@@ -2,6 +2,7 @@
 Projekt na PrZ
 
 Aplikacja dla strzelnicy:
+
 •	pracownik
 •	użytkownik
 Baza danych: broń, amunicja, użytkownicy(klienci), koszt, zdobyte punkty, stopień.  
