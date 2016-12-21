@@ -16,27 +16,19 @@ namespace Twix
         public Okno()
         {
             InitializeComponent();
-            panelLogowanie.Visible = false;
-            panelLogowanie.Enabled = false;
-            panelLogowanie.SendToBack();
-            panelRejestracja.Visible = false;
-            panelRejestracja.Enabled = false;
-            panelRejestracja.SendToBack();
+            ukrywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelRejestracja);
         }
 
         private void buttonLogowanieWroc_Click(object sender, EventArgs e)
         {
-            panelLogowanie.Enabled = false;
-            panelLogowanie.Visible = false;
-            panelLogowanie.SendToBack();
-            epLogowanieLogin.Clear();
+            ukrywaniePanelu(panelLogowanie);
+            epLogowanie.Clear();
         }
 
         private void buttonOknoZaloguj_Click(object sender, EventArgs e)
         {
-            panelLogowanie.BringToFront();
-            panelLogowanie.Enabled = true;
-            panelLogowanie.Visible = true;
+            pokazywaniePanelu(panelLogowanie);
         }
 
         private void buttonOknoWyjdz_Click(object sender, EventArgs e)
@@ -46,24 +38,24 @@ namespace Twix
 
         private void textBoxLogowanieLogin_Leave(object sender, EventArgs e)
         {
-            setError(this.textBoxLogowanieLogin, "Nieporpawny login");
+            setError(this.textBoxLogowanieLogin, "Niepoprawny login");
         }
 
         private void textBoxLogowanieHaslo_Leave(object sender, EventArgs e)
         {
-            setError(this.textBoxLogowanieHaslo, "Nieporpawne hasło");
+            setError(this.textBoxLogowanieHaslo, "Niepoprawne hasło");
         }
 
         private void setError(TextBox componentToValidate, string message)
         {
             if (string.IsNullOrEmpty(componentToValidate.Text))
             {
-                epLogowanieLogin.Icon = Properties.Resources.error;
-                epLogowanieLogin.SetError(componentToValidate, message);
+                epLogowanie.Icon = Properties.Resources.error;
+                epLogowanie.SetError(componentToValidate, message);
             }
             else
             {
-                epLogowanieLogin.Clear();
+                epLogowanie.Clear();
             }
         }
 
@@ -71,46 +63,38 @@ namespace Twix
         {
             if(user == null)
             {
-                epLogowanieLogin.Icon = Properties.Resources.error;
-                epLogowanieLogin.SetError(logowanie, message);
+                epLogowanie.Icon = Properties.Resources.error;
+                epLogowanie.SetError(logowanie, message);
             }
             else
             {
-                epLogowanieLogin.Clear();
+                epLogowanie.Clear();
             }
             
         }
 
-        private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
-        {
-            string login = textBoxLogowanieLogin.Text;
-            string haslo = textBoxLogowanieHaslo.Text;
-
-
-            IDataReader dr = this.twixDataSet1.CreateDataReader();
-            this.twixDataSet1.Twix_Klienci.Load(dr,LoadOption.OverwriteChanges);
-            int aaa = this.twixDataSet1.Twix_Klienci.Count;
-           
-            //user = this.twixDataSet1.Twix_Klienci.Where(user => 
-            //user.LOGIN.Equals(login) && user.HASLO.Equals(haslo)).FirstOrDefault();
-            setError(buttonLogowanieZaloguj, "Niepoprawny użytkownik");
-            string usert = user.IMIE.ToString();
-            label1.Text = usert;
-        }
-
         private void buttonRejestracjaWroc_Click(object sender, EventArgs e)
         {
-            panelRejestracja.SendToBack();
-            panelRejestracja.Visible = false;
-            panelRejestracja.Enabled = false;
+            ukrywaniePanelu(panelRejestracja);
         }
 
         private void buttonOknoZarejestruj_Click(object sender, EventArgs e)
         {
-            panelLogowanie.SendToBack();
-            panelRejestracja.Enabled = true;
-            panelRejestracja.Visible = true;
-            panelRejestracja.BringToFront();
+            pokazywaniePanelu(panelRejestracja);
+        }
+
+        private void ukrywaniePanelu(Panel doUkrycia)
+        {
+            doUkrycia.Enabled = false;
+            doUkrycia.Visible = false;
+            doUkrycia.SendToBack();
+        }
+
+        private void pokazywaniePanelu(Panel doPokazania)
+        {
+            doPokazania.BringToFront();
+            doPokazania.Enabled = true;
+            doPokazania.Visible = true;
         }
     }
 }

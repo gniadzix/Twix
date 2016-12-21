@@ -33,10 +33,12 @@
             this.buttonOknoZarejestruj = new System.Windows.Forms.Button();
             this.buttonOknoWyjdz = new System.Windows.Forms.Button();
             this.panelLogowanie = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelLogowanieHaslo = new System.Windows.Forms.Label();
             this.labelLogowanieLogin = new System.Windows.Forms.Label();
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
+            this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
+            this.textBoxLogowanieHaslo = new System.Windows.Forms.TextBox();
+            this.textBoxLogowanieLogin = new System.Windows.Forms.TextBox();
             this.panelRejestracja = new System.Windows.Forms.Panel();
             this.textBoxRejestracjaHaslo = new System.Windows.Forms.TextBox();
             this.textBoxRejestracjaLogin = new System.Windows.Forms.TextBox();
@@ -52,15 +54,10 @@
             this.labelRejestracjaImie = new System.Windows.Forms.Label();
             this.buttonRejestracjaZarejestruj = new System.Windows.Forms.Button();
             this.buttonRejestracjaWroc = new System.Windows.Forms.Button();
-            this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
-            this.textBoxLogowanieHaslo = new System.Windows.Forms.TextBox();
-            this.textBoxLogowanieLogin = new System.Windows.Forms.TextBox();
-            this.epLogowanieLogin = new System.Windows.Forms.ErrorProvider(this.components);
-            this.twixDataSet1 = new Twix.twixDataSet();
+            this.epLogowanie = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelLogowanie.SuspendLayout();
             this.panelRejestracja.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epLogowanieLogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.twixDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOknoZaloguj
@@ -95,7 +92,6 @@
             // 
             // panelLogowanie
             // 
-            this.panelLogowanie.Controls.Add(this.label1);
             this.panelLogowanie.Controls.Add(this.labelLogowanieHaslo);
             this.panelLogowanie.Controls.Add(this.labelLogowanieLogin);
             this.panelLogowanie.Controls.Add(this.buttonLogowanieWroc);
@@ -106,15 +102,6 @@
             this.panelLogowanie.Name = "panelLogowanie";
             this.panelLogowanie.Size = new System.Drawing.Size(282, 257);
             this.panelLogowanie.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 196);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
             // 
             // labelLogowanieHaslo
             // 
@@ -143,6 +130,31 @@
             this.buttonLogowanieWroc.Text = "Wróć";
             this.buttonLogowanieWroc.UseVisualStyleBackColor = true;
             this.buttonLogowanieWroc.Click += new System.EventHandler(this.buttonLogowanieWroc_Click);
+            // 
+            // buttonLogowanieZaloguj
+            // 
+            this.buttonLogowanieZaloguj.Location = new System.Drawing.Point(103, 141);
+            this.buttonLogowanieZaloguj.Name = "buttonLogowanieZaloguj";
+            this.buttonLogowanieZaloguj.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogowanieZaloguj.TabIndex = 2;
+            this.buttonLogowanieZaloguj.Text = "Zaloguj";
+            this.buttonLogowanieZaloguj.UseVisualStyleBackColor = true;
+            // 
+            // textBoxLogowanieHaslo
+            // 
+            this.textBoxLogowanieHaslo.Location = new System.Drawing.Point(148, 103);
+            this.textBoxLogowanieHaslo.Name = "textBoxLogowanieHaslo";
+            this.textBoxLogowanieHaslo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLogowanieHaslo.TabIndex = 1;
+            this.textBoxLogowanieHaslo.Leave += new System.EventHandler(this.textBoxLogowanieHaslo_Leave);
+            // 
+            // textBoxLogowanieLogin
+            // 
+            this.textBoxLogowanieLogin.Location = new System.Drawing.Point(12, 102);
+            this.textBoxLogowanieLogin.Name = "textBoxLogowanieLogin";
+            this.textBoxLogowanieLogin.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLogowanieLogin.TabIndex = 0;
+            this.textBoxLogowanieLogin.Leave += new System.EventHandler(this.textBoxLogowanieLogin_Leave);
             // 
             // panelRejestracja
             // 
@@ -280,40 +292,9 @@
             this.buttonRejestracjaWroc.UseVisualStyleBackColor = true;
             this.buttonRejestracjaWroc.Click += new System.EventHandler(this.buttonRejestracjaWroc_Click);
             // 
-            // buttonLogowanieZaloguj
+            // epLogowanie
             // 
-            this.buttonLogowanieZaloguj.Location = new System.Drawing.Point(103, 141);
-            this.buttonLogowanieZaloguj.Name = "buttonLogowanieZaloguj";
-            this.buttonLogowanieZaloguj.Size = new System.Drawing.Size(75, 23);
-            this.buttonLogowanieZaloguj.TabIndex = 2;
-            this.buttonLogowanieZaloguj.Text = "Zaloguj";
-            this.buttonLogowanieZaloguj.UseVisualStyleBackColor = true;
-            this.buttonLogowanieZaloguj.Click += new System.EventHandler(this.buttonLogowanieZaloguj_Click);
-            // 
-            // textBoxLogowanieHaslo
-            // 
-            this.textBoxLogowanieHaslo.Location = new System.Drawing.Point(148, 103);
-            this.textBoxLogowanieHaslo.Name = "textBoxLogowanieHaslo";
-            this.textBoxLogowanieHaslo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLogowanieHaslo.TabIndex = 1;
-            this.textBoxLogowanieHaslo.Leave += new System.EventHandler(this.textBoxLogowanieHaslo_Leave);
-            // 
-            // textBoxLogowanieLogin
-            // 
-            this.textBoxLogowanieLogin.Location = new System.Drawing.Point(12, 102);
-            this.textBoxLogowanieLogin.Name = "textBoxLogowanieLogin";
-            this.textBoxLogowanieLogin.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLogowanieLogin.TabIndex = 0;
-            this.textBoxLogowanieLogin.Leave += new System.EventHandler(this.textBoxLogowanieLogin_Leave);
-            // 
-            // epLogowanieLogin
-            // 
-            this.epLogowanieLogin.ContainerControl = this;
-            // 
-            // twixDataSet1
-            // 
-            this.twixDataSet1.DataSetName = "twixDataSet";
-            this.twixDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.epLogowanie.ContainerControl = this;
             // 
             // Okno
             // 
@@ -331,8 +312,7 @@
             this.panelLogowanie.PerformLayout();
             this.panelRejestracja.ResumeLayout(false);
             this.panelRejestracja.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epLogowanieLogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.twixDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,9 +329,7 @@
         private System.Windows.Forms.Button buttonLogowanieZaloguj;
         private System.Windows.Forms.TextBox textBoxLogowanieHaslo;
         private System.Windows.Forms.TextBox textBoxLogowanieLogin;
-        private System.Windows.Forms.ErrorProvider epLogowanieLogin;
-        private System.Windows.Forms.Label label1;
-        public twixDataSet twixDataSet1;
+        private System.Windows.Forms.ErrorProvider epLogowanie;
         private System.Windows.Forms.Panel panelRejestracja;
         private System.Windows.Forms.TextBox textBoxRejestracjaHaslo;
         private System.Windows.Forms.TextBox textBoxRejestracjaLogin;
