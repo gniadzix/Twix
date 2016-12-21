@@ -55,9 +55,24 @@
             this.buttonRejestracjaZarejestruj = new System.Windows.Forms.Button();
             this.buttonRejestracjaWroc = new System.Windows.Forms.Button();
             this.epLogowanie = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelZaktualizujDane = new System.Windows.Forms.Panel();
+            this.buttonZaktualizujDaneWroc = new System.Windows.Forms.Button();
+            this.textBoxZaktualizujDaneWyszukajUzytkownika = new System.Windows.Forms.TextBox();
+            this.buttonZaktualizujDane = new System.Windows.Forms.Button();
+            this.textBoxZaktualizujDaneImie = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDaneNazwisko = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDanePesel = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDaneNrDowodu = new System.Windows.Forms.TextBox();
+            this.labelZaktualizujDaneImie = new System.Windows.Forms.Label();
+            this.labelZaktualizujDaneNazwisko = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonZaktualizujDaneZmien = new System.Windows.Forms.Button();
+            this.buttonZaktualizujDaneZatwierd = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelRejestracja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).BeginInit();
+            this.panelZaktualizujDane.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOknoZaloguj
@@ -296,11 +311,145 @@
             // 
             this.epLogowanie.ContainerControl = this;
             // 
+            // panelZaktualizujDane
+            // 
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZatwierd);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZmien);
+            this.panelZaktualizujDane.Controls.Add(this.label4);
+            this.panelZaktualizujDane.Controls.Add(this.label3);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneNazwisko);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneImie);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneNrDowodu);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDanePesel);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneNazwisko);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneImie);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDane);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneWyszukajUzytkownika);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneWroc);
+            this.panelZaktualizujDane.Location = new System.Drawing.Point(591, 4);
+            this.panelZaktualizujDane.Name = "panelZaktualizujDane";
+            this.panelZaktualizujDane.Size = new System.Drawing.Size(330, 257);
+            this.panelZaktualizujDane.TabIndex = 5;
+            // 
+            // buttonZaktualizujDaneWroc
+            // 
+            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(252, 225);
+            this.buttonZaktualizujDaneWroc.Name = "buttonZaktualizujDaneWroc";
+            this.buttonZaktualizujDaneWroc.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneWroc.TabIndex = 0;
+            this.buttonZaktualizujDaneWroc.Text = "Wróć";
+            this.buttonZaktualizujDaneWroc.UseVisualStyleBackColor = true;
+            // 
+            // textBoxZaktualizujDaneWyszukajUzytkownika
+            // 
+            this.textBoxZaktualizujDaneWyszukajUzytkownika.Location = new System.Drawing.Point(34, 37);
+            this.textBoxZaktualizujDaneWyszukajUzytkownika.Name = "textBoxZaktualizujDaneWyszukajUzytkownika";
+            this.textBoxZaktualizujDaneWyszukajUzytkownika.Size = new System.Drawing.Size(125, 20);
+            this.textBoxZaktualizujDaneWyszukajUzytkownika.TabIndex = 1;
+            this.textBoxZaktualizujDaneWyszukajUzytkownika.Text = "Wyszukaj użytkownika";
+            // 
+            // buttonZaktualizujDane
+            // 
+            this.buttonZaktualizujDane.Location = new System.Drawing.Point(180, 38);
+            this.buttonZaktualizujDane.Name = "buttonZaktualizujDane";
+            this.buttonZaktualizujDane.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDane.TabIndex = 2;
+            this.buttonZaktualizujDane.Text = "Szukaj";
+            this.buttonZaktualizujDane.UseVisualStyleBackColor = true;
+            // 
+            // textBoxZaktualizujDaneImie
+            // 
+            this.textBoxZaktualizujDaneImie.Enabled = false;
+            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(34, 70);
+            this.textBoxZaktualizujDaneImie.Name = "textBoxZaktualizujDaneImie";
+            this.textBoxZaktualizujDaneImie.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDaneImie.TabIndex = 3;
+            // 
+            // textBoxZaktualizujDaneNazwisko
+            // 
+            this.textBoxZaktualizujDaneNazwisko.Enabled = false;
+            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(34, 102);
+            this.textBoxZaktualizujDaneNazwisko.Name = "textBoxZaktualizujDaneNazwisko";
+            this.textBoxZaktualizujDaneNazwisko.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDaneNazwisko.TabIndex = 4;
+            // 
+            // textBoxZaktualizujDanePesel
+            // 
+            this.textBoxZaktualizujDanePesel.Enabled = false;
+            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(34, 129);
+            this.textBoxZaktualizujDanePesel.Name = "textBoxZaktualizujDanePesel";
+            this.textBoxZaktualizujDanePesel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDanePesel.TabIndex = 5;
+            // 
+            // textBoxZaktualizujDaneNrDowodu
+            // 
+            this.textBoxZaktualizujDaneNrDowodu.Enabled = false;
+            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(34, 156);
+            this.textBoxZaktualizujDaneNrDowodu.Name = "textBoxZaktualizujDaneNrDowodu";
+            this.textBoxZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDaneNrDowodu.TabIndex = 6;
+            // 
+            // labelZaktualizujDaneImie
+            // 
+            this.labelZaktualizujDaneImie.AutoSize = true;
+            this.labelZaktualizujDaneImie.Location = new System.Drawing.Point(155, 76);
+            this.labelZaktualizujDaneImie.Name = "labelZaktualizujDaneImie";
+            this.labelZaktualizujDaneImie.Size = new System.Drawing.Size(26, 13);
+            this.labelZaktualizujDaneImie.TabIndex = 7;
+            this.labelZaktualizujDaneImie.Text = "Imię";
+            // 
+            // labelZaktualizujDaneNazwisko
+            // 
+            this.labelZaktualizujDaneNazwisko.AutoSize = true;
+            this.labelZaktualizujDaneNazwisko.Location = new System.Drawing.Point(158, 109);
+            this.labelZaktualizujDaneNazwisko.Name = "labelZaktualizujDaneNazwisko";
+            this.labelZaktualizujDaneNazwisko.Size = new System.Drawing.Size(53, 13);
+            this.labelZaktualizujDaneNazwisko.TabIndex = 8;
+            this.labelZaktualizujDaneNazwisko.Text = "Nazwisko";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(158, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Pesel";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(158, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Nr dowodu";
+            // 
+            // buttonZaktualizujDaneZmien
+            // 
+            this.buttonZaktualizujDaneZmien.Location = new System.Drawing.Point(34, 183);
+            this.buttonZaktualizujDaneZmien.Name = "buttonZaktualizujDaneZmien";
+            this.buttonZaktualizujDaneZmien.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneZmien.TabIndex = 11;
+            this.buttonZaktualizujDaneZmien.Text = "Zmień dane";
+            this.buttonZaktualizujDaneZmien.UseVisualStyleBackColor = true;
+            this.buttonZaktualizujDaneZmien.Click += new System.EventHandler(this.buttonZaktualizujDaneZmien_Click);
+            // 
+            // buttonZaktualizujDaneZatwierd
+            // 
+            this.buttonZaktualizujDaneZatwierd.Location = new System.Drawing.Point(34, 206);
+            this.buttonZaktualizujDaneZatwierd.Name = "buttonZaktualizujDaneZatwierd";
+            this.buttonZaktualizujDaneZatwierd.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneZatwierd.TabIndex = 12;
+            this.buttonZaktualizujDaneZatwierd.Text = "Zatwierdź";
+            this.buttonZaktualizujDaneZatwierd.UseVisualStyleBackColor = true;
+            // 
             // Okno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 439);
+            this.ClientSize = new System.Drawing.Size(1179, 773);
+            this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.buttonOknoWyjdz);
@@ -313,6 +462,8 @@
             this.panelRejestracja.ResumeLayout(false);
             this.panelRejestracja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).EndInit();
+            this.panelZaktualizujDane.ResumeLayout(false);
+            this.panelZaktualizujDane.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,6 +496,20 @@
         private System.Windows.Forms.Label labelRejestracjaImie;
         private System.Windows.Forms.Button buttonRejestracjaZarejestruj;
         private System.Windows.Forms.Button buttonRejestracjaWroc;
+        private System.Windows.Forms.Panel panelZaktualizujDane;
+        private System.Windows.Forms.Button buttonZaktualizujDaneZatwierd;
+        private System.Windows.Forms.Button buttonZaktualizujDaneZmien;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelZaktualizujDaneNazwisko;
+        private System.Windows.Forms.Label labelZaktualizujDaneImie;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneNrDowodu;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDanePesel;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneNazwisko;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneImie;
+        private System.Windows.Forms.Button buttonZaktualizujDane;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneWyszukajUzytkownika;
+        private System.Windows.Forms.Button buttonZaktualizujDaneWroc;
     }
 }
 

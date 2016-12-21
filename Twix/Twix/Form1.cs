@@ -96,5 +96,13 @@ namespace Twix
             doPokazania.Enabled = true;
             doPokazania.Visible = true;
         }
+
+        private void buttonZaktualizujDaneZmien_Click(object sender, EventArgs e)
+        {
+            textBoxZaktualizujDaneImie.Enabled = true;
+            textBoxZaktualizujDaneNazwisko.Enabled = true;
+            textBoxZaktualizujDaneNrDowodu.Enabled = true;
+            textBoxZaktualizujDanePesel.Enabled = true;
+        }
     }
 }
