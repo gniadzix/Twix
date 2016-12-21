@@ -60,15 +60,6 @@ namespace Twix
 
         private void setError(Button logowanie, string message)
         {
-            if(user == null)
-            {
-                epLogowanie.Icon = Properties.Resources.error;
-                epLogowanie.SetError(logowanie, message);
-            }
-            else
-            {
-                epLogowanie.Clear();
-            }
             
         }
 
