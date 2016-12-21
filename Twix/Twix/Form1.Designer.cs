@@ -69,10 +69,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonZaktualizujDaneZmien = new System.Windows.Forms.Button();
             this.buttonZaktualizujDaneZatwierd = new System.Windows.Forms.Button();
+            this.panelRanking = new System.Windows.Forms.Panel();
+            this.buttonRankingWroc = new System.Windows.Forms.Button();
+            this.comboBoxRankingOkres = new System.Windows.Forms.ComboBox();
+            this.comboBoxRankingJakiWynik = new System.Windows.Forms.ComboBox();
+            this.buttonRankingPokazRankig = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelRejestracja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).BeginInit();
             this.panelZaktualizujDane.SuspendLayout();
+            this.panelRanking.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOknoZaloguj
@@ -444,11 +450,59 @@
             this.buttonZaktualizujDaneZatwierd.Text = "Zatwierdź";
             this.buttonZaktualizujDaneZatwierd.UseVisualStyleBackColor = true;
             // 
+            // panelRanking
+            // 
+            this.panelRanking.Controls.Add(this.buttonRankingPokazRankig);
+            this.panelRanking.Controls.Add(this.comboBoxRankingJakiWynik);
+            this.panelRanking.Controls.Add(this.comboBoxRankingOkres);
+            this.panelRanking.Controls.Add(this.buttonRankingWroc);
+            this.panelRanking.Location = new System.Drawing.Point(13, 301);
+            this.panelRanking.Name = "panelRanking";
+            this.panelRanking.Size = new System.Drawing.Size(452, 383);
+            this.panelRanking.TabIndex = 6;
+            // 
+            // buttonRankingWroc
+            // 
+            this.buttonRankingWroc.Location = new System.Drawing.Point(374, 357);
+            this.buttonRankingWroc.Name = "buttonRankingWroc";
+            this.buttonRankingWroc.Size = new System.Drawing.Size(75, 23);
+            this.buttonRankingWroc.TabIndex = 0;
+            this.buttonRankingWroc.Text = "Wróć";
+            this.buttonRankingWroc.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxRankingOkres
+            // 
+            this.comboBoxRankingOkres.FormattingEnabled = true;
+            this.comboBoxRankingOkres.Location = new System.Drawing.Point(18, 49);
+            this.comboBoxRankingOkres.Name = "comboBoxRankingOkres";
+            this.comboBoxRankingOkres.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRankingOkres.TabIndex = 1;
+            this.comboBoxRankingOkres.Text = "Okres";
+            // 
+            // comboBoxRankingJakiWynik
+            // 
+            this.comboBoxRankingJakiWynik.FormattingEnabled = true;
+            this.comboBoxRankingJakiWynik.Location = new System.Drawing.Point(18, 77);
+            this.comboBoxRankingJakiWynik.Name = "comboBoxRankingJakiWynik";
+            this.comboBoxRankingJakiWynik.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRankingJakiWynik.TabIndex = 2;
+            this.comboBoxRankingJakiWynik.Text = "Jaki wynik?";
+            // 
+            // buttonRankingPokazRankig
+            // 
+            this.buttonRankingPokazRankig.Location = new System.Drawing.Point(18, 146);
+            this.buttonRankingPokazRankig.Name = "buttonRankingPokazRankig";
+            this.buttonRankingPokazRankig.Size = new System.Drawing.Size(128, 23);
+            this.buttonRankingPokazRankig.TabIndex = 3;
+            this.buttonRankingPokazRankig.Text = "Pokaż ranking";
+            this.buttonRankingPokazRankig.UseVisualStyleBackColor = true;
+            // 
             // Okno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 773);
+            this.Controls.Add(this.panelRanking);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelLogowanie);
@@ -464,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.epLogowanie)).EndInit();
             this.panelZaktualizujDane.ResumeLayout(false);
             this.panelZaktualizujDane.PerformLayout();
+            this.panelRanking.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -510,6 +565,11 @@
         private System.Windows.Forms.Button buttonZaktualizujDane;
         private System.Windows.Forms.TextBox textBoxZaktualizujDaneWyszukajUzytkownika;
         private System.Windows.Forms.Button buttonZaktualizujDaneWroc;
+        private System.Windows.Forms.Panel panelRanking;
+        private System.Windows.Forms.ComboBox comboBoxRankingOkres;
+        private System.Windows.Forms.Button buttonRankingWroc;
+        private System.Windows.Forms.Button buttonRankingPokazRankig;
+        private System.Windows.Forms.ComboBox comboBoxRankingJakiWynik;
     }
 }
 
