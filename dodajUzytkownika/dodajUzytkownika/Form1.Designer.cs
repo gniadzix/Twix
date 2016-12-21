@@ -91,6 +91,7 @@
             // 
             this.textboxDodajPesel.AccessibleName = "textboxDodajPesel";
             this.textboxDodajPesel.Location = new System.Drawing.Point(93, 119);
+            this.textboxDodajPesel.MaxLength = 11;
             this.textboxDodajPesel.Name = "textboxDodajPesel";
             this.textboxDodajPesel.Size = new System.Drawing.Size(111, 20);
             this.textboxDodajPesel.TabIndex = 2;
