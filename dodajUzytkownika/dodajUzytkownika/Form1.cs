@@ -42,8 +42,8 @@ namespace dodajUzytkownika
 
         private void buttonDodajUzytkownika_Click(object sender, EventArgs e)
         {
-            string constring = "Data Source=cfcfq5jupw.database.windows.net,1433;Initial Catalog=twix;Persist Security Info=True;User ID=twixadmin;Password=qazTHRD1250";
-            string Query = "insert into dbo.Twix_Klienci(IMIE,NAZWISKO,PESEL,NR_DOWODU) VALUES ('" + textboxDodajImie.ToString()+ "','" + textboxDodajNazwisko.ToString() + "','" + textboxDodajPesel.ToString() + "','" + textboxDodajNrDowodu.ToString() +"');";
+            string constring = "Data Source=cfcfq5jupw.database.windows.net,1433;Initial Catalog=twixv2;Persist Security Info=True;User ID=twixadmin;Password=qazTHRD1250";
+            string Query = "insert into dbo.Twix_Klienci(IMIE,NAZWISKO,PESEL,NR_DOWODU) VALUES ('" + textboxDodajImie.Text+ "','" + textboxDodajNazwisko.Text + "','" + textboxDodajPesel.Text + "','" + textboxDodajNrDowodu.Text +"');";
             SqlConnection conDataBase = new SqlConnection(constring);
             SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
             SqlDataReader myReader;

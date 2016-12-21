@@ -35,12 +35,14 @@
             this.textboxDodajPesel = new System.Windows.Forms.TextBox();
             this.textboxDodajNazwisko = new System.Windows.Forms.TextBox();
             this.textboxDodajImie = new System.Windows.Forms.TextBox();
+            this.checkBoxCzyAdmin = new System.Windows.Forms.CheckBox();
             this.panelDodajUzytkownika.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDodajUzytkownika
             // 
             this.panelDodajUzytkownika.AccessibleName = "panelDodajUzytkownika";
+            this.panelDodajUzytkownika.Controls.Add(this.checkBoxCzyAdmin);
             this.panelDodajUzytkownika.Controls.Add(this.buttonWrocDoPaneluUzytkownika);
             this.panelDodajUzytkownika.Controls.Add(this.buttonDodajUzytkownika);
             this.panelDodajUzytkownika.Controls.Add(this.textboxDodajNrDowodu);
@@ -118,6 +120,17 @@
             this.textboxDodajImie.Click += new System.EventHandler(this.textboxDodajImie_Click);
             this.textboxDodajImie.TextChanged += new System.EventHandler(this.textboxDodajImie_TextChanged);
             // 
+            // checkBoxCzyAdmin
+            // 
+            this.checkBoxCzyAdmin.AccessibleName = "checkBoxCzyAdmin";
+            this.checkBoxCzyAdmin.AutoSize = true;
+            this.checkBoxCzyAdmin.Location = new System.Drawing.Point(93, 171);
+            this.checkBoxCzyAdmin.Name = "checkBoxCzyAdmin";
+            this.checkBoxCzyAdmin.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxCzyAdmin.TabIndex = 6;
+            this.checkBoxCzyAdmin.Text = "Admin?";
+            this.checkBoxCzyAdmin.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +154,7 @@
         private System.Windows.Forms.TextBox textboxDodajNazwisko;
         private System.Windows.Forms.TextBox textboxDodajImie;
         private System.Windows.Forms.Button buttonWrocDoPaneluUzytkownika;
+        private System.Windows.Forms.CheckBox checkBoxCzyAdmin;
     }
 }
 
