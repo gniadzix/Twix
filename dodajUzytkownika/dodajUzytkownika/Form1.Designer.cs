@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelDodajUzytkownika = new System.Windows.Forms.Panel();
             this.buttonWrocDoPaneluUzytkownika = new System.Windows.Forms.Button();
             this.buttonDodajUzytkownika = new System.Windows.Forms.Button();
@@ -36,9 +35,7 @@
             this.textboxDodajPesel = new System.Windows.Forms.TextBox();
             this.textboxDodajNazwisko = new System.Windows.Forms.TextBox();
             this.textboxDodajImie = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelDodajUzytkownika.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDodajUzytkownika
@@ -121,10 +118,6 @@
             this.textboxDodajImie.Click += new System.EventHandler(this.textboxDodajImie_Click);
             this.textboxDodajImie.TextChanged += new System.EventHandler(this.textboxDodajImie_TextChanged);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,7 +128,6 @@
             this.Text = "Form1";
             this.panelDodajUzytkownika.ResumeLayout(false);
             this.panelDodajUzytkownika.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,7 +140,6 @@
         private System.Windows.Forms.TextBox textboxDodajPesel;
         private System.Windows.Forms.TextBox textboxDodajNazwisko;
         private System.Windows.Forms.TextBox textboxDodajImie;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button buttonWrocDoPaneluUzytkownika;
     }
 }
