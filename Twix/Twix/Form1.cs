@@ -12,7 +12,6 @@ namespace Twix
 {
     public partial class Okno : Form
     {
-        twixDataSet.Twix_KlienciRow user;
         public Okno()
         {
             InitializeComponent();
