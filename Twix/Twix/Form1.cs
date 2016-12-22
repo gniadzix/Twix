@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Simple.Data;
 namespace Twix
 {
     public partial class Okno : Form
@@ -93,6 +93,13 @@ namespace Twix
             textBoxZaktualizujDaneNazwisko.Enabled = true;
             textBoxZaktualizujDaneNrDowodu.Enabled = true;
             textBoxZaktualizujDanePesel.Enabled = true;
+        }
+
+        private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
+        {
+            var db = Database.Open();
+            var klienci = db.twix.klienci.findAllByIMIE("Hubert");
+            string a = "A"; ;
         }
     }
 }
