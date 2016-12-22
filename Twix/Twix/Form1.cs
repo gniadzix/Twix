@@ -12,7 +12,6 @@ namespace Twix
 {
     public partial class Okno : Form
     {
-        twixDataSet.Twix_KlienciRow user;
         public Okno()
         {
             InitializeComponent();
@@ -61,15 +60,7 @@ namespace Twix
 
         private void setError(Button logowanie, string message)
         {
-            if(user == null)
-            {
-                epLogowanie.Icon = Properties.Resources.error;
-                epLogowanie.SetError(logowanie, message);
-            }
-            else
-            {
-                epLogowanie.Clear();
-            }
+
             
         }
 
