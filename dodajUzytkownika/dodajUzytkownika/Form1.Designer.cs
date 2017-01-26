@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.panelDodajUzytkownika = new System.Windows.Forms.Panel();
+            this.checkBoxCzyAdmin = new System.Windows.Forms.CheckBox();
             this.buttonWrocDoPaneluUzytkownika = new System.Windows.Forms.Button();
             this.buttonDodajUzytkownika = new System.Windows.Forms.Button();
             this.textboxDodajNrDowodu = new System.Windows.Forms.TextBox();
             this.textboxDodajPesel = new System.Windows.Forms.TextBox();
             this.textboxDodajNazwisko = new System.Windows.Forms.TextBox();
             this.textboxDodajImie = new System.Windows.Forms.TextBox();
-            this.checkBoxCzyAdmin = new System.Windows.Forms.CheckBox();
             this.panelDodajUzytkownika.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDodajUzytkownika
             // 
             this.panelDodajUzytkownika.AccessibleName = "panelDodajUzytkownika";
+            this.panelDodajUzytkownika.BackgroundImage = global::dodajUzytkownika.Properties.Resources.Dodaj_uzytkownika_background;
             this.panelDodajUzytkownika.Controls.Add(this.checkBoxCzyAdmin);
             this.panelDodajUzytkownika.Controls.Add(this.buttonWrocDoPaneluUzytkownika);
             this.panelDodajUzytkownika.Controls.Add(this.buttonDodajUzytkownika);
@@ -51,16 +52,28 @@
             this.panelDodajUzytkownika.Controls.Add(this.textboxDodajImie);
             this.panelDodajUzytkownika.Location = new System.Drawing.Point(0, 0);
             this.panelDodajUzytkownika.Name = "panelDodajUzytkownika";
-            this.panelDodajUzytkownika.Size = new System.Drawing.Size(325, 289);
+            this.panelDodajUzytkownika.Size = new System.Drawing.Size(304, 568);
             this.panelDodajUzytkownika.TabIndex = 0;
             this.panelDodajUzytkownika.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // checkBoxCzyAdmin
+            // 
+            this.checkBoxCzyAdmin.AccessibleName = "checkBoxCzyAdmin";
+            this.checkBoxCzyAdmin.AutoSize = true;
+            this.checkBoxCzyAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.checkBoxCzyAdmin.Location = new System.Drawing.Point(33, 168);
+            this.checkBoxCzyAdmin.Name = "checkBoxCzyAdmin";
+            this.checkBoxCzyAdmin.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxCzyAdmin.TabIndex = 6;
+            this.checkBoxCzyAdmin.Text = "Admin?";
+            this.checkBoxCzyAdmin.UseVisualStyleBackColor = true;
             // 
             // buttonWrocDoPaneluUzytkownika
             // 
             this.buttonWrocDoPaneluUzytkownika.AccessibleName = "buttonWrocDoPaneluUzytkownika";
-            this.buttonWrocDoPaneluUzytkownika.Location = new System.Drawing.Point(207, 241);
+            this.buttonWrocDoPaneluUzytkownika.Location = new System.Drawing.Point(101, 216);
             this.buttonWrocDoPaneluUzytkownika.Name = "buttonWrocDoPaneluUzytkownika";
-            this.buttonWrocDoPaneluUzytkownika.Size = new System.Drawing.Size(75, 23);
+            this.buttonWrocDoPaneluUzytkownika.Size = new System.Drawing.Size(43, 23);
             this.buttonWrocDoPaneluUzytkownika.TabIndex = 5;
             this.buttonWrocDoPaneluUzytkownika.Text = "Wróć";
             this.buttonWrocDoPaneluUzytkownika.UseVisualStyleBackColor = true;
@@ -68,9 +81,9 @@
             // buttonDodajUzytkownika
             // 
             this.buttonDodajUzytkownika.AccessibleName = "buttonDodajUzytkownika";
-            this.buttonDodajUzytkownika.Location = new System.Drawing.Point(48, 242);
+            this.buttonDodajUzytkownika.Location = new System.Drawing.Point(33, 216);
             this.buttonDodajUzytkownika.Name = "buttonDodajUzytkownika";
-            this.buttonDodajUzytkownika.Size = new System.Drawing.Size(75, 23);
+            this.buttonDodajUzytkownika.Size = new System.Drawing.Size(43, 23);
             this.buttonDodajUzytkownika.TabIndex = 4;
             this.buttonDodajUzytkownika.Text = "Dodaj";
             this.buttonDodajUzytkownika.UseVisualStyleBackColor = true;
@@ -79,7 +92,8 @@
             // textboxDodajNrDowodu
             // 
             this.textboxDodajNrDowodu.AccessibleName = "textboxDodajNrDowodu";
-            this.textboxDodajNrDowodu.Location = new System.Drawing.Point(93, 145);
+            this.textboxDodajNrDowodu.Location = new System.Drawing.Point(33, 142);
+            this.textboxDodajNrDowodu.MaxLength = 9;
             this.textboxDodajNrDowodu.Name = "textboxDodajNrDowodu";
             this.textboxDodajNrDowodu.Size = new System.Drawing.Size(111, 20);
             this.textboxDodajNrDowodu.TabIndex = 3;
@@ -89,7 +103,7 @@
             // textboxDodajPesel
             // 
             this.textboxDodajPesel.AccessibleName = "textboxDodajPesel";
-            this.textboxDodajPesel.Location = new System.Drawing.Point(93, 119);
+            this.textboxDodajPesel.Location = new System.Drawing.Point(33, 116);
             this.textboxDodajPesel.MaxLength = 11;
             this.textboxDodajPesel.Name = "textboxDodajPesel";
             this.textboxDodajPesel.Size = new System.Drawing.Size(111, 20);
@@ -101,7 +115,7 @@
             // textboxDodajNazwisko
             // 
             this.textboxDodajNazwisko.AccessibleName = "textboxDodajNazwisko";
-            this.textboxDodajNazwisko.Location = new System.Drawing.Point(93, 92);
+            this.textboxDodajNazwisko.Location = new System.Drawing.Point(33, 89);
             this.textboxDodajNazwisko.Name = "textboxDodajNazwisko";
             this.textboxDodajNazwisko.Size = new System.Drawing.Size(111, 20);
             this.textboxDodajNazwisko.TabIndex = 1;
@@ -112,7 +126,7 @@
             // textboxDodajImie
             // 
             this.textboxDodajImie.AccessibleName = "textboxDodajImie";
-            this.textboxDodajImie.Location = new System.Drawing.Point(93, 65);
+            this.textboxDodajImie.Location = new System.Drawing.Point(33, 62);
             this.textboxDodajImie.Name = "textboxDodajImie";
             this.textboxDodajImie.Size = new System.Drawing.Size(111, 20);
             this.textboxDodajImie.TabIndex = 0;
@@ -120,25 +134,14 @@
             this.textboxDodajImie.Click += new System.EventHandler(this.textboxDodajImie_Click);
             this.textboxDodajImie.TextChanged += new System.EventHandler(this.textboxDodajImie_TextChanged);
             // 
-            // checkBoxCzyAdmin
-            // 
-            this.checkBoxCzyAdmin.AccessibleName = "checkBoxCzyAdmin";
-            this.checkBoxCzyAdmin.AutoSize = true;
-            this.checkBoxCzyAdmin.Location = new System.Drawing.Point(93, 171);
-            this.checkBoxCzyAdmin.Name = "checkBoxCzyAdmin";
-            this.checkBoxCzyAdmin.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxCzyAdmin.TabIndex = 6;
-            this.checkBoxCzyAdmin.Text = "Admin?";
-            this.checkBoxCzyAdmin.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 290);
+            this.ClientSize = new System.Drawing.Size(304, 530);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Dodaj użytkownika";
             this.panelDodajUzytkownika.ResumeLayout(false);
             this.panelDodajUzytkownika.PerformLayout();
             this.ResumeLayout(false);
