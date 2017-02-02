@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace Dodaj_wynik
 {
-    public partial class Form1 : Form
+    public partial class Dodaj_wynik : Form
     {
-        public Form1()
+        public Dodaj_wynik()
         {
             InitializeComponent();
+           
+        }
+
+        private void Dodaj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
+           
+        }
+        string a = "test";
+       
+        private void Wybierz_bron_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
