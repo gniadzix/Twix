@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TwixModelStoreContainer" CdmEntityContainer="TwixEntities">
+    <EntitySetMapping Name="Twix_Bron_Amunicja">
+      <EntityTypeMapping TypeName="TwixModel.Twix_Bron_Amunicja">
+        <MappingFragment StoreEntitySet="Twix_Bron_Amunicja">
+          <ScalarProperty Name="ID_BRONI" ColumnName="ID_BRONI" />
+          <ScalarProperty Name="ID_AMUNICJI" ColumnName="ID_AMUNICJI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_Klienci">
+      <EntityTypeMapping TypeName="TwixModel.Twix_Klienci">
+        <MappingFragment StoreEntitySet="Twix_Klienci">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+          <ScalarProperty Name="NR_DOWODU" ColumnName="NR_DOWODU" />
+          <ScalarProperty Name="ID_RANGI" ColumnName="ID_RANGI" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+          <ScalarProperty Name="czyADMIN" ColumnName="czyADMIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_Rezerwacja">
+      <EntityTypeMapping TypeName="TwixModel.Twix_Rezerwacja">
+        <MappingFragment StoreEntitySet="Twix_Rezerwacja">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_KLIENTA" ColumnName="ID_KLIENTA" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="CZAS" ColumnName="CZAS" />
+          <ScalarProperty Name="ID_TORU" ColumnName="ID_TORU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_SL_Amunicji">
+      <EntityTypeMapping TypeName="TwixModel.Twix_SL_Amunicji">
+        <MappingFragment StoreEntitySet="Twix_SL_Amunicji">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KALIBER" ColumnName="KALIBER" />
+          <ScalarProperty Name="CENA" ColumnName="CENA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_SL_Broni">
+      <EntityTypeMapping TypeName="TwixModel.Twix_SL_Broni">
+        <MappingFragment StoreEntitySet="Twix_SL_Broni">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="CENA" ColumnName="CENA" />
+          <ScalarProperty Name="TYP" ColumnName="TYP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_SL_Rangi">
+      <EntityTypeMapping TypeName="TwixModel.Twix_SL_Rangi">
+        <MappingFragment StoreEntitySet="Twix_SL_Rangi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
+          <ScalarProperty Name="ZNIZKA" ColumnName="ZNIZKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Twix_SL_Torow">
+      <EntityTypeMapping TypeName="TwixModel.Twix_SL_Torow">
+        <MappingFragment StoreEntitySet="Twix_SL_Torow">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Twix_Rezerwacja_Broni" TypeName="TwixModel.Twix_Rezerwacja_Broni" StoreEntitySet="Twix_Rezerwacja_Broni">
+      <EndProperty Name="Twix_Bron_Amunicja">
+        <ScalarProperty Name="ID" ColumnName="ID_BRON_AMUNICJA" />
+      </EndProperty>
+      <EndProperty Name="Twix_Rezerwacja">
+        <ScalarProperty Name="ID" ColumnName="ID_REZERWACJI" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
