@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Twix
 {
@@ -94,6 +95,29 @@ namespace Twix
             textBoxZaktualizujDaneNazwisko.Enabled = true;
             textBoxZaktualizujDaneNrDowodu.Enabled = true;
             textBoxZaktualizujDanePesel.Enabled = true;
+        }
+
+        private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
+        {
+            string constring = "Data Source=cfcfq5jupw.database.windows.net,1433;Initial Catalog=twixv2;Persist Security Info=True;User ID=twixadmin;Password=qazTHRD1250";
+            string Query = "select ID from dbo.Twix_Klienci where dbo.Klienci.Imie = 'Hubert'";// into dbo.Twix_Klienci(IMIE,NAZWISKO,PESEL,NR_DOWODU) VALUES ('" + textboxDodajImie.ToString() + "','" + textboxDodajNazwisko.ToString() + "','" + textboxDodajPesel.ToString() + "','" + textboxDodajNrDowodu.ToString() + "');";
+            SqlConnection conDataBase = new SqlConnection(constring);
+            SqlCommand cmdDataBase = new SqlCommand(Query, conDataBase);
+            SqlDataReader myReader;
+            try
+            {
+                conDataBase.Open();
+                myReader = cmdDataBase.ExecuteReader();
+                MessageBox.Show("Saved");
+                while (myReader.Read())
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

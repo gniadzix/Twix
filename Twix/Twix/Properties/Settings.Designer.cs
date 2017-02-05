@@ -33,5 +33,16 @@ namespace Twix.Properties {
                 return ((string)(this["twixConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cfcfq5jupw.database.windows.net,1433;Initial Catalog=twixv2;User ID=t" +
+            "wixadmin;Password=qazTHRD1250")]
+        public string twixv2ConnectionString {
+            get {
+                return ((string)(this["twixv2ConnectionString"]));
+            }
+        }
     }
 }
