@@ -72,6 +72,14 @@
             this.textBoxZaktualizujDaneWyszukajPesel = new System.Windows.Forms.TextBox();
             this.buttonZaktualizujDaneZmienDane = new System.Windows.Forms.Button();
             this.buttonZaktualizujDaneZatwierdz = new System.Windows.Forms.Button();
+            this.labelZaktualizujDaneImie = new System.Windows.Forms.Label();
+            this.labelZaktualizujDanePesel = new System.Windows.Forms.Label();
+            this.labellZaktualizujDaneImie = new System.Windows.Forms.Label();
+            this.labellZaktualizujDaneNazwisko = new System.Windows.Forms.Label();
+            this.labellZaktualizujDanePesel = new System.Windows.Forms.Label();
+            this.labellZaktualizujDaneNrDow = new System.Windows.Forms.Label();
+            this.labellZaktualizujDaneLogin = new System.Windows.Forms.Label();
+            this.labellZaktualizujDaneHaslo = new System.Windows.Forms.Label();
             this.panelLogowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).BeginInit();
             this.panelRejestracja.SuspendLayout();
@@ -346,6 +354,14 @@
             // 
             // panelZaktualizujDane
             // 
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneHaslo);
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneLogin);
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneNrDow);
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDanePesel);
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneNazwisko);
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneImie);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDanePesel);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneImie);
             this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZatwierdz);
             this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZmienDane);
             this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneWyszukajPesel);
@@ -361,12 +377,12 @@
             this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneWroc);
             this.panelZaktualizujDane.Location = new System.Drawing.Point(343, 12);
             this.panelZaktualizujDane.Name = "panelZaktualizujDane";
-            this.panelZaktualizujDane.Size = new System.Drawing.Size(284, 263);
+            this.panelZaktualizujDane.Size = new System.Drawing.Size(376, 342);
             this.panelZaktualizujDane.TabIndex = 5;
             // 
             // buttonZaktualizujDaneWroc
             // 
-            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(206, 236);
+            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(298, 316);
             this.buttonZaktualizujDaneWroc.Name = "buttonZaktualizujDaneWroc";
             this.buttonZaktualizujDaneWroc.Size = new System.Drawing.Size(75, 23);
             this.buttonZaktualizujDaneWroc.TabIndex = 0;
@@ -376,7 +392,7 @@
             // textBoxZaktualizujDaneImie
             // 
             this.textBoxZaktualizujDaneImie.Enabled = false;
-            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(13, 12);
+            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(98, 117);
             this.textBoxZaktualizujDaneImie.Name = "textBoxZaktualizujDaneImie";
             this.textBoxZaktualizujDaneImie.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneImie.TabIndex = 1;
@@ -384,7 +400,7 @@
             // textBoxZaktualizujDaneNazwisko
             // 
             this.textBoxZaktualizujDaneNazwisko.Enabled = false;
-            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(13, 39);
+            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(98, 143);
             this.textBoxZaktualizujDaneNazwisko.Name = "textBoxZaktualizujDaneNazwisko";
             this.textBoxZaktualizujDaneNazwisko.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneNazwisko.TabIndex = 2;
@@ -392,7 +408,7 @@
             // textBoxZaktualizujDanePesel
             // 
             this.textBoxZaktualizujDanePesel.Enabled = false;
-            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(13, 66);
+            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(98, 168);
             this.textBoxZaktualizujDanePesel.Name = "textBoxZaktualizujDanePesel";
             this.textBoxZaktualizujDanePesel.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDanePesel.TabIndex = 3;
@@ -400,7 +416,7 @@
             // textBoxZaktualizujDaneNrDowodu
             // 
             this.textBoxZaktualizujDaneNrDowodu.Enabled = false;
-            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(13, 93);
+            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(98, 195);
             this.textBoxZaktualizujDaneNrDowodu.Name = "textBoxZaktualizujDaneNrDowodu";
             this.textBoxZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneNrDowodu.TabIndex = 4;
@@ -408,7 +424,7 @@
             // textBoxZaktualizujDaneLogin
             // 
             this.textBoxZaktualizujDaneLogin.Enabled = false;
-            this.textBoxZaktualizujDaneLogin.Location = new System.Drawing.Point(13, 120);
+            this.textBoxZaktualizujDaneLogin.Location = new System.Drawing.Point(98, 221);
             this.textBoxZaktualizujDaneLogin.Name = "textBoxZaktualizujDaneLogin";
             this.textBoxZaktualizujDaneLogin.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneLogin.TabIndex = 5;
@@ -416,7 +432,7 @@
             // textBoxZaktualizujDaneHaslo
             // 
             this.textBoxZaktualizujDaneHaslo.Enabled = false;
-            this.textBoxZaktualizujDaneHaslo.Location = new System.Drawing.Point(13, 147);
+            this.textBoxZaktualizujDaneHaslo.Location = new System.Drawing.Point(98, 247);
             this.textBoxZaktualizujDaneHaslo.Name = "textBoxZaktualizujDaneHaslo";
             this.textBoxZaktualizujDaneHaslo.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneHaslo.TabIndex = 6;
@@ -425,7 +441,7 @@
             // 
             this.checkBoxZaktualizujDaneCzyAdministrator.AutoSize = true;
             this.checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
-            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(13, 174);
+            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(98, 273);
             this.checkBoxZaktualizujDaneCzyAdministrator.Name = "checkBoxZaktualizujDaneCzyAdministrator";
             this.checkBoxZaktualizujDaneCzyAdministrator.Size = new System.Drawing.Size(112, 17);
             this.checkBoxZaktualizujDaneCzyAdministrator.TabIndex = 7;
@@ -434,14 +450,14 @@
             // 
             // textBoxZaktualizujDaneWyszukajImie
             // 
-            this.textBoxZaktualizujDaneWyszukajImie.Location = new System.Drawing.Point(165, 11);
+            this.textBoxZaktualizujDaneWyszukajImie.Location = new System.Drawing.Point(98, 12);
             this.textBoxZaktualizujDaneWyszukajImie.Name = "textBoxZaktualizujDaneWyszukajImie";
             this.textBoxZaktualizujDaneWyszukajImie.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneWyszukajImie.TabIndex = 8;
             // 
             // buttonZaktualizujDaneWyszukaj
             // 
-            this.buttonZaktualizujDaneWyszukaj.Location = new System.Drawing.Point(180, 74);
+            this.buttonZaktualizujDaneWyszukaj.Location = new System.Drawing.Point(113, 65);
             this.buttonZaktualizujDaneWyszukaj.Name = "buttonZaktualizujDaneWyszukaj";
             this.buttonZaktualizujDaneWyszukaj.Size = new System.Drawing.Size(75, 23);
             this.buttonZaktualizujDaneWyszukaj.TabIndex = 9;
@@ -451,14 +467,14 @@
             // 
             // textBoxZaktualizujDaneWyszukajPesel
             // 
-            this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(165, 38);
+            this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(98, 38);
             this.textBoxZaktualizujDaneWyszukajPesel.Name = "textBoxZaktualizujDaneWyszukajPesel";
             this.textBoxZaktualizujDaneWyszukajPesel.Size = new System.Drawing.Size(100, 20);
             this.textBoxZaktualizujDaneWyszukajPesel.TabIndex = 10;
             // 
             // buttonZaktualizujDaneZmienDane
             // 
-            this.buttonZaktualizujDaneZmienDane.Location = new System.Drawing.Point(13, 197);
+            this.buttonZaktualizujDaneZmienDane.Location = new System.Drawing.Point(227, 117);
             this.buttonZaktualizujDaneZmienDane.Name = "buttonZaktualizujDaneZmienDane";
             this.buttonZaktualizujDaneZmienDane.Size = new System.Drawing.Size(75, 23);
             this.buttonZaktualizujDaneZmienDane.TabIndex = 11;
@@ -469,7 +485,7 @@
             // buttonZaktualizujDaneZatwierdz
             // 
             this.buttonZaktualizujDaneZatwierdz.Enabled = false;
-            this.buttonZaktualizujDaneZatwierdz.Location = new System.Drawing.Point(13, 225);
+            this.buttonZaktualizujDaneZatwierdz.Location = new System.Drawing.Point(227, 146);
             this.buttonZaktualizujDaneZatwierdz.Name = "buttonZaktualizujDaneZatwierdz";
             this.buttonZaktualizujDaneZatwierdz.Size = new System.Drawing.Size(112, 23);
             this.buttonZaktualizujDaneZatwierdz.TabIndex = 12;
@@ -478,11 +494,83 @@
             this.buttonZaktualizujDaneZatwierdz.Visible = false;
             this.buttonZaktualizujDaneZatwierdz.Click += new System.EventHandler(this.buttonZaktualizujDaneZatwierdz_Click);
             // 
+            // labelZaktualizujDaneImie
+            // 
+            this.labelZaktualizujDaneImie.AutoSize = true;
+            this.labelZaktualizujDaneImie.Location = new System.Drawing.Point(4, 12);
+            this.labelZaktualizujDaneImie.Name = "labelZaktualizujDaneImie";
+            this.labelZaktualizujDaneImie.Size = new System.Drawing.Size(60, 13);
+            this.labelZaktualizujDaneImie.TabIndex = 13;
+            this.labelZaktualizujDaneImie.Text = "Wpisz imię:";
+            // 
+            // labelZaktualizujDanePesel
+            // 
+            this.labelZaktualizujDanePesel.AutoSize = true;
+            this.labelZaktualizujDanePesel.Location = new System.Drawing.Point(7, 45);
+            this.labelZaktualizujDanePesel.Name = "labelZaktualizujDanePesel";
+            this.labelZaktualizujDanePesel.Size = new System.Drawing.Size(67, 13);
+            this.labelZaktualizujDanePesel.TabIndex = 14;
+            this.labelZaktualizujDanePesel.Text = "Wpisz pesel:";
+            // 
+            // labellZaktualizujDaneImie
+            // 
+            this.labellZaktualizujDaneImie.AutoSize = true;
+            this.labellZaktualizujDaneImie.Location = new System.Drawing.Point(14, 120);
+            this.labellZaktualizujDaneImie.Name = "labellZaktualizujDaneImie";
+            this.labellZaktualizujDaneImie.Size = new System.Drawing.Size(26, 13);
+            this.labellZaktualizujDaneImie.TabIndex = 15;
+            this.labellZaktualizujDaneImie.Text = "Imię";
+            // 
+            // labellZaktualizujDaneNazwisko
+            // 
+            this.labellZaktualizujDaneNazwisko.AutoSize = true;
+            this.labellZaktualizujDaneNazwisko.Location = new System.Drawing.Point(13, 146);
+            this.labellZaktualizujDaneNazwisko.Name = "labellZaktualizujDaneNazwisko";
+            this.labellZaktualizujDaneNazwisko.Size = new System.Drawing.Size(53, 13);
+            this.labellZaktualizujDaneNazwisko.TabIndex = 16;
+            this.labellZaktualizujDaneNazwisko.Text = "Nazwisko";
+            // 
+            // labellZaktualizujDanePesel
+            // 
+            this.labellZaktualizujDanePesel.AutoSize = true;
+            this.labellZaktualizujDanePesel.Location = new System.Drawing.Point(13, 172);
+            this.labellZaktualizujDanePesel.Name = "labellZaktualizujDanePesel";
+            this.labellZaktualizujDanePesel.Size = new System.Drawing.Size(33, 13);
+            this.labellZaktualizujDanePesel.TabIndex = 17;
+            this.labellZaktualizujDanePesel.Text = "Pesel";
+            // 
+            // labellZaktualizujDaneNrDow
+            // 
+            this.labellZaktualizujDaneNrDow.AutoSize = true;
+            this.labellZaktualizujDaneNrDow.Location = new System.Drawing.Point(13, 198);
+            this.labellZaktualizujDaneNrDow.Name = "labellZaktualizujDaneNrDow";
+            this.labellZaktualizujDaneNrDow.Size = new System.Drawing.Size(79, 13);
+            this.labellZaktualizujDaneNrDow.TabIndex = 18;
+            this.labellZaktualizujDaneNrDow.Text = "Numer dowodu";
+            // 
+            // labellZaktualizujDaneLogin
+            // 
+            this.labellZaktualizujDaneLogin.AutoSize = true;
+            this.labellZaktualizujDaneLogin.Location = new System.Drawing.Point(13, 224);
+            this.labellZaktualizujDaneLogin.Name = "labellZaktualizujDaneLogin";
+            this.labellZaktualizujDaneLogin.Size = new System.Drawing.Size(33, 13);
+            this.labellZaktualizujDaneLogin.TabIndex = 19;
+            this.labellZaktualizujDaneLogin.Text = "Login";
+            // 
+            // labellZaktualizujDaneHaslo
+            // 
+            this.labellZaktualizujDaneHaslo.AutoSize = true;
+            this.labellZaktualizujDaneHaslo.Location = new System.Drawing.Point(13, 250);
+            this.labellZaktualizujDaneHaslo.Name = "labellZaktualizujDaneHaslo";
+            this.labellZaktualizujDaneHaslo.Size = new System.Drawing.Size(36, 13);
+            this.labellZaktualizujDaneHaslo.TabIndex = 20;
+            this.labellZaktualizujDaneHaslo.Text = "Hasło";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 662);
+            this.ClientSize = new System.Drawing.Size(797, 662);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelLogowanie);
@@ -548,6 +636,14 @@
         private System.Windows.Forms.Button buttonZaktualizujDaneWroc;
         private System.Windows.Forms.Button buttonZaktualizujDaneZatwierdz;
         private System.Windows.Forms.Button buttonZaktualizujDaneZmienDane;
+        private System.Windows.Forms.Label labellZaktualizujDaneHaslo;
+        private System.Windows.Forms.Label labellZaktualizujDaneLogin;
+        private System.Windows.Forms.Label labellZaktualizujDaneNrDow;
+        private System.Windows.Forms.Label labellZaktualizujDanePesel;
+        private System.Windows.Forms.Label labellZaktualizujDaneNazwisko;
+        private System.Windows.Forms.Label labellZaktualizujDaneImie;
+        private System.Windows.Forms.Label labelZaktualizujDanePesel;
+        private System.Windows.Forms.Label labelZaktualizujDaneImie;
     }
 }
 
