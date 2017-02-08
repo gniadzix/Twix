@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -98,29 +98,91 @@ namespace Twixv2
 
         private void buttonRejestracjaZarejestruj_Click(object sender, EventArgs e)
         {
-            TwixEntities twixEncjaRejestracja = new TwixEntities();
-            var nowyUzytkownik = new Twix_Klienci();
-            nowyUzytkownik.IMIE = textBoxRejestracjaImie.Text;
-            nowyUzytkownik.NAZWISKO = textBoxRejestracjaNazwisko.Text;
-            nowyUzytkownik.NR_DOWODU = textBoxRejestracjaNrDowodu.Text;
-            nowyUzytkownik.PESEL = textBoxRejestracjaPesel.Text;
-            nowyUzytkownik.LOGIN = textBoxRejestracjaLogin.Text;
-            nowyUzytkownik.HASLO = textBoxRejestracjaHaslo.Text;
-            twixEncjaRejestracja.Twix_Klienci.Add(nowyUzytkownik);
-            twixEncjaRejestracja.SaveChanges();
+            if (uzytkownik.rejetracja(textBoxRejestracjaImie.Text, textBoxRejestracjaNazwisko.Text, textBoxRejestracjaNrDowodu.Text, textBoxRejestracjaPesel.Text, textBoxRejestracjaLogin.Text, textBoxRejestracjaHaslo.Text))
+            {
+                MessageBox.Show("Rejestracja przebiegła pomyślnie", "Rejestracja");
+            }
+            else
+            {
+                MessageBox.Show("Rejestracja zakończyła się niepowodzeniem, spróbuj ponownie", "Rejestracja");
+            }
         }
 
         private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
         {
-            bool logowanie;
-            logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text, textBoxLogowanieHaslo.Text);
-            if(logowanie == true)
+            if(uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text, textBoxLogowanieHaslo.Text) == true)
             {
                 MessageBox.Show("Logowanie zakończone", "Logowanie");
             }
             else
             {  
                 MessageBox.Show("Nieudane logowanie" + Environment.NewLine + "Spróbuj ponownie" , "Logowanie" );
+            }
+        }
+
+        private void buttonZaktualizujDaneWyszukaj_Click(object sender, EventArgs e)
+        {
+            string imie = textBoxZaktualizujDaneWyszukajImie.Text;
+            string pesel = textBoxZaktualizujDaneWyszukajPesel.Text;
+            if(uzytkownik.wyszukajUzytkownika(imie, pesel) == true)
+            {
+                ArrayList lista = new ArrayList();
+                lista = uzytkownik.daneKlienta();
+                textBoxZaktualizujDaneImie.Text = Convert.ToString(lista[1]);
+                textBoxZaktualizujDaneNazwisko.Text = Convert.ToString(lista[2]);
+                textBoxZaktualizujDaneNrDowodu.Text = Convert.ToString(lista[3]);
+                textBoxZaktualizujDanePesel.Text = Convert.ToString(lista[4]);
+                textBoxZaktualizujDaneLogin.Text = Convert.ToString(lista[5]);
+                textBoxZaktualizujDaneHaslo.Text = Convert.ToString(lista[6]);
+                if(Convert.ToBoolean(lista[7]) == true)
+                {
+                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = true;
+                }
+                else
+                {
+                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie ma takiego użytkownika", "Błąd");
+            }
+        }
+
+        private void buttonZaktualizujDaneZmienDane_Click(object sender, EventArgs e)
+        {
+            textBoxZaktualizujDaneHaslo.Enabled = true;
+            textBoxZaktualizujDaneImie.Enabled = true;
+            textBoxZaktualizujDaneLogin.Enabled = true;
+            textBoxZaktualizujDaneNazwisko.Enabled = true;
+            textBoxZaktualizujDaneNrDowodu.Enabled = true;
+            textBoxZaktualizujDanePesel.Enabled = true;
+            checkBoxZaktualizujDaneCzyAdministrator.Enabled = true;
+            buttonZaktualizujDaneZatwierdz.Enabled = true;
+            buttonZaktualizujDaneZatwierdz.Visible = true;
+        }
+
+        private void buttonZaktualizujDaneZatwierdz_Click(object sender, EventArgs e)
+        {
+            KlientStrzelnicy uzytkownikZmiana = new KlientStrzelnicy();
+            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajImie.Text, textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, textBoxZaktualizujDaneHaslo.Text) == true)
+            {
+                MessageBox.Show("Poprawnie zaktualizowano dane użytkownika", "Sukces");
+                textBoxZaktualizujDaneHaslo.Enabled = false;
+                textBoxZaktualizujDaneImie.Enabled = false;
+                textBoxZaktualizujDaneLogin.Enabled = false;
+                textBoxZaktualizujDaneNazwisko.Enabled = false;
+                textBoxZaktualizujDaneNrDowodu.Enabled = false;
+                textBoxZaktualizujDanePesel.Enabled = false;
+                checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
+                buttonZaktualizujDaneZatwierdz.Enabled = false;
+                buttonZaktualizujDaneZatwierdz.Visible = false;
+                textBoxZaktualizujDaneWyszukajImie.Text = "";
+                textBoxZaktualizujDaneWyszukajPesel.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się zaktualizować danych użytkownika", "Błąd");
             }
         }
     }
