@@ -18,6 +18,8 @@ namespace Twixv2
             InitializeComponent();
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelRejestracja);
+            ukrywaniePanelu(panelDodajUzytkownika);
+            ukrywaniePanelu(panelPanelPracownika);
         }
         private void ukrywaniePanelu(Panel doUkrycia)
         {
@@ -116,12 +118,17 @@ namespace Twixv2
             logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text, textBoxLogowanieHaslo.Text);
             if(logowanie == true)
             {
-                MessageBox.Show("Logowanie zakończone", "Logowanie");
+                pokazywaniePanelu(panelPanelPracownika);
             }
             else
             {  
                 MessageBox.Show("Nieudane logowanie" + Environment.NewLine + "Spróbuj ponownie" , "Logowanie" );
             }
+        }
+
+        private void buttonDodajPracownika_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(panelDodajUzytkownika);
         }
     }
 }
