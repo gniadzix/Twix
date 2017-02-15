@@ -42,6 +42,7 @@
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
             this.panelPanelPracownika = new System.Windows.Forms.Panel();
             this.panelDodajUzytkownika = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBoxDodajLogin = new System.Windows.Forms.TextBox();
             this.buttonWrocDoPaneluPracownika = new System.Windows.Forms.Button();
             this.checkBoxCzyAdmin = new System.Windows.Forms.CheckBox();
@@ -69,7 +70,6 @@
             this.labelRejestracjaImie = new System.Windows.Forms.Label();
             this.buttonRejestracjaWroc = new System.Windows.Forms.Button();
             this.errorProviderRejestracjaHaslo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -191,11 +191,12 @@
             // 
             // buttonLogowanieWroc
             // 
-            this.buttonLogowanieWroc.Location = new System.Drawing.Point(561, 369);
+            this.buttonLogowanieWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonLogowanieWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLogowanieWroc.Location = new System.Drawing.Point(545, 362);
             this.buttonLogowanieWroc.Name = "buttonLogowanieWroc";
-            this.buttonLogowanieWroc.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogowanieWroc.Size = new System.Drawing.Size(89, 32);
             this.buttonLogowanieWroc.TabIndex = 0;
-            this.buttonLogowanieWroc.Text = "Wróć";
             this.buttonLogowanieWroc.UseVisualStyleBackColor = true;
             this.buttonLogowanieWroc.Click += new System.EventHandler(this.buttonLogowanieWroc_Click);
             // 
@@ -227,6 +228,16 @@
             this.panelDodajUzytkownika.Size = new System.Drawing.Size(800, 600);
             this.panelDodajUzytkownika.TabIndex = 1;
             this.panelDodajUzytkownika.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDodajUzytkownika_Paint);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(40, 173);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(76, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBoxDodajLogin
             // 
@@ -479,11 +490,12 @@
             // 
             // buttonRejestracjaWroc
             // 
-            this.buttonRejestracjaWroc.Location = new System.Drawing.Point(210, 237);
+            this.buttonRejestracjaWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonRejestracjaWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRejestracjaWroc.Location = new System.Drawing.Point(18, 399);
             this.buttonRejestracjaWroc.Name = "buttonRejestracjaWroc";
-            this.buttonRejestracjaWroc.Size = new System.Drawing.Size(75, 23);
+            this.buttonRejestracjaWroc.Size = new System.Drawing.Size(91, 33);
             this.buttonRejestracjaWroc.TabIndex = 0;
-            this.buttonRejestracjaWroc.Text = "Wróć";
             this.buttonRejestracjaWroc.UseVisualStyleBackColor = true;
             this.buttonRejestracjaWroc.Click += new System.EventHandler(this.buttonRejestracjaWroc_Click);
             // 
@@ -491,30 +503,20 @@
             // 
             this.errorProviderRejestracjaHaslo.ContainerControl = this;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(40, 173);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(793, 583);
+            this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelRejestracja);
             this.Name = "Form1";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);

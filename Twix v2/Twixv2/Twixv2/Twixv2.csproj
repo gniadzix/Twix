@@ -163,6 +163,7 @@
     <None Include="Resources\PanelPracownika_background.jpg" />
     <None Include="Resources\button_Add_user.png" />
     <None Include="Resources\Dodaj_uzytkownika_background.jpg" />
+    <None Include="Resources\button_cofnij.png" />
     <Content Include="TwixBaza.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TwixBaza.edmx</DependentUpon>
