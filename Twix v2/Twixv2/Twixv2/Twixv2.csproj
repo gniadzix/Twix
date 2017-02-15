@@ -164,6 +164,10 @@
     <None Include="Resources\button_Add_user.png" />
     <None Include="Resources\Dodaj_uzytkownika_background.jpg" />
     <None Include="Resources\button_cofnij.png" />
+    <None Include="Resources\button_dodaj.png" />
+    <None Include="Resources\button_delete_user.png" />
+    <None Include="Resources\button_wyloguj.png" />
+    <None Include="Resources\usunuzytkownika_background.jpg" />
     <Content Include="TwixBaza.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TwixBaza.edmx</DependentUpon>

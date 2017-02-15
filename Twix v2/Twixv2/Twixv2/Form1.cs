@@ -20,6 +20,7 @@ namespace Twixv2
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajUzytkownika);
             ukrywaniePanelu(panelPanelPracownika);
+            ukrywaniePanelu(panelUsunUzytkownika);
         }
         private void ukrywaniePanelu(Panel doUkrycia)
         {
@@ -34,6 +35,7 @@ namespace Twixv2
             doPokazania.Enabled = true;
             doPokazania.Visible = true;
         }
+
         private void ustawBladLogowanie(TextBox przedmiotDoWalidacji, string wiadomosc)
         {
             if (string.IsNullOrEmpty(przedmiotDoWalidacji.Text))
@@ -122,7 +124,7 @@ namespace Twixv2
             }
             else
             {  
-                MessageBox.Show("Nieudane logowanie" + Environment.NewLine + "Spróbuj ponownie" , "Logowanie" );
+                MessageBox.Show("Login i/lub hasło niepoprawne!" + Environment.NewLine + "Spróbuj ponownie" , "Logowanie" );
             }
         }
 
@@ -131,15 +133,9 @@ namespace Twixv2
             pokazywaniePanelu(panelDodajUzytkownika);
         }
 
-        private void panelDodajUzytkownika_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void textBoxDodajPesel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < '0' || e.KeyChar > '9')
+            if (e.KeyChar < '0' || e.KeyChar > '9' )
             {
                 MessageBox.Show("Wprowadź tylko cyfry");
                 e.KeyChar = (char)0;
@@ -156,9 +152,11 @@ namespace Twixv2
                 nowyUzytkownik.NAZWISKO = textBoxDodajNazwisko.Text;
                 nowyUzytkownik.NR_DOWODU = textBoxDodajNrDowodu.Text;
                 nowyUzytkownik.PESEL = textBoxDodajPesel.Text;
-                nowyUzytkownik.LOGIN = textBoxDodajLogin.Text;               
+                nowyUzytkownik.LOGIN = textBoxDodajLogin.Text;
+                nowyUzytkownik.HASLO = textBoxDodajHaslo.Text;               
                 twixEncjaDodajUzytkownika.Twix_Klienci.Add(nowyUzytkownik);
                 twixEncjaDodajUzytkownika.SaveChanges();
+                MessageBox.Show("+++DODANO+++");
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -196,14 +194,67 @@ namespace Twixv2
             textBoxDodajLogin.Clear();
         }
 
-        private void textBoxDodajLogin_TextChanged(object sender, EventArgs e)
+        private void textBoxRejestracjaPesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9' )
+            {
+                MessageBox.Show("Wprowadź tylko cyfry");
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void textBoxDodajLogin_Leave(object sender, EventArgs e)
         {
             TwixEntities twixEncjaDodajUzytkownika = new TwixEntities();
             if (twixEncjaDodajUzytkownika.Twix_Klienci.Any(o => o.LOGIN == textBoxDodajLogin.Text))
             {
                 MessageBox.Show("Login istnieje!");
-                textBoxDodajLogin.Clear();
             }
         }
+
+        private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
+        {
+            TwixEntities twixEncjaRejestracja = new TwixEntities();
+            if (twixEncjaRejestracja.Twix_Klienci.Any(o => o.LOGIN == textBoxRejestracjaLogin.Text))
+            {
+                MessageBox.Show("Login zajęty :(");
+            }
+        }
+
+        private void textBoxDodajHaslo_Click(object sender, EventArgs e)
+        {
+            string allowedChars = "";
+            allowedChars = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,";
+            allowedChars += "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,";
+            allowedChars += "1,2,3,4,5,6,7,8,9,0,!,@,#,$,%,&,?";
+            char[] sep = { ',' };
+            string[] arr = allowedChars.Split(sep);
+            string passwordString = "";
+            string temp = "";
+            Random rand = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                temp = arr[rand.Next(0, arr.Length)];
+                passwordString += temp;
+            }
+            textBoxDodajHaslo.Text = passwordString;
+        }
+
+        private void buttonPanelPracownikaWyloguj_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelPanelPracownika);
+        }
+
+        private void buttonUsunUzytkownikaCofnij_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelUsunUzytkownika);
+        }
+
+        private void buttonPanelPracownikaUsunUzytkownika_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(panelUsunUzytkownika);
+        }
     }
-}
+    }
+

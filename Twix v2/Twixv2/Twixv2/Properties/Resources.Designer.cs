@@ -93,6 +93,36 @@ namespace Twixv2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_delete_user {
+            get {
+                object obj = ResourceManager.GetObject("button_delete_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_dodaj {
+            get {
+                object obj = ResourceManager.GetObject("button_dodaj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_wyloguj {
+            get {
+                object obj = ResourceManager.GetObject("button_wyloguj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_zaloguj {
             get {
                 object obj = ResourceManager.GetObject("button_zaloguj", resourceCulture);
@@ -166,6 +196,16 @@ namespace Twixv2.Properties {
         internal static System.Drawing.Bitmap Rejestracja_background {
             get {
                 object obj = ResourceManager.GetObject("Rejestracja_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usunuzytkownika_background {
+            get {
+                object obj = ResourceManager.GetObject("usunuzytkownika_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
