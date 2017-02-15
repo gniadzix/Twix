@@ -130,8 +130,8 @@
   <data name="button_zaloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_zaloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_zamknij" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_zamknij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Home_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_zarejestruj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_zarejestruj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,10 +142,13 @@
   <data name="PanelPracownika_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PanelPracownika_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Home_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_zamknij" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_zamknij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_Add_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_Add_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dodaj_uzytkownika_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dodaj_uzytkownika_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

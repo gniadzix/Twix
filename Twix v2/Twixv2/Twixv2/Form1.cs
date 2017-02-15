@@ -130,5 +130,80 @@ namespace Twixv2
         {
             pokazywaniePanelu(panelDodajUzytkownika);
         }
+
+        private void panelDodajUzytkownika_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void textBoxDodajPesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                MessageBox.Show("Wprowadź tylko cyfry");
+                e.KeyChar = (char)0;
+            }
+        }
+
+        private void buttonDodajUzytkownika_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TwixEntities twixEncjaDodajUzytkownika = new TwixEntities();
+                var nowyUzytkownik = new Twix_Klienci();
+                nowyUzytkownik.IMIE = textBoxDodajImie.Text;
+                nowyUzytkownik.NAZWISKO = textBoxDodajNazwisko.Text;
+                nowyUzytkownik.NR_DOWODU = textBoxDodajNrDowodu.Text;
+                nowyUzytkownik.PESEL = textBoxDodajPesel.Text;
+                nowyUzytkownik.LOGIN = textBoxDodajLogin.Text;               
+                twixEncjaDodajUzytkownika.Twix_Klienci.Add(nowyUzytkownik);
+                twixEncjaDodajUzytkownika.SaveChanges();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBoxDodajImie_Click(object sender, EventArgs e)
+        {
+            textBoxDodajImie.Clear();
+        }
+
+        private void textBoxDodajNazwisko_Click(object sender, EventArgs e)
+        {
+            textBoxDodajNazwisko.Clear();
+        }
+
+        private void textBoxDodajPesel_Click(object sender, EventArgs e)
+        {
+            textBoxDodajPesel.Clear();
+        }
+
+        private void textBoxDodajNrDowodu_Click(object sender, EventArgs e)
+        {
+            textBoxDodajNrDowodu.Clear();
+        }
+
+        private void buttonWrocDoPaneluPracownika_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelDodajUzytkownika);
+            pokazywaniePanelu(panelPanelPracownika);
+        }
+
+        private void textBoxDodajLogin_Click(object sender, EventArgs e)
+        {
+            textBoxDodajLogin.Clear();
+        }
+
+        private void textBoxDodajLogin_TextChanged(object sender, EventArgs e)
+        {
+            TwixEntities twixEncjaDodajUzytkownika = new TwixEntities();
+            if (twixEncjaDodajUzytkownika.Twix_Klienci.Any(o => o.LOGIN == textBoxDodajLogin.Text))
+            {
+                MessageBox.Show("Login istnieje!");
+                textBoxDodajLogin.Clear();
+            }
+        }
     }
 }
