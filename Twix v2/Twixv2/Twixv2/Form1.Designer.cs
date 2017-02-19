@@ -80,6 +80,8 @@
             this.labellZaktualizujDaneNrDow = new System.Windows.Forms.Label();
             this.labellZaktualizujDaneLogin = new System.Windows.Forms.Label();
             this.labellZaktualizujDaneHaslo = new System.Windows.Forms.Label();
+            this.textBoxZaktualizujDaneRanga = new System.Windows.Forms.TextBox();
+            this.labellZaktualizujDaneRanga = new System.Windows.Forms.Label();
             this.panelLogowanie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).BeginInit();
             this.panelRejestracja.SuspendLayout();
@@ -354,6 +356,8 @@
             // 
             // panelZaktualizujDane
             // 
+            this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneRanga);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneRanga);
             this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneHaslo);
             this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneLogin);
             this.panelZaktualizujDane.Controls.Add(this.labellZaktualizujDaneNrDow);
@@ -441,7 +445,7 @@
             // 
             this.checkBoxZaktualizujDaneCzyAdministrator.AutoSize = true;
             this.checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
-            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(98, 273);
+            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(98, 300);
             this.checkBoxZaktualizujDaneCzyAdministrator.Name = "checkBoxZaktualizujDaneCzyAdministrator";
             this.checkBoxZaktualizujDaneCzyAdministrator.Size = new System.Drawing.Size(112, 17);
             this.checkBoxZaktualizujDaneCzyAdministrator.TabIndex = 7;
@@ -566,6 +570,23 @@
             this.labellZaktualizujDaneHaslo.TabIndex = 20;
             this.labellZaktualizujDaneHaslo.Text = "Hasło";
             // 
+            // textBoxZaktualizujDaneRanga
+            // 
+            this.textBoxZaktualizujDaneRanga.Enabled = false;
+            this.textBoxZaktualizujDaneRanga.Location = new System.Drawing.Point(98, 274);
+            this.textBoxZaktualizujDaneRanga.Name = "textBoxZaktualizujDaneRanga";
+            this.textBoxZaktualizujDaneRanga.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDaneRanga.TabIndex = 21;
+            // 
+            // labellZaktualizujDaneRanga
+            // 
+            this.labellZaktualizujDaneRanga.AutoSize = true;
+            this.labellZaktualizujDaneRanga.Location = new System.Drawing.Point(14, 277);
+            this.labellZaktualizujDaneRanga.Name = "labellZaktualizujDaneRanga";
+            this.labellZaktualizujDaneRanga.Size = new System.Drawing.Size(39, 13);
+            this.labellZaktualizujDaneRanga.TabIndex = 22;
+            this.labellZaktualizujDaneRanga.Text = "Ranga";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +665,8 @@
         private System.Windows.Forms.Label labellZaktualizujDaneImie;
         private System.Windows.Forms.Label labelZaktualizujDanePesel;
         private System.Windows.Forms.Label labelZaktualizujDaneImie;
+        private System.Windows.Forms.Label labellZaktualizujDaneRanga;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneRanga;
     }
 }
 

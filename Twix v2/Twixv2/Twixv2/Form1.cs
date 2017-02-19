@@ -134,6 +134,7 @@ namespace Twixv2
                 textBoxZaktualizujDanePesel.Text = Convert.ToString(lista[4]);
                 textBoxZaktualizujDaneLogin.Text = Convert.ToString(lista[5]);
                 textBoxZaktualizujDaneHaslo.Text = Convert.ToString(lista[6]);
+                textBoxZaktualizujDaneRanga.Text = Convert.ToString(lista[7]);
                 if(Convert.ToBoolean(lista[7]) == true)
                 {
                     checkBoxZaktualizujDaneCzyAdministrator.ThreeState = true;
@@ -160,6 +161,7 @@ namespace Twixv2
             checkBoxZaktualizujDaneCzyAdministrator.Enabled = true;
             buttonZaktualizujDaneZatwierdz.Enabled = true;
             buttonZaktualizujDaneZatwierdz.Visible = true;
+            textBoxZaktualizujDaneRanga.Enabled = true;
         }
 
         private void buttonZaktualizujDaneZatwierdz_Click(object sender, EventArgs e)
@@ -177,6 +179,7 @@ namespace Twixv2
                 checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
                 buttonZaktualizujDaneZatwierdz.Enabled = false;
                 buttonZaktualizujDaneZatwierdz.Visible = false;
+                textBoxZaktualizujDaneRanga.Enabled = false;
                 textBoxZaktualizujDaneWyszukajImie.Text = "";
                 textBoxZaktualizujDaneWyszukajPesel.Text = "";
             }

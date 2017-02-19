@@ -15,8 +15,8 @@ namespace Twixv2
         private string nrDowodu;
         private string login;
         private string haslo;
-        private int ranga;
-        private byte[] czyAdmin;
+        private Nullable<int> ranga;
+        private int czyAdmin;
         private bool czyAdminBool = false;
 
         public bool pobranieDanych(string log, string has)
@@ -32,9 +32,9 @@ namespace Twixv2
                 nrDowodu = klient.NR_DOWODU;
                 login = klient.LOGIN;
                 haslo = klient.HASLO;
-                /*ranga = klient.ID_RANGI.Value;
-                czyAdmin = klient.czyADMIN;
-                if (czyAdmin[0] == 1)
+               /* ranga = klient.ID_RANGI;
+                czyAdmin = Convert.ToByte(klient.czyADMIN);
+                if (czyAdmin == 1)
                 {
                     czyAdminBool = true;
                 }*/
@@ -81,11 +81,11 @@ namespace Twixv2
                 nrDowodu = klient.NR_DOWODU;
                 login = klient.LOGIN;
                 haslo = klient.HASLO;
-                //ranga = klient.ID_RANGI.Value;
-                //czyAdmin = klient.czyADMIN[0];
-               /* if (czyAdmin[] == 1)
+                /*ranga = klient.ID_RANGI;
+                czyAdmin = BitConverter.ToInt32(klient.czyADMIN); Convert.ToByte(klient.czyADMIN);
+                if (czyAdmin == 1)
                 {
-                    czyAdminBool = true;
+                     czyAdminBool = true;
                 }*/
                 return true;
             }
@@ -123,6 +123,15 @@ namespace Twixv2
                 klient.NR_DOWODU = nrDow;
                 klient.LOGIN = log;
                 klient.HASLO = has;
+                /*if(czyAdm == true)
+                {
+                    klient.czyADMIN = BitConverter.GetBytes(1);
+                }
+                else
+                {
+                    klient.czyADMIN = BitConverter.GetBytes(0);
+                }
+                //klient.ID_RANGI = ran;*/
                 encjaTwix.SaveChanges();
                 return true;
             }
