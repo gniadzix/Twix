@@ -61,6 +61,16 @@ namespace Twixv2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background_ZmienDane {
+            get {
+                object obj = ResourceManager.GetObject("background_ZmienDane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon blad {
@@ -76,6 +86,16 @@ namespace Twixv2.Properties {
         internal static System.Drawing.Bitmap button_Add_user {
             get {
                 object obj = ResourceManager.GetObject("button_Add_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_aktywuj_pola {
+            get {
+                object obj = ResourceManager.GetObject("button_aktywuj_pola", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +133,39 @@ namespace Twixv2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_edytuj_usera {
+            get {
+                object obj = ResourceManager.GetObject("button_edytuj_usera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_wyloguj {
             get {
                 object obj = ResourceManager.GetObject("button_wyloguj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_wyszukaj {
+            get {
+                object obj = ResourceManager.GetObject("button_wyszukaj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_zaakceptuj {
+            get {
+                object obj = ResourceManager.GetObject("button_zaakceptuj", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +196,16 @@ namespace Twixv2.Properties {
         internal static System.Drawing.Bitmap button_zarejestruj {
             get {
                 object obj = ResourceManager.GetObject("button_zarejestruj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_zlikwidujklienta {
+            get {
+                object obj = ResourceManager.GetObject("button_zlikwidujklienta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

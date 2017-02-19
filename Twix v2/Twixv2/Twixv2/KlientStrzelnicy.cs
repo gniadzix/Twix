@@ -23,7 +23,7 @@ namespace Twixv2
         {
             try
             {
-                TwixEntities encjaTwix = new TwixEntities();
+                Twix encjaTwix = new Twix();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == log && a.HASLO == has);
                 id = klient.ID;
                 imie = klient.IMIE;
@@ -46,11 +46,11 @@ namespace Twixv2
             }
         }
 
-        public bool rejetracja(string im, string naz, string nrDow, string pes, string log, string has)
+        public bool rejestracja(string im, string naz, string nrDow, string pes, string log, string has)
         {
             try
             {
-                TwixEntities encjaTwix = new TwixEntities();
+                Twix encjaTwix = new Twix();
                 var nowyUzytkownik = new Twix_Klienci();
                 nowyUzytkownik.IMIE = im;
                 nowyUzytkownik.NAZWISKO = naz;
@@ -68,11 +68,11 @@ namespace Twixv2
             }
         }
 
-        public bool wyszukajUzytkownika(string im, string pes)
+        public bool wyszukajUzytkownika(string pes)
         {
             try
             {
-                TwixEntities encjaTwix = new TwixEntities();
+                Twix encjaTwix = new Twix();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
                 id = klient.ID;
                 imie = klient.IMIE;
@@ -115,7 +115,7 @@ namespace Twixv2
         {
             try
             {
-                TwixEntities encjaTwix = new TwixEntities();
+                Twix encjaTwix = new Twix();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
                 klient.IMIE = imPoZmianie;
                 klient.NAZWISKO = naz;
@@ -140,5 +140,23 @@ namespace Twixv2
                 return false;
             }
         }
+
+        public bool usunUzytkownika (string pes)
+        {
+            try
+            {
+                Twix encjaTwix = new Twix();
+                var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
+                encjaTwix.Twix_Klienci.Remove(klient);
+                encjaTwix.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+    
     }
 }

@@ -13,10 +13,10 @@ namespace Twixv2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TwixEntities : DbContext
+    public partial class Twix : DbContext
     {
-        public TwixEntities()
-            : base("name=TwixEntities")
+        public Twix()
+            : base("name=Twix")
         {
         }
     
@@ -32,5 +32,6 @@ namespace Twixv2
         public virtual DbSet<Twix_SL_Broni> Twix_SL_Broni { get; set; }
         public virtual DbSet<Twix_SL_Rangi> Twix_SL_Rangi { get; set; }
         public virtual DbSet<Twix_SL_Torow> Twix_SL_Torow { get; set; }
+        public virtual DbSet<Twix_Wyniki> Twix_Wyniki { get; set; }
     }
 }

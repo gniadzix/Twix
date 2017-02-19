@@ -117,6 +117,9 @@
     <Compile Include="Twix_SL_Torow.cs">
       <DependentUpon>TwixBaza.tt</DependentUpon>
     </Compile>
+    <Compile Include="Twix_Wyniki.cs">
+      <DependentUpon>TwixBaza.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,16 +171,12 @@
     <None Include="Resources\button_delete_user.png" />
     <None Include="Resources\button_wyloguj.png" />
     <None Include="Resources\usunuzytkownika_background.jpg" />
-    <Content Include="TwixBaza.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TwixBaza.edmx</DependentUpon>
-      <LastGenOutput>TwixBaza.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TwixBaza.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TwixBaza.edmx</DependentUpon>
-      <LastGenOutput>TwixBaza.cs</LastGenOutput>
-    </Content>
+    <None Include="Resources\button_wyszukaj.png" />
+    <None Include="Resources\button_aktywuj_pola.png" />
+    <None Include="Resources\button_zaakceptuj.png" />
+    <None Include="Resources\button_edytuj_usera.png" />
+    <None Include="Resources\background_ZmienDane.jpg" />
+    <None Include="Resources\button_zlikwidujklienta.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -193,6 +192,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TwixBaza.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TwixBaza.edmx</DependentUpon>
+      <LastGenOutput>TwixBaza.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TwixBaza.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TwixBaza.edmx</DependentUpon>
+      <LastGenOutput>TwixBaza.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

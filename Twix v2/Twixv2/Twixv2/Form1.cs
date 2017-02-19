@@ -104,17 +104,14 @@ namespace Twixv2
 
         private void buttonRejestracjaZarejestruj_Click(object sender, EventArgs e)
         {
-            TwixEntities twixEncjaRejestracja = new TwixEntities();
-            var nowyUzytkownik = new Twix_Klienci();
-            nowyUzytkownik.IMIE = textBoxRejestracjaImie.Text;
-            nowyUzytkownik.NAZWISKO = textBoxRejestracjaNazwisko.Text;
-            nowyUzytkownik.NR_DOWODU = textBoxRejestracjaNrDowodu.Text;
-            nowyUzytkownik.PESEL = textBoxRejestracjaPesel.Text;
-            nowyUzytkownik.LOGIN = textBoxRejestracjaLogin.Text;
-            nowyUzytkownik.HASLO = textBoxRejestracjaHaslo.Text;
-            twixEncjaRejestracja.Twix_Klienci.Add(nowyUzytkownik);
-            twixEncjaRejestracja.SaveChanges();
-            MessageBox.Show("ZAREJESTROWANO");
+            if (uzytkownik.rejestracja(textBoxRejestracjaImie.Text, textBoxRejestracjaNazwisko.Text, textBoxRejestracjaNrDowodu.Text, textBoxRejestracjaPesel.Text, textBoxRejestracjaLogin.Text, textBoxRejestracjaHaslo.Text))
+            {
+                MessageBox.Show("Rejestracja przebiegła pomyślnie", "Rejestracja");
+            }
+            else
+            {
+                MessageBox.Show("Rejestracja zakończyła się niepowodzeniem, spróbuj ponownie", "Rejestracja");
+            }
         }
 
         private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
@@ -149,7 +146,7 @@ namespace Twixv2
         {
             try
             {
-                TwixEntities twixEncjaDodajUzytkownika = new TwixEntities();
+                Twix twixEncjaDodajUzytkownika = new Twix();
                 var nowyUzytkownik = new Twix_Klienci();
                 nowyUzytkownik.IMIE = textBoxDodajImie.Text;
                 nowyUzytkownik.NAZWISKO = textBoxDodajNazwisko.Text;
@@ -199,6 +196,7 @@ namespace Twixv2
 
         private void textBoxRejestracjaPesel_KeyPress(object sender, KeyPressEventArgs e)
         {
+            textBoxRejestracjaPesel.MaxLength = 11;
             if (e.KeyChar < '0' || e.KeyChar > '9' )
             {
                 MessageBox.Show("Wprowadź tylko cyfry");
@@ -208,7 +206,7 @@ namespace Twixv2
 
         private void textBoxDodajLogin_Leave(object sender, EventArgs e)
         {
-            TwixEntities twixEncjaDodajUzytkownika = new TwixEntities();
+            Twix twixEncjaDodajUzytkownika = new Twix();
             if (twixEncjaDodajUzytkownika.Twix_Klienci.Any(o => o.LOGIN == textBoxDodajLogin.Text))
             {
                 MessageBox.Show("Login istnieje!");
@@ -217,7 +215,7 @@ namespace Twixv2
 
         private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
         {
-            TwixEntities twixEncjaRejestracja = new TwixEntities();
+            Twix twixEncjaRejestracja = new Twix();
             if (twixEncjaRejestracja.Twix_Klienci.Any(o => o.LOGIN == textBoxRejestracjaLogin.Text))
             {
                 MessageBox.Show("Login zajęty :(");
@@ -336,6 +334,49 @@ namespace Twixv2
             {
                 MessageBox.Show("Nie udało się zaktualizować danych użytkownika", "Błąd");
             }
+        }
+
+        private void buttonUsunUzytkownikaWyszukaj_Click(object sender, EventArgs e)
+        {
+            string pesel = textBoxUsunUzytkownikaPodajPesel.Text;
+            if (uzytkownik.wyszukajUzytkownika(pesel) == true)
+            {
+                ArrayList lista = new ArrayList();
+                lista = uzytkownik.daneKlienta();
+                textBoxUsunUzytkownikaImie.Text = Convert.ToString(lista[1]);
+                textBoxUsunUzytkownikaNazwisko.Text = Convert.ToString(lista[2]);
+                textBoxUsunUzytkownikaNrDowodu.Text = Convert.ToString(lista[3]);
+                textBoxUsunUzytkownikaPesel.Text = Convert.ToString(lista[4]);
+                textBoxUsunUzytkownikaLogin.Text = Convert.ToString(lista[5]);
+            
+            }
+            else
+            {
+                MessageBox.Show("Nie ma takiego użytkownika", "Błąd");
+            }
+        }
+
+        private void buttonUsunUzytkownikaUsunUzytkownika_Click(object sender, EventArgs e)
+        {
+            if(uzytkownik.usunUzytkownika(textBoxUsunUzytkownikaPesel.Text))
+            {
+                MessageBox.Show("Poprawnie usunięto użytkownika", "Sukces");
+                textBoxUsunUzytkownikaImie.Text = "";
+                textBoxUsunUzytkownikaNazwisko.Text = "";
+                textBoxUsunUzytkownikaPesel.Text = "";
+                textBoxUsunUzytkownikaNrDowodu.Text = "";
+                textBoxUsunUzytkownikaLogin.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się usunąć użytkownika", "Błąd");
+            }
+        }
+
+        private void buttonUsunUzytkownikaCofnij_Click_1(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelUsunUzytkownika);
+            pokazywaniePanelu(panelPanelPracownika);
         }
     }
     }

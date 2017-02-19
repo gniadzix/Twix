@@ -17,6 +17,7 @@ namespace Twixv2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Twix_Klienci()
         {
+            this.Twix_Wyniki = new HashSet<Twix_Wyniki>();
             this.Twix_Rezerwacja = new HashSet<Twix_Rezerwacja>();
         }
     
@@ -28,8 +29,11 @@ namespace Twixv2
         public Nullable<int> ID_RANGI { get; set; }
         public string LOGIN { get; set; }
         public string HASLO { get; set; }
-        public byte[] czyADMIN { get; set; }
+        public Nullable<int> czyADMIN { get; set; }
+        public Nullable<int> SUMAPKT { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Twix_Wyniki> Twix_Wyniki { get; set; }
         public virtual Twix_SL_Rangi Twix_SL_Rangi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Twix_Rezerwacja> Twix_Rezerwacja { get; set; }
