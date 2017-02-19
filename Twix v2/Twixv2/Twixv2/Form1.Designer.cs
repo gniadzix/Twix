@@ -41,6 +41,7 @@
             this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
             this.panelPanelPracownika = new System.Windows.Forms.Panel();
+            this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaWyloguj = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaUsunUzytkownika = new System.Windows.Forms.Button();
             this.panelDodajUzytkownika = new System.Windows.Forms.Panel();
@@ -80,7 +81,28 @@
             this.errorProviderRejestracjaHaslo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelUsunUzytkownika = new System.Windows.Forms.Panel();
             this.buttonUsunUzytkownikaCofnij = new System.Windows.Forms.Button();
-            this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
+            this.panelZaktualizujDane = new System.Windows.Forms.Panel();
+            this.labelZaktualizujDanePodajPesel = new System.Windows.Forms.Label();
+            this.textBoxZaktualizujDaneWyszukajPesel = new System.Windows.Forms.TextBox();
+            this.buttonZaktualizujDaneWyszukaj = new System.Windows.Forms.Button();
+            this.labelZaktualizujDaneHaslo = new System.Windows.Forms.Label();
+            this.labelZaktualizujDaneLogin = new System.Windows.Forms.Label();
+            this.labelZaktualizujDaneNrDowodu = new System.Windows.Forms.Label();
+            this.labelZaktualizujDanePesel = new System.Windows.Forms.Label();
+            this.labelZaktualizujDaneNazwisko = new System.Windows.Forms.Label();
+            this.labelZaktualizujDaneImie = new System.Windows.Forms.Label();
+            this.textBoxZaktualizujDaneHaslo = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDaneLogin = new System.Windows.Forms.TextBox();
+            this.checkBoxZaktualizujDaneCzyAdministrator = new System.Windows.Forms.CheckBox();
+            this.textBoxZaktualizujDaneNrDowodu = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDanePesel = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDaneNazwisko = new System.Windows.Forms.TextBox();
+            this.textBoxZaktualizujDaneImie = new System.Windows.Forms.TextBox();
+            this.labelZaktualizujDaneRanga = new System.Windows.Forms.Label();
+            this.textBoxZaktualizujDaneRanga = new System.Windows.Forms.TextBox();
+            this.buttonZaktualizujDaneWroc = new System.Windows.Forms.Button();
+            this.buttonZaktualizujDaneZmienDane = new System.Windows.Forms.Button();
+            this.buttonZaktualizujDaneZatwierdz = new System.Windows.Forms.Button();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -89,6 +111,7 @@
             this.panelRejestracja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaHaslo)).BeginInit();
             this.panelUsunUzytkownika.SuspendLayout();
+            this.panelZaktualizujDane.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -155,10 +178,10 @@
             // 
             this.labelLogowanieHaslo.AutoSize = true;
             this.labelLogowanieHaslo.BackColor = System.Drawing.Color.Transparent;
-            this.labelLogowanieHaslo.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelLogowanieHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelLogowanieHaslo.Location = new System.Drawing.Point(554, 228);
             this.labelLogowanieHaslo.Name = "labelLogowanieHaslo";
-            this.labelLogowanieHaslo.Size = new System.Drawing.Size(57, 23);
+            this.labelLogowanieHaslo.Size = new System.Drawing.Size(67, 24);
             this.labelLogowanieHaslo.TabIndex = 5;
             this.labelLogowanieHaslo.Text = "Hasło";
             // 
@@ -166,10 +189,10 @@
             // 
             this.labelLogowanieLogin.AutoSize = true;
             this.labelLogowanieLogin.BackColor = System.Drawing.Color.Transparent;
-            this.labelLogowanieLogin.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelLogowanieLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelLogowanieLogin.Location = new System.Drawing.Point(400, 227);
             this.labelLogowanieLogin.Name = "labelLogowanieLogin";
-            this.labelLogowanieLogin.Size = new System.Drawing.Size(50, 23);
+            this.labelLogowanieLogin.Size = new System.Drawing.Size(62, 24);
             this.labelLogowanieLogin.TabIndex = 4;
             this.labelLogowanieLogin.Text = "Login";
             // 
@@ -222,10 +245,20 @@
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaWyloguj);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaUsunUzytkownika);
             this.panelPanelPracownika.Controls.Add(buttonDodajPracownika);
-            this.panelPanelPracownika.Location = new System.Drawing.Point(800, 0);
+            this.panelPanelPracownika.Location = new System.Drawing.Point(0, 0);
             this.panelPanelPracownika.Name = "panelPanelPracownika";
             this.panelPanelPracownika.Size = new System.Drawing.Size(800, 600);
             this.panelPanelPracownika.TabIndex = 6;
+            // 
+            // buttonPanelPracownikaZmienDaneUzytkownika
+            // 
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Location = new System.Drawing.Point(18, 199);
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Name = "buttonPanelPracownikaZmienDaneUzytkownika";
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Size = new System.Drawing.Size(159, 23);
+            this.buttonPanelPracownikaZmienDaneUzytkownika.TabIndex = 3;
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Text = "ZMIEŃ DANE";
+            this.buttonPanelPracownikaZmienDaneUzytkownika.UseVisualStyleBackColor = true;
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Click += new System.EventHandler(this.buttonPanelPracownikaZmienDaneUzytkownika_Click);
             // 
             // buttonPanelPracownikaWyloguj
             // 
@@ -277,10 +310,10 @@
             // 
             this.labelDodajHaslo.AutoSize = true;
             this.labelDodajHaslo.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajHaslo.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajHaslo.Location = new System.Drawing.Point(169, 179);
             this.labelDodajHaslo.Name = "labelDodajHaslo";
-            this.labelDodajHaslo.Size = new System.Drawing.Size(57, 23);
+            this.labelDodajHaslo.Size = new System.Drawing.Size(67, 24);
             this.labelDodajHaslo.TabIndex = 18;
             this.labelDodajHaslo.Text = "Hasło";
             // 
@@ -288,10 +321,10 @@
             // 
             this.labelDodajLogin.AutoSize = true;
             this.labelDodajLogin.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajLogin.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajLogin.Location = new System.Drawing.Point(169, 144);
             this.labelDodajLogin.Name = "labelDodajLogin";
-            this.labelDodajLogin.Size = new System.Drawing.Size(50, 23);
+            this.labelDodajLogin.Size = new System.Drawing.Size(62, 24);
             this.labelDodajLogin.TabIndex = 17;
             this.labelDodajLogin.Text = "Login";
             // 
@@ -299,10 +332,10 @@
             // 
             this.labelDodajNrDowodu.AutoSize = true;
             this.labelDodajNrDowodu.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajNrDowodu.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajNrDowodu.Location = new System.Drawing.Point(169, 116);
             this.labelDodajNrDowodu.Name = "labelDodajNrDowodu";
-            this.labelDodajNrDowodu.Size = new System.Drawing.Size(100, 23);
+            this.labelDodajNrDowodu.Size = new System.Drawing.Size(113, 24);
             this.labelDodajNrDowodu.TabIndex = 16;
             this.labelDodajNrDowodu.Text = "Nr dowodu";
             // 
@@ -310,10 +343,10 @@
             // 
             this.labelDodajPesel.AutoSize = true;
             this.labelDodajPesel.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajPesel.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajPesel.Location = new System.Drawing.Point(169, 88);
             this.labelDodajPesel.Name = "labelDodajPesel";
-            this.labelDodajPesel.Size = new System.Drawing.Size(57, 23);
+            this.labelDodajPesel.Size = new System.Drawing.Size(62, 24);
             this.labelDodajPesel.TabIndex = 15;
             this.labelDodajPesel.Text = "Pesel";
             // 
@@ -321,10 +354,10 @@
             // 
             this.labelDodajNazwisko.AutoSize = true;
             this.labelDodajNazwisko.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajNazwisko.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajNazwisko.Location = new System.Drawing.Point(169, 61);
             this.labelDodajNazwisko.Name = "labelDodajNazwisko";
-            this.labelDodajNazwisko.Size = new System.Drawing.Size(91, 23);
+            this.labelDodajNazwisko.Size = new System.Drawing.Size(98, 24);
             this.labelDodajNazwisko.TabIndex = 14;
             this.labelDodajNazwisko.Text = "Nazwisko";
             // 
@@ -332,10 +365,10 @@
             // 
             this.labelDodajImie.AutoSize = true;
             this.labelDodajImie.BackColor = System.Drawing.Color.Transparent;
-            this.labelDodajImie.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelDodajImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelDodajImie.Location = new System.Drawing.Point(169, 34);
             this.labelDodajImie.Name = "labelDodajImie";
-            this.labelDodajImie.Size = new System.Drawing.Size(45, 23);
+            this.labelDodajImie.Size = new System.Drawing.Size(49, 24);
             this.labelDodajImie.TabIndex = 13;
             this.labelDodajImie.Text = "Imię";
             // 
@@ -375,10 +408,10 @@
             // 
             this.checkBoxCzyAdmin.AutoSize = true;
             this.checkBoxCzyAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxCzyAdmin.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxCzyAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.checkBoxCzyAdmin.Location = new System.Drawing.Point(40, 212);
             this.checkBoxCzyAdmin.Name = "checkBoxCzyAdmin";
-            this.checkBoxCzyAdmin.Size = new System.Drawing.Size(93, 27);
+            this.checkBoxCzyAdmin.Size = new System.Drawing.Size(111, 28);
             this.checkBoxCzyAdmin.TabIndex = 5;
             this.checkBoxCzyAdmin.Text = "ADMIN ?";
             this.checkBoxCzyAdmin.UseVisualStyleBackColor = false;
@@ -488,10 +521,10 @@
             // 
             this.labelRejestracjaPowtorzHaslo.AutoSize = true;
             this.labelRejestracjaPowtorzHaslo.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaPowtorzHaslo.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaPowtorzHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaPowtorzHaslo.Location = new System.Drawing.Point(18, 180);
             this.labelRejestracjaPowtorzHaslo.Name = "labelRejestracjaPowtorzHaslo";
-            this.labelRejestracjaPowtorzHaslo.Size = new System.Drawing.Size(137, 23);
+            this.labelRejestracjaPowtorzHaslo.Size = new System.Drawing.Size(144, 24);
             this.labelRejestracjaPowtorzHaslo.TabIndex = 13;
             this.labelRejestracjaPowtorzHaslo.Text = "Powtórz hasło";
             // 
@@ -499,10 +532,10 @@
             // 
             this.labelRejestracjaHaslo.AutoSize = true;
             this.labelRejestracjaHaslo.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaHaslo.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaHaslo.Location = new System.Drawing.Point(18, 154);
             this.labelRejestracjaHaslo.Name = "labelRejestracjaHaslo";
-            this.labelRejestracjaHaslo.Size = new System.Drawing.Size(57, 23);
+            this.labelRejestracjaHaslo.Size = new System.Drawing.Size(67, 24);
             this.labelRejestracjaHaslo.TabIndex = 12;
             this.labelRejestracjaHaslo.Text = "Hasło";
             // 
@@ -563,10 +596,10 @@
             // 
             this.labelRejestracjaLogin.AutoSize = true;
             this.labelRejestracjaLogin.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaLogin.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaLogin.Location = new System.Drawing.Point(18, 128);
             this.labelRejestracjaLogin.Name = "labelRejestracjaLogin";
-            this.labelRejestracjaLogin.Size = new System.Drawing.Size(50, 23);
+            this.labelRejestracjaLogin.Size = new System.Drawing.Size(62, 24);
             this.labelRejestracjaLogin.TabIndex = 5;
             this.labelRejestracjaLogin.Text = "Login";
             // 
@@ -574,10 +607,10 @@
             // 
             this.labelRejestracjaNrDowodu.AutoSize = true;
             this.labelRejestracjaNrDowodu.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaNrDowodu.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaNrDowodu.Location = new System.Drawing.Point(18, 102);
             this.labelRejestracjaNrDowodu.Name = "labelRejestracjaNrDowodu";
-            this.labelRejestracjaNrDowodu.Size = new System.Drawing.Size(100, 23);
+            this.labelRejestracjaNrDowodu.Size = new System.Drawing.Size(113, 24);
             this.labelRejestracjaNrDowodu.TabIndex = 4;
             this.labelRejestracjaNrDowodu.Text = "Nr dowodu";
             // 
@@ -585,10 +618,10 @@
             // 
             this.labelRejestracjaPesel.AutoSize = true;
             this.labelRejestracjaPesel.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaPesel.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaPesel.Location = new System.Drawing.Point(18, 76);
             this.labelRejestracjaPesel.Name = "labelRejestracjaPesel";
-            this.labelRejestracjaPesel.Size = new System.Drawing.Size(57, 23);
+            this.labelRejestracjaPesel.Size = new System.Drawing.Size(62, 24);
             this.labelRejestracjaPesel.TabIndex = 3;
             this.labelRejestracjaPesel.Text = "Pesel";
             // 
@@ -596,10 +629,10 @@
             // 
             this.labelRejestracjaNazwisko.AutoSize = true;
             this.labelRejestracjaNazwisko.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaNazwisko.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaNazwisko.Location = new System.Drawing.Point(18, 50);
             this.labelRejestracjaNazwisko.Name = "labelRejestracjaNazwisko";
-            this.labelRejestracjaNazwisko.Size = new System.Drawing.Size(91, 23);
+            this.labelRejestracjaNazwisko.Size = new System.Drawing.Size(98, 24);
             this.labelRejestracjaNazwisko.TabIndex = 2;
             this.labelRejestracjaNazwisko.Text = "Nazwisko";
             // 
@@ -607,10 +640,10 @@
             // 
             this.labelRejestracjaImie.AutoSize = true;
             this.labelRejestracjaImie.BackColor = System.Drawing.Color.Transparent;
-            this.labelRejestracjaImie.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelRejestracjaImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.labelRejestracjaImie.Location = new System.Drawing.Point(18, 24);
             this.labelRejestracjaImie.Name = "labelRejestracjaImie";
-            this.labelRejestracjaImie.Size = new System.Drawing.Size(45, 23);
+            this.labelRejestracjaImie.Size = new System.Drawing.Size(49, 24);
             this.labelRejestracjaImie.TabIndex = 1;
             this.labelRejestracjaImie.Text = "Imię";
             // 
@@ -650,14 +683,242 @@
             this.buttonUsunUzytkownikaCofnij.UseVisualStyleBackColor = true;
             this.buttonUsunUzytkownikaCofnij.Click += new System.EventHandler(this.buttonUsunUzytkownikaCofnij_Click);
             // 
-            // buttonPanelPracownikaZmienDaneUzytkownika
+            // panelZaktualizujDane
             // 
-            this.buttonPanelPracownikaZmienDaneUzytkownika.Location = new System.Drawing.Point(18, 199);
-            this.buttonPanelPracownikaZmienDaneUzytkownika.Name = "buttonPanelPracownikaZmienDaneUzytkownika";
-            this.buttonPanelPracownikaZmienDaneUzytkownika.Size = new System.Drawing.Size(159, 23);
-            this.buttonPanelPracownikaZmienDaneUzytkownika.TabIndex = 3;
-            this.buttonPanelPracownikaZmienDaneUzytkownika.Text = "ZMIEŃ DANE";
-            this.buttonPanelPracownikaZmienDaneUzytkownika.UseVisualStyleBackColor = true;
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZatwierdz);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneZmienDane);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneWroc);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneRanga);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneRanga);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneHaslo);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneLogin);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneNrDowodu);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDanePesel);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneNazwisko);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDaneImie);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneHaslo);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneLogin);
+            this.panelZaktualizujDane.Controls.Add(this.checkBoxZaktualizujDaneCzyAdministrator);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneNrDowodu);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDanePesel);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneNazwisko);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneImie);
+            this.panelZaktualizujDane.Controls.Add(this.buttonZaktualizujDaneWyszukaj);
+            this.panelZaktualizujDane.Controls.Add(this.textBoxZaktualizujDaneWyszukajPesel);
+            this.panelZaktualizujDane.Controls.Add(this.labelZaktualizujDanePodajPesel);
+            this.panelZaktualizujDane.Location = new System.Drawing.Point(800, 0);
+            this.panelZaktualizujDane.Name = "panelZaktualizujDane";
+            this.panelZaktualizujDane.Size = new System.Drawing.Size(800, 600);
+            this.panelZaktualizujDane.TabIndex = 8;
+            // 
+            // labelZaktualizujDanePodajPesel
+            // 
+            this.labelZaktualizujDanePodajPesel.AutoSize = true;
+            this.labelZaktualizujDanePodajPesel.Location = new System.Drawing.Point(43, 51);
+            this.labelZaktualizujDanePodajPesel.Name = "labelZaktualizujDanePodajPesel";
+            this.labelZaktualizujDanePodajPesel.Size = new System.Drawing.Size(62, 13);
+            this.labelZaktualizujDanePodajPesel.TabIndex = 0;
+            this.labelZaktualizujDanePodajPesel.Text = "Podaj pesel";
+            // 
+            // textBoxZaktualizujDaneWyszukajPesel
+            // 
+            this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(126, 48);
+            this.textBoxZaktualizujDaneWyszukajPesel.Name = "textBoxZaktualizujDaneWyszukajPesel";
+            this.textBoxZaktualizujDaneWyszukajPesel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZaktualizujDaneWyszukajPesel.TabIndex = 1;
+            // 
+            // buttonZaktualizujDaneWyszukaj
+            // 
+            this.buttonZaktualizujDaneWyszukaj.Location = new System.Drawing.Point(94, 79);
+            this.buttonZaktualizujDaneWyszukaj.Name = "buttonZaktualizujDaneWyszukaj";
+            this.buttonZaktualizujDaneWyszukaj.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneWyszukaj.TabIndex = 2;
+            this.buttonZaktualizujDaneWyszukaj.Text = "Wyszukaj";
+            this.buttonZaktualizujDaneWyszukaj.UseVisualStyleBackColor = true;
+            this.buttonZaktualizujDaneWyszukaj.Click += new System.EventHandler(this.buttonZaktualizujDaneWyszukaj_Click);
+            // 
+            // labelZaktualizujDaneHaslo
+            // 
+            this.labelZaktualizujDaneHaslo.AutoSize = true;
+            this.labelZaktualizujDaneHaslo.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDaneHaslo.Location = new System.Drawing.Point(213, 263);
+            this.labelZaktualizujDaneHaslo.Name = "labelZaktualizujDaneHaslo";
+            this.labelZaktualizujDaneHaslo.Size = new System.Drawing.Size(67, 24);
+            this.labelZaktualizujDaneHaslo.TabIndex = 31;
+            this.labelZaktualizujDaneHaslo.Text = "Hasło";
+            // 
+            // labelZaktualizujDaneLogin
+            // 
+            this.labelZaktualizujDaneLogin.AutoSize = true;
+            this.labelZaktualizujDaneLogin.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDaneLogin.Location = new System.Drawing.Point(213, 228);
+            this.labelZaktualizujDaneLogin.Name = "labelZaktualizujDaneLogin";
+            this.labelZaktualizujDaneLogin.Size = new System.Drawing.Size(62, 24);
+            this.labelZaktualizujDaneLogin.TabIndex = 30;
+            this.labelZaktualizujDaneLogin.Text = "Login";
+            // 
+            // labelZaktualizujDaneNrDowodu
+            // 
+            this.labelZaktualizujDaneNrDowodu.AutoSize = true;
+            this.labelZaktualizujDaneNrDowodu.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(213, 200);
+            this.labelZaktualizujDaneNrDowodu.Name = "labelZaktualizujDaneNrDowodu";
+            this.labelZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(113, 24);
+            this.labelZaktualizujDaneNrDowodu.TabIndex = 29;
+            this.labelZaktualizujDaneNrDowodu.Text = "Nr dowodu";
+            // 
+            // labelZaktualizujDanePesel
+            // 
+            this.labelZaktualizujDanePesel.AutoSize = true;
+            this.labelZaktualizujDanePesel.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDanePesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDanePesel.Location = new System.Drawing.Point(213, 172);
+            this.labelZaktualizujDanePesel.Name = "labelZaktualizujDanePesel";
+            this.labelZaktualizujDanePesel.Size = new System.Drawing.Size(62, 24);
+            this.labelZaktualizujDanePesel.TabIndex = 28;
+            this.labelZaktualizujDanePesel.Text = "Pesel";
+            // 
+            // labelZaktualizujDaneNazwisko
+            // 
+            this.labelZaktualizujDaneNazwisko.AutoSize = true;
+            this.labelZaktualizujDaneNazwisko.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDaneNazwisko.Location = new System.Drawing.Point(213, 145);
+            this.labelZaktualizujDaneNazwisko.Name = "labelZaktualizujDaneNazwisko";
+            this.labelZaktualizujDaneNazwisko.Size = new System.Drawing.Size(98, 24);
+            this.labelZaktualizujDaneNazwisko.TabIndex = 27;
+            this.labelZaktualizujDaneNazwisko.Text = "Nazwisko";
+            // 
+            // labelZaktualizujDaneImie
+            // 
+            this.labelZaktualizujDaneImie.AutoSize = true;
+            this.labelZaktualizujDaneImie.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.labelZaktualizujDaneImie.Location = new System.Drawing.Point(213, 118);
+            this.labelZaktualizujDaneImie.Name = "labelZaktualizujDaneImie";
+            this.labelZaktualizujDaneImie.Size = new System.Drawing.Size(49, 24);
+            this.labelZaktualizujDaneImie.TabIndex = 26;
+            this.labelZaktualizujDaneImie.Text = "Imię";
+            // 
+            // textBoxZaktualizujDaneHaslo
+            // 
+            this.textBoxZaktualizujDaneHaslo.Enabled = false;
+            this.textBoxZaktualizujDaneHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDaneHaslo.Location = new System.Drawing.Point(84, 262);
+            this.textBoxZaktualizujDaneHaslo.MaxLength = 10;
+            this.textBoxZaktualizujDaneHaslo.Name = "textBoxZaktualizujDaneHaslo";
+            this.textBoxZaktualizujDaneHaslo.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDaneHaslo.TabIndex = 25;
+            // 
+            // textBoxZaktualizujDaneLogin
+            // 
+            this.textBoxZaktualizujDaneLogin.Enabled = false;
+            this.textBoxZaktualizujDaneLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDaneLogin.Location = new System.Drawing.Point(84, 229);
+            this.textBoxZaktualizujDaneLogin.Name = "textBoxZaktualizujDaneLogin";
+            this.textBoxZaktualizujDaneLogin.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDaneLogin.TabIndex = 24;
+            // 
+            // checkBoxZaktualizujDaneCzyAdministrator
+            // 
+            this.checkBoxZaktualizujDaneCzyAdministrator.AutoSize = true;
+            this.checkBoxZaktualizujDaneCzyAdministrator.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
+            this.checkBoxZaktualizujDaneCzyAdministrator.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(84, 337);
+            this.checkBoxZaktualizujDaneCzyAdministrator.Name = "checkBoxZaktualizujDaneCzyAdministrator";
+            this.checkBoxZaktualizujDaneCzyAdministrator.Size = new System.Drawing.Size(111, 28);
+            this.checkBoxZaktualizujDaneCzyAdministrator.TabIndex = 23;
+            this.checkBoxZaktualizujDaneCzyAdministrator.Text = "ADMIN ?";
+            this.checkBoxZaktualizujDaneCzyAdministrator.UseVisualStyleBackColor = false;
+            // 
+            // textBoxZaktualizujDaneNrDowodu
+            // 
+            this.textBoxZaktualizujDaneNrDowodu.Enabled = false;
+            this.textBoxZaktualizujDaneNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(84, 201);
+            this.textBoxZaktualizujDaneNrDowodu.MaxLength = 9;
+            this.textBoxZaktualizujDaneNrDowodu.Name = "textBoxZaktualizujDaneNrDowodu";
+            this.textBoxZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDaneNrDowodu.TabIndex = 22;
+            // 
+            // textBoxZaktualizujDanePesel
+            // 
+            this.textBoxZaktualizujDanePesel.Enabled = false;
+            this.textBoxZaktualizujDanePesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(84, 173);
+            this.textBoxZaktualizujDanePesel.MaxLength = 11;
+            this.textBoxZaktualizujDanePesel.Name = "textBoxZaktualizujDanePesel";
+            this.textBoxZaktualizujDanePesel.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDanePesel.TabIndex = 21;
+            // 
+            // textBoxZaktualizujDaneNazwisko
+            // 
+            this.textBoxZaktualizujDaneNazwisko.Enabled = false;
+            this.textBoxZaktualizujDaneNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(84, 145);
+            this.textBoxZaktualizujDaneNazwisko.Name = "textBoxZaktualizujDaneNazwisko";
+            this.textBoxZaktualizujDaneNazwisko.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDaneNazwisko.TabIndex = 20;
+            // 
+            // textBoxZaktualizujDaneImie
+            // 
+            this.textBoxZaktualizujDaneImie.Enabled = false;
+            this.textBoxZaktualizujDaneImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(84, 117);
+            this.textBoxZaktualizujDaneImie.Name = "textBoxZaktualizujDaneImie";
+            this.textBoxZaktualizujDaneImie.Size = new System.Drawing.Size(120, 24);
+            this.textBoxZaktualizujDaneImie.TabIndex = 19;
+            // 
+            // labelZaktualizujDaneRanga
+            // 
+            this.labelZaktualizujDaneRanga.AutoSize = true;
+            this.labelZaktualizujDaneRanga.Location = new System.Drawing.Point(217, 304);
+            this.labelZaktualizujDaneRanga.Name = "labelZaktualizujDaneRanga";
+            this.labelZaktualizujDaneRanga.Size = new System.Drawing.Size(39, 13);
+            this.labelZaktualizujDaneRanga.TabIndex = 32;
+            this.labelZaktualizujDaneRanga.Text = "Ranga";
+            // 
+            // textBoxZaktualizujDaneRanga
+            // 
+            this.textBoxZaktualizujDaneRanga.Enabled = false;
+            this.textBoxZaktualizujDaneRanga.Location = new System.Drawing.Point(84, 297);
+            this.textBoxZaktualizujDaneRanga.Name = "textBoxZaktualizujDaneRanga";
+            this.textBoxZaktualizujDaneRanga.Size = new System.Drawing.Size(120, 20);
+            this.textBoxZaktualizujDaneRanga.TabIndex = 33;
+            // 
+            // buttonZaktualizujDaneWroc
+            // 
+            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(220, 409);
+            this.buttonZaktualizujDaneWroc.Name = "buttonZaktualizujDaneWroc";
+            this.buttonZaktualizujDaneWroc.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneWroc.TabIndex = 34;
+            this.buttonZaktualizujDaneWroc.Text = "Cofnij";
+            this.buttonZaktualizujDaneWroc.UseVisualStyleBackColor = true;
+            this.buttonZaktualizujDaneWroc.Click += new System.EventHandler(this.buttonZaktualizujDaneWroc_Click);
+            // 
+            // buttonZaktualizujDaneZmienDane
+            // 
+            this.buttonZaktualizujDaneZmienDane.Location = new System.Drawing.Point(354, 77);
+            this.buttonZaktualizujDaneZmienDane.Name = "buttonZaktualizujDaneZmienDane";
+            this.buttonZaktualizujDaneZmienDane.Size = new System.Drawing.Size(75, 23);
+            this.buttonZaktualizujDaneZmienDane.TabIndex = 35;
+            this.buttonZaktualizujDaneZmienDane.Text = "Zmień dane";
+            this.buttonZaktualizujDaneZmienDane.UseVisualStyleBackColor = true;
+            this.buttonZaktualizujDaneZmienDane.Click += new System.EventHandler(this.buttonZaktualizujDaneZmienDane_Click);
+            // 
+            // buttonZaktualizujDaneZatwierdz
+            // 
+            this.buttonZaktualizujDaneZatwierdz.Location = new System.Drawing.Point(354, 116);
+            this.buttonZaktualizujDaneZatwierdz.Name = "buttonZaktualizujDaneZatwierdz";
+            this.buttonZaktualizujDaneZatwierdz.Size = new System.Drawing.Size(110, 23);
+            this.buttonZaktualizujDaneZatwierdz.TabIndex = 36;
+            this.buttonZaktualizujDaneZatwierdz.Text = "Zatwierdź zmiany";
+            this.buttonZaktualizujDaneZatwierdz.UseVisualStyleBackColor = true;
+            this.buttonZaktualizujDaneZatwierdz.Click += new System.EventHandler(this.buttonZaktualizujDaneZatwierdz_Click);
             // 
             // Form1
             // 
@@ -665,15 +926,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1217, 750);
+            this.ClientSize = new System.Drawing.Size(1276, 773);
+            this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
+            this.Controls.Add(this.panelPanelPracownika);
             this.Name = "Form1";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
@@ -686,6 +948,8 @@
             this.panelRejestracja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaHaslo)).EndInit();
             this.panelUsunUzytkownika.ResumeLayout(false);
+            this.panelZaktualizujDane.ResumeLayout(false);
+            this.panelZaktualizujDane.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -743,6 +1007,28 @@
         private System.Windows.Forms.Panel panelUsunUzytkownika;
         private System.Windows.Forms.Button buttonUsunUzytkownikaCofnij;
         private System.Windows.Forms.Button buttonPanelPracownikaZmienDaneUzytkownika;
+        private System.Windows.Forms.Panel panelZaktualizujDane;
+        private System.Windows.Forms.Button buttonZaktualizujDaneWroc;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneRanga;
+        private System.Windows.Forms.Label labelZaktualizujDaneRanga;
+        private System.Windows.Forms.Label labelZaktualizujDaneHaslo;
+        private System.Windows.Forms.Label labelZaktualizujDaneLogin;
+        private System.Windows.Forms.Label labelZaktualizujDaneNrDowodu;
+        private System.Windows.Forms.Label labelZaktualizujDanePesel;
+        private System.Windows.Forms.Label labelZaktualizujDaneNazwisko;
+        private System.Windows.Forms.Label labelZaktualizujDaneImie;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneHaslo;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneLogin;
+        private System.Windows.Forms.CheckBox checkBoxZaktualizujDaneCzyAdministrator;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneNrDowodu;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDanePesel;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneNazwisko;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneImie;
+        private System.Windows.Forms.Button buttonZaktualizujDaneWyszukaj;
+        private System.Windows.Forms.TextBox textBoxZaktualizujDaneWyszukajPesel;
+        private System.Windows.Forms.Label labelZaktualizujDanePodajPesel;
+        private System.Windows.Forms.Button buttonZaktualizujDaneZatwierdz;
+        private System.Windows.Forms.Button buttonZaktualizujDaneZmienDane;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace Twixv2
             ukrywaniePanelu(panelDodajUzytkownika);
             ukrywaniePanelu(panelPanelPracownika);
             ukrywaniePanelu(panelUsunUzytkownika);
+            ukrywaniePanelu(panelZaktualizujDane);
         }
         private void ukrywaniePanelu(Panel doUkrycia)
         {
@@ -255,6 +257,85 @@ namespace Twixv2
         private void buttonPanelPracownikaUsunUzytkownika_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelUsunUzytkownika);
+        }
+
+        private void buttonPanelPracownikaZmienDaneUzytkownika_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelPanelPracownika);
+            pokazywaniePanelu(panelZaktualizujDane);
+        }
+
+        private void buttonZaktualizujDaneWroc_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelZaktualizujDane);
+            pokazywaniePanelu(panelPanelPracownika);
+        }
+
+        private void buttonZaktualizujDaneWyszukaj_Click(object sender, EventArgs e)
+        {
+            string pesel = textBoxZaktualizujDaneWyszukajPesel.Text;
+            if (uzytkownik.wyszukajUzytkownika(pesel) == true)
+            {
+                ArrayList lista = new ArrayList();
+                lista = uzytkownik.daneKlienta();
+                textBoxZaktualizujDaneImie.Text = Convert.ToString(lista[1]);
+                textBoxZaktualizujDaneNazwisko.Text = Convert.ToString(lista[2]);
+                textBoxZaktualizujDaneNrDowodu.Text = Convert.ToString(lista[3]);
+                textBoxZaktualizujDanePesel.Text = Convert.ToString(lista[4]);
+                textBoxZaktualizujDaneLogin.Text = Convert.ToString(lista[5]);
+                textBoxZaktualizujDaneHaslo.Text = Convert.ToString(lista[6]);
+                textBoxZaktualizujDaneRanga.Text = Convert.ToString(lista[7]);
+                if (Convert.ToBoolean(lista[7]) == true)
+                {
+                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = true;
+                }
+                else
+                {
+                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie ma takiego użytkownika", "Błąd");
+            }
+        }
+
+        private void buttonZaktualizujDaneZmienDane_Click(object sender, EventArgs e)
+        {
+            textBoxZaktualizujDaneHaslo.Enabled = true;
+            textBoxZaktualizujDaneImie.Enabled = true;
+            textBoxZaktualizujDaneLogin.Enabled = true;
+            textBoxZaktualizujDaneNazwisko.Enabled = true;
+            textBoxZaktualizujDaneNrDowodu.Enabled = true;
+            textBoxZaktualizujDanePesel.Enabled = true;
+            checkBoxZaktualizujDaneCzyAdministrator.Enabled = true;
+            buttonZaktualizujDaneZatwierdz.Enabled = true;
+            buttonZaktualizujDaneZatwierdz.Visible = true;
+            textBoxZaktualizujDaneRanga.Enabled = true;
+        }
+
+        private void buttonZaktualizujDaneZatwierdz_Click(object sender, EventArgs e)
+        {
+            KlientStrzelnicy uzytkownikZmiana = new KlientStrzelnicy();
+            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, textBoxZaktualizujDaneHaslo.Text) == true)
+            {
+                MessageBox.Show("Poprawnie zaktualizowano dane użytkownika", "Sukces");
+                textBoxZaktualizujDaneHaslo.Enabled = false;
+                textBoxZaktualizujDaneImie.Enabled = false;
+                textBoxZaktualizujDaneLogin.Enabled = false;
+                textBoxZaktualizujDaneNazwisko.Enabled = false;
+                textBoxZaktualizujDaneNrDowodu.Enabled = false;
+                textBoxZaktualizujDanePesel.Enabled = false;
+                checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
+                buttonZaktualizujDaneZatwierdz.Enabled = false;
+                buttonZaktualizujDaneZatwierdz.Visible = false;
+                textBoxZaktualizujDaneRanga.Enabled = false;
+                textBoxZaktualizujDaneWyszukajPesel.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się zaktualizować danych użytkownika", "Błąd");
+            }
         }
     }
     }
