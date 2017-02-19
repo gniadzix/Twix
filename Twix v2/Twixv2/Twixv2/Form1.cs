@@ -112,6 +112,7 @@ namespace Twixv2
             nowyUzytkownik.HASLO = textBoxRejestracjaHaslo.Text;
             twixEncjaRejestracja.Twix_Klienci.Add(nowyUzytkownik);
             twixEncjaRejestracja.SaveChanges();
+            MessageBox.Show("ZAREJESTROWANO");
         }
 
         private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)

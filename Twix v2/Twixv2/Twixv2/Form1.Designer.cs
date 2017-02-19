@@ -80,6 +80,7 @@
             this.errorProviderRejestracjaHaslo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelUsunUzytkownika = new System.Windows.Forms.Panel();
             this.buttonUsunUzytkownikaCofnij = new System.Windows.Forms.Button();
+            this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -217,10 +218,11 @@
             // 
             this.panelPanelPracownika.BackgroundImage = global::Twixv2.Properties.Resources.PanelPracownika_background;
             this.panelPanelPracownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaZmienDaneUzytkownika);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaWyloguj);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaUsunUzytkownika);
             this.panelPanelPracownika.Controls.Add(buttonDodajPracownika);
-            this.panelPanelPracownika.Location = new System.Drawing.Point(0, 0);
+            this.panelPanelPracownika.Location = new System.Drawing.Point(800, 0);
             this.panelPanelPracownika.Name = "panelPanelPracownika";
             this.panelPanelPracownika.Size = new System.Drawing.Size(800, 600);
             this.panelPanelPracownika.TabIndex = 6;
@@ -648,13 +650,22 @@
             this.buttonUsunUzytkownikaCofnij.UseVisualStyleBackColor = true;
             this.buttonUsunUzytkownikaCofnij.Click += new System.EventHandler(this.buttonUsunUzytkownikaCofnij_Click);
             // 
+            // buttonPanelPracownikaZmienDaneUzytkownika
+            // 
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Location = new System.Drawing.Point(18, 199);
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Name = "buttonPanelPracownikaZmienDaneUzytkownika";
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Size = new System.Drawing.Size(159, 23);
+            this.buttonPanelPracownikaZmienDaneUzytkownika.TabIndex = 3;
+            this.buttonPanelPracownikaZmienDaneUzytkownika.Text = "ZMIEŃ DANE";
+            this.buttonPanelPracownikaZmienDaneUzytkownika.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(1217, 750);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
@@ -731,6 +742,7 @@
         private System.Windows.Forms.Label labelDodajImie;
         private System.Windows.Forms.Panel panelUsunUzytkownika;
         private System.Windows.Forms.Button buttonUsunUzytkownikaCofnij;
+        private System.Windows.Forms.Button buttonPanelPracownikaZmienDaneUzytkownika;
     }
 }
 
