@@ -1,6 +1,6 @@
 ﻿namespace Twixv2
 {
-    partial class Form1
+    partial class FormOknoGlowne
     {
         /// <summary>
         /// Required designer variable.
@@ -82,11 +82,11 @@
             this.panelUsunUzytkownika = new System.Windows.Forms.Panel();
             this.buttonUsunUzytkownikaUsunUzytkownika = new System.Windows.Forms.Button();
             this.buttonUsunUzytkownikaCofnij = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelUsunUzytkownikaLogin = new System.Windows.Forms.Label();
+            this.labelUsunUzytkownikaNrDowodu = new System.Windows.Forms.Label();
+            this.labelUsunUzytkownikaPesel = new System.Windows.Forms.Label();
+            this.labelUsunUzytkownikaNazwisko = new System.Windows.Forms.Label();
+            this.labelUsunUzytkownikaImie = new System.Windows.Forms.Label();
             this.textBoxUsunUzytkownikaLogin = new System.Windows.Forms.TextBox();
             this.textBoxUsunUzytkownikaNrDowodu = new System.Windows.Forms.TextBox();
             this.textBoxUsunUzytkownikaPesel = new System.Windows.Forms.TextBox();
@@ -683,11 +683,11 @@
             this.panelUsunUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelUsunUzytkownika.Controls.Add(this.buttonUsunUzytkownikaUsunUzytkownika);
             this.panelUsunUzytkownika.Controls.Add(this.buttonUsunUzytkownikaCofnij);
-            this.panelUsunUzytkownika.Controls.Add(this.label3);
-            this.panelUsunUzytkownika.Controls.Add(this.label4);
-            this.panelUsunUzytkownika.Controls.Add(this.label5);
-            this.panelUsunUzytkownika.Controls.Add(this.label6);
-            this.panelUsunUzytkownika.Controls.Add(this.label7);
+            this.panelUsunUzytkownika.Controls.Add(this.labelUsunUzytkownikaLogin);
+            this.panelUsunUzytkownika.Controls.Add(this.labelUsunUzytkownikaNrDowodu);
+            this.panelUsunUzytkownika.Controls.Add(this.labelUsunUzytkownikaPesel);
+            this.panelUsunUzytkownika.Controls.Add(this.labelUsunUzytkownikaNazwisko);
+            this.panelUsunUzytkownika.Controls.Add(this.labelUsunUzytkownikaImie);
             this.panelUsunUzytkownika.Controls.Add(this.textBoxUsunUzytkownikaLogin);
             this.panelUsunUzytkownika.Controls.Add(this.textBoxUsunUzytkownikaNrDowodu);
             this.panelUsunUzytkownika.Controls.Add(this.textBoxUsunUzytkownikaPesel);
@@ -723,60 +723,65 @@
             this.buttonUsunUzytkownikaCofnij.UseVisualStyleBackColor = true;
             this.buttonUsunUzytkownikaCofnij.Click += new System.EventHandler(this.buttonUsunUzytkownikaCofnij_Click_1);
             // 
-            // label3
+            // labelUsunUzytkownikaLogin
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(150, 241);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 23);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Login";
+            this.labelUsunUzytkownikaLogin.AutoSize = true;
+            this.labelUsunUzytkownikaLogin.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsunUzytkownikaLogin.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUsunUzytkownikaLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelUsunUzytkownikaLogin.Location = new System.Drawing.Point(150, 241);
+            this.labelUsunUzytkownikaLogin.Name = "labelUsunUzytkownikaLogin";
+            this.labelUsunUzytkownikaLogin.Size = new System.Drawing.Size(50, 23);
+            this.labelUsunUzytkownikaLogin.TabIndex = 51;
+            this.labelUsunUzytkownikaLogin.Text = "Login";
             // 
-            // label4
+            // labelUsunUzytkownikaNrDowodu
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(150, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Nr dowodu";
+            this.labelUsunUzytkownikaNrDowodu.AutoSize = true;
+            this.labelUsunUzytkownikaNrDowodu.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsunUzytkownikaNrDowodu.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUsunUzytkownikaNrDowodu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelUsunUzytkownikaNrDowodu.Location = new System.Drawing.Point(150, 213);
+            this.labelUsunUzytkownikaNrDowodu.Name = "labelUsunUzytkownikaNrDowodu";
+            this.labelUsunUzytkownikaNrDowodu.Size = new System.Drawing.Size(100, 23);
+            this.labelUsunUzytkownikaNrDowodu.TabIndex = 50;
+            this.labelUsunUzytkownikaNrDowodu.Text = "Nr dowodu";
             // 
-            // label5
+            // labelUsunUzytkownikaPesel
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(150, 185);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 23);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Pesel";
+            this.labelUsunUzytkownikaPesel.AutoSize = true;
+            this.labelUsunUzytkownikaPesel.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsunUzytkownikaPesel.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUsunUzytkownikaPesel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelUsunUzytkownikaPesel.Location = new System.Drawing.Point(150, 185);
+            this.labelUsunUzytkownikaPesel.Name = "labelUsunUzytkownikaPesel";
+            this.labelUsunUzytkownikaPesel.Size = new System.Drawing.Size(57, 23);
+            this.labelUsunUzytkownikaPesel.TabIndex = 49;
+            this.labelUsunUzytkownikaPesel.Text = "Pesel";
             // 
-            // label6
+            // labelUsunUzytkownikaNazwisko
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(150, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 23);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Nazwisko";
+            this.labelUsunUzytkownikaNazwisko.AutoSize = true;
+            this.labelUsunUzytkownikaNazwisko.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsunUzytkownikaNazwisko.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUsunUzytkownikaNazwisko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelUsunUzytkownikaNazwisko.Location = new System.Drawing.Point(150, 158);
+            this.labelUsunUzytkownikaNazwisko.Name = "labelUsunUzytkownikaNazwisko";
+            this.labelUsunUzytkownikaNazwisko.Size = new System.Drawing.Size(91, 23);
+            this.labelUsunUzytkownikaNazwisko.TabIndex = 48;
+            this.labelUsunUzytkownikaNazwisko.Text = "Nazwisko";
             // 
-            // label7
+            // labelUsunUzytkownikaImie
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(150, 131);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 23);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Imię";
+            this.labelUsunUzytkownikaImie.AutoSize = true;
+            this.labelUsunUzytkownikaImie.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsunUzytkownikaImie.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUsunUzytkownikaImie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.labelUsunUzytkownikaImie.Location = new System.Drawing.Point(150, 131);
+            this.labelUsunUzytkownikaImie.Name = "labelUsunUzytkownikaImie";
+            this.labelUsunUzytkownikaImie.Size = new System.Drawing.Size(45, 23);
+            this.labelUsunUzytkownikaImie.TabIndex = 47;
+            this.labelUsunUzytkownikaImie.Text = "Imię";
             // 
             // textBoxUsunUzytkownikaLogin
             // 
@@ -839,15 +844,18 @@
             // textBoxUsunUzytkownikaPodajPesel
             // 
             this.textBoxUsunUzytkownikaPodajPesel.Location = new System.Drawing.Point(53, 34);
+            this.textBoxUsunUzytkownikaPodajPesel.MaxLength = 11;
             this.textBoxUsunUzytkownikaPodajPesel.Name = "textBoxUsunUzytkownikaPodajPesel";
             this.textBoxUsunUzytkownikaPodajPesel.Size = new System.Drawing.Size(100, 20);
             this.textBoxUsunUzytkownikaPodajPesel.TabIndex = 38;
+            this.textBoxUsunUzytkownikaPodajPesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsunUzytkownikaPodajPesel_KeyPress);
             // 
             // labelUsunUzytkownikaPodajPesel
             // 
             this.labelUsunUzytkownikaPodajPesel.AutoSize = true;
             this.labelUsunUzytkownikaPodajPesel.BackColor = System.Drawing.Color.Transparent;
             this.labelUsunUzytkownikaPodajPesel.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
+            this.labelUsunUzytkownikaPodajPesel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelUsunUzytkownikaPodajPesel.Location = new System.Drawing.Point(42, 8);
             this.labelUsunUzytkownikaPodajPesel.Name = "labelUsunUzytkownikaPodajPesel";
             this.labelUsunUzytkownikaPodajPesel.Size = new System.Drawing.Size(111, 23);
@@ -1027,6 +1035,7 @@
             this.checkBoxZaktualizujDaneCzyAdministrator.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
             this.checkBoxZaktualizujDaneCzyAdministrator.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxZaktualizujDaneCzyAdministrator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(94, 364);
             this.checkBoxZaktualizujDaneCzyAdministrator.Name = "checkBoxZaktualizujDaneCzyAdministrator";
             this.checkBoxZaktualizujDaneCzyAdministrator.Size = new System.Drawing.Size(93, 27);
@@ -1085,10 +1094,12 @@
             // 
             // textBoxZaktualizujDaneWyszukajPesel
             // 
+            this.textBoxZaktualizujDaneWyszukajPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(126, 48);
             this.textBoxZaktualizujDaneWyszukajPesel.Name = "textBoxZaktualizujDaneWyszukajPesel";
-            this.textBoxZaktualizujDaneWyszukajPesel.Size = new System.Drawing.Size(100, 21);
+            this.textBoxZaktualizujDaneWyszukajPesel.Size = new System.Drawing.Size(100, 24);
             this.textBoxZaktualizujDaneWyszukajPesel.TabIndex = 1;
+            this.textBoxZaktualizujDaneWyszukajPesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxZaktualizujDaneWyszukajPesel_KeyPress);
             // 
             // labelZaktualizujDanePodajPesel
             // 
@@ -1101,7 +1112,7 @@
             this.labelZaktualizujDanePodajPesel.TabIndex = 0;
             this.labelZaktualizujDanePodajPesel.Text = "Podaj pesel";
             // 
-            // Form1
+            // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1111,13 +1122,13 @@
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
+            this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
-            this.Controls.Add(this.panelZaktualizujDane);
-            this.Name = "Form1";
+            this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
@@ -1212,11 +1223,11 @@
         private System.Windows.Forms.Button buttonZaktualizujDaneZmienDane;
         private System.Windows.Forms.Button buttonUsunUzytkownikaUsunUzytkownika;
         private System.Windows.Forms.Button buttonUsunUzytkownikaCofnij;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelUsunUzytkownikaLogin;
+        private System.Windows.Forms.Label labelUsunUzytkownikaNrDowodu;
+        private System.Windows.Forms.Label labelUsunUzytkownikaPesel;
+        private System.Windows.Forms.Label labelUsunUzytkownikaNazwisko;
+        private System.Windows.Forms.Label labelUsunUzytkownikaImie;
         private System.Windows.Forms.TextBox textBoxUsunUzytkownikaLogin;
         private System.Windows.Forms.TextBox textBoxUsunUzytkownikaNrDowodu;
         private System.Windows.Forms.TextBox textBoxUsunUzytkownikaPesel;
