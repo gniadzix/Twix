@@ -40,10 +40,93 @@ namespace Twixv2
             //tu bedzie weryfikacji pelnoletnosci
         }
 
-        private void ustawieniapolaNrDowodu(TextBox poleNrDowodu, KeyPressEventArgs e)
+        private int wartoscZnaku(char litera)
         {
-            poleNrDowodu.MaxLength = 9;
-            //tutaj bedzie sprawdzenie poprawnosci nr dowodu
+            char[] wartosciLiter = new char[36];
+            wartosciLiter[0] = '0';
+            wartosciLiter[1] = '1';
+            wartosciLiter[2] = '2';
+            wartosciLiter[3] = '3';
+            wartosciLiter[4] = '4';
+            wartosciLiter[5] = '5';
+            wartosciLiter[6] = '6';
+            wartosciLiter[7] = '7';
+            wartosciLiter[8] = '8';
+            wartosciLiter[9] = '9';
+            wartosciLiter[10] = 'A';
+            wartosciLiter[11] = 'B';
+            wartosciLiter[12] = 'C';
+            wartosciLiter[13] = 'D';
+            wartosciLiter[14] = 'E';
+            wartosciLiter[15] = 'F';
+            wartosciLiter[16] = 'G';
+            wartosciLiter[17] = 'H';
+            wartosciLiter[18] = 'I';
+            wartosciLiter[19] = 'J';
+            wartosciLiter[20] = 'K';
+            wartosciLiter[21] = 'L';
+            wartosciLiter[22] = 'M';
+            wartosciLiter[23] = 'N';
+            wartosciLiter[24] = 'O';
+            wartosciLiter[25] = 'P';
+            wartosciLiter[26] = 'Q';
+            wartosciLiter[27] = 'R';
+            wartosciLiter[28] = 'S';
+            wartosciLiter[29] = 'T';
+            wartosciLiter[30] = 'U';
+            wartosciLiter[31] = 'V';
+            wartosciLiter[32] = 'W';
+            wartosciLiter[33] = 'X';
+            wartosciLiter[34] = 'Y';
+            wartosciLiter[35] = 'Z';
+            for (int i = 0; i < 36; i++)
+            {
+                if (wartosciLiter[i] == litera)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private bool sprawdzanieNrDowodu(TextBox poleNrDowodu)
+        {
+            int sumakontrolna;
+            string nrDowodu = poleNrDowodu.Text;
+            if (nrDowodu == "") return false;
+            char[] litery = new char[9];
+            litery = nrDowodu.ToCharArray();
+            for (int i = 0; i < 3; i++)
+            {
+                if (wartoscZnaku(litery[i]) < 10)
+                {
+                    return false;
+                }
+            }
+            for (int i = 3; i < 9; i++)
+            {
+                if (wartoscZnaku(litery[i]) < 0 || wartoscZnaku(litery[i]) > 9)
+                {
+                    return false;
+                }
+            }
+            sumakontrolna = 7 * wartoscZnaku(litery[0]);
+            sumakontrolna += 3 * wartoscZnaku(litery[1]);
+            sumakontrolna += 1 * wartoscZnaku(litery[2]);
+            sumakontrolna += 7 * wartoscZnaku(litery[4]);
+            sumakontrolna += 3 * wartoscZnaku(litery[5]);
+            sumakontrolna += 1 * wartoscZnaku(litery[6]);
+            sumakontrolna += 7 * wartoscZnaku(litery[7]);
+            sumakontrolna += 3 * wartoscZnaku(litery[8]);
+            sumakontrolna %= 10;
+            if (sumakontrolna != wartoscZnaku(litery[3]))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void ukrywaniePanelu(Panel doUkrycia)
@@ -408,6 +491,40 @@ namespace Twixv2
         private void textBoxZaktualizujDaneWyszukajPesel_KeyPress(object sender, KeyPressEventArgs e)
         {
             ustawieniapolaPesel(textBoxZaktualizujDaneWyszukajPesel, e);
+        }
+
+        private void textBoxDodajNrDowodu_Leave(object sender, EventArgs e)
+        {
+            if(sprawdzanieNrDowodu(textBoxDodajNrDowodu) == false)
+                {
+                    MessageBox.Show("Nieprawidłowy numer dowodu");
+                }
+        }
+
+        private void textBoxRejestracjaNrDowodu_Leave(object sender, EventArgs e)
+        {
+            if (sprawdzanieNrDowodu(textBoxRejestracjaNrDowodu) == false)
+            {
+                MessageBox.Show("Nieprawidłowy numer dowodu");
+            }
+        }
+
+        private void textBoxZaktualizujDaneNrDowodu_Leave(object sender, EventArgs e)
+        {
+            if (sprawdzanieNrDowodu(textBoxZaktualizujDaneNrDowodu) == false)
+            {
+                MessageBox.Show("Nieprawidłowy numer dowodu");
+            }
+        }
+
+        private void textBoxZaktualizujDaneNrDowodu_Click(object sender, EventArgs e)
+        {
+            textBoxZaktualizujDaneNrDowodu.Clear();
+        }
+
+        private void textBoxRejestracjaNrDowodu_Click(object sender, EventArgs e)
+        {
+            textBoxRejestracjaNrDowodu.Clear();
         }
     }
     }

@@ -433,6 +433,7 @@
             // 
             // textBoxDodajNrDowodu
             // 
+            this.textBoxDodajNrDowodu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDodajNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxDodajNrDowodu.Location = new System.Drawing.Point(40, 117);
             this.textBoxDodajNrDowodu.MaxLength = 9;
@@ -440,6 +441,7 @@
             this.textBoxDodajNrDowodu.Size = new System.Drawing.Size(120, 24);
             this.textBoxDodajNrDowodu.TabIndex = 4;
             this.textBoxDodajNrDowodu.Click += new System.EventHandler(this.textBoxDodajNrDowodu_Click);
+            this.textBoxDodajNrDowodu.Leave += new System.EventHandler(this.textBoxDodajNrDowodu_Leave);
             // 
             // textBoxDodajPesel
             // 
@@ -574,12 +576,15 @@
             // 
             // textBoxRejestracjaNrDowodu
             // 
+            this.textBoxRejestracjaNrDowodu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRejestracjaNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.textBoxRejestracjaNrDowodu.Location = new System.Drawing.Point(161, 103);
             this.textBoxRejestracjaNrDowodu.MaxLength = 9;
             this.textBoxRejestracjaNrDowodu.Name = "textBoxRejestracjaNrDowodu";
             this.textBoxRejestracjaNrDowodu.Size = new System.Drawing.Size(100, 24);
             this.textBoxRejestracjaNrDowodu.TabIndex = 9;
+            this.textBoxRejestracjaNrDowodu.Click += new System.EventHandler(this.textBoxRejestracjaNrDowodu_Click);
+            this.textBoxRejestracjaNrDowodu.Leave += new System.EventHandler(this.textBoxRejestracjaNrDowodu_Leave);
             // 
             // textBoxRejestracjaPesel
             // 
@@ -1045,6 +1050,7 @@
             // 
             // textBoxZaktualizujDaneNrDowodu
             // 
+            this.textBoxZaktualizujDaneNrDowodu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxZaktualizujDaneNrDowodu.Enabled = false;
             this.textBoxZaktualizujDaneNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(94, 228);
@@ -1052,6 +1058,8 @@
             this.textBoxZaktualizujDaneNrDowodu.Name = "textBoxZaktualizujDaneNrDowodu";
             this.textBoxZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDaneNrDowodu.TabIndex = 22;
+            this.textBoxZaktualizujDaneNrDowodu.Click += new System.EventHandler(this.textBoxZaktualizujDaneNrDowodu_Click);
+            this.textBoxZaktualizujDaneNrDowodu.Leave += new System.EventHandler(this.textBoxZaktualizujDaneNrDowodu_Leave);
             // 
             // textBoxZaktualizujDanePesel
             // 
@@ -1122,12 +1130,12 @@
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelPanelPracownika);
-            this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
+            this.Controls.Add(this.panelPanelPracownika);
+            this.Controls.Add(this.panelDodajUzytkownika);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
