@@ -17,7 +17,7 @@ namespace Twixv2
         private string haslo;
         private Nullable<int> ranga;
         private int czyAdmin;
-        private bool czyAdminBool = false;
+        public bool czyAdminBool = false;
 
         public bool pobranieDanych(string log, string has)
         {
@@ -32,12 +32,12 @@ namespace Twixv2
                 nrDowodu = klient.NR_DOWODU;
                 login = klient.LOGIN;
                 haslo = klient.HASLO;
-                /* ranga = klient.ID_RANGI;
-                 czyAdmin = Convert.ToByte(klient.czyADMIN);
-                 if (czyAdmin == 1)
-                 {
+                czyAdmin = klient.czyADMIN.GetValueOrDefault();
+                // ranga = klient.ID_RANGI;
+                if (czyAdmin == 1)
+                {
                      czyAdminBool = true;
-                 }*/
+                }
                 return true;
             }
             catch
@@ -81,12 +81,12 @@ namespace Twixv2
                 nrDowodu = klient.NR_DOWODU;
                 login = klient.LOGIN;
                 haslo = klient.HASLO;
-                /*ranga = klient.ID_RANGI;
-                czyAdmin = BitConverter.ToInt32(klient.czyADMIN); Convert.ToByte(klient.czyADMIN);
+                //ranga = klient.ID_RANGI;
+                czyAdmin = klient.czyADMIN.GetValueOrDefault();
                 if (czyAdmin == 1)
                 {
                      czyAdminBool = true;
-                }*/
+                }
                 return true;
             }
             catch
@@ -111,7 +111,7 @@ namespace Twixv2
             return dane;
         }
 
-        public bool zmianaDanych(string pes, string imPoZmianie, string naz, string nrDow, string pesPoZmianie, string log, string has)
+        public bool zmianaDanych(string pes, string imPoZmianie, string naz, string nrDow, string pesPoZmianie, string log, string has, bool czyAdm)
         {
             try
             {
@@ -123,13 +123,13 @@ namespace Twixv2
                 klient.NR_DOWODU = nrDow;
                 klient.LOGIN = log;
                 klient.HASLO = has;
-                /*if(czyAdm == true)
+                if(czyAdm == true)
                 {
-                    klient.czyADMIN = BitConverter.GetBytes(1);
+                    klient.czyADMIN = 1;
                 }
                 else
                 {
-                    klient.czyADMIN = BitConverter.GetBytes(0);
+                    klient.czyADMIN = 0;
                 }
                 //klient.ID_RANGI = ran;*/
                 encjaTwix.SaveChanges();
@@ -156,6 +156,29 @@ namespace Twixv2
                 return false;
             }
 
+        }
+
+        public bool wyloguj ()
+        {
+            try
+            {
+                id = 0;
+                imie = null;
+                nazwisko = null;
+                pesel = null;
+                nrDowodu = null;
+                login = null;
+                haslo = null;
+                ranga = null;
+                czyAdmin = 0;
+                czyAdminBool = false;
+                return true;
+            }
+
+            catch
+            {
+                return false;
+            }
         }
     
     }

@@ -118,13 +118,17 @@ namespace Twixv2
         {
             bool logowanie;
             logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text, textBoxLogowanieHaslo.Text);
-            if(logowanie == true)
+            if(logowanie == true && uzytkownik.czyAdminBool == true)
             {
                 pokazywaniePanelu(panelPanelPracownika);
             }
+            else if(logowanie == true && uzytkownik.czyAdminBool == false)
+            {
+                MessageBox.Show("Jesteś zwykłym userem!" + Environment.NewLine + "Spróbuj ponownie", "Logowanie");
+            }
             else
-            {  
-                MessageBox.Show("Login i/lub hasło niepoprawne!" + Environment.NewLine + "Spróbuj ponownie" , "Logowanie" );
+            {
+                MessageBox.Show("Login i/lub hasło niepoprawne!" + Environment.NewLine + "Spróbuj ponownie", "Logowanie");
             }
         }
 
@@ -315,7 +319,13 @@ namespace Twixv2
         private void buttonZaktualizujDaneZatwierdz_Click(object sender, EventArgs e)
         {
             KlientStrzelnicy uzytkownikZmiana = new KlientStrzelnicy();
-            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, textBoxZaktualizujDaneHaslo.Text) == true)
+            bool czyAdm = false;
+            if (checkBoxCzyAdmin.Checked)
+            {
+                czyAdm = true;
+            }
+            else czyAdm = false;
+            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, textBoxZaktualizujDaneHaslo.Text, czyAdm) == true)
             {
                 MessageBox.Show("Poprawnie zaktualizowano dane użytkownika", "Sukces");
                 textBoxZaktualizujDaneHaslo.Enabled = false;
