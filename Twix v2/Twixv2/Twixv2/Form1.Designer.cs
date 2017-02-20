@@ -1122,12 +1122,12 @@
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelZaktualizujDane);
-            this.Controls.Add(this.panelUsunUzytkownika);
-            this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
+            this.Controls.Add(this.panelZaktualizujDane);
+            this.Controls.Add(this.panelUsunUzytkownika);
+            this.Controls.Add(this.panelLogowanie);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);

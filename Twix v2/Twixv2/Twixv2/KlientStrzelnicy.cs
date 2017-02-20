@@ -58,6 +58,7 @@ namespace Twixv2
                 nowyUzytkownik.PESEL = pes;
                 nowyUzytkownik.LOGIN = log;
                 nowyUzytkownik.HASLO = has;
+                nowyUzytkownik.czyADMIN = 0;
                 encjaTwix.Twix_Klienci.Add(nowyUzytkownik);
                 encjaTwix.SaveChanges();
                 return true;
@@ -85,8 +86,9 @@ namespace Twixv2
                 czyAdmin = klient.czyADMIN.GetValueOrDefault();
                 if (czyAdmin == 1)
                 {
-                     czyAdminBool = true;
+                    czyAdminBool = true;
                 }
+                else czyAdminBool = false;
                 return true;
             }
             catch
@@ -176,6 +178,29 @@ namespace Twixv2
             }
 
             catch
+            {
+                return false;
+            }
+        }
+
+        public bool dodajUzytkownika(string imie, string nazwisko, string nrDowodu, string pesel, string login, string haslo, int czyAdmin)
+        {
+            try
+            {
+                Twix twixEncjaDodajUzytkownika = new Twix();
+                var nowyUzytkownik = new Twix_Klienci();
+                nowyUzytkownik.IMIE = imie;
+                nowyUzytkownik.NAZWISKO = nazwisko;
+                nowyUzytkownik.NR_DOWODU = nrDowodu;
+                nowyUzytkownik.PESEL = pesel;
+                nowyUzytkownik.LOGIN = login;
+                nowyUzytkownik.HASLO = haslo;
+                nowyUzytkownik.czyADMIN = czyAdmin;
+                twixEncjaDodajUzytkownika.Twix_Klienci.Add(nowyUzytkownik);
+                twixEncjaDodajUzytkownika.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
             {
                 return false;
             }

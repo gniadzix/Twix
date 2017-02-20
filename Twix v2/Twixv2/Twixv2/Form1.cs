@@ -19,8 +19,8 @@ namespace Twixv2
         public FormOknoGlowne()
         {
             InitializeComponent();
-            odtwarzacz = new SoundPlayer("GTA.wav");
-            odtwarzacz.PlayLooping();
+            //odtwarzacz = new SoundPlayer("GTA.wav");
+           // odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajUzytkownika);
@@ -167,23 +167,18 @@ namespace Twixv2
 
         private void buttonDodajUzytkownika_Click(object sender, EventArgs e)
         {
-            try
+            int czyAdm = 0;
+            if (checkBoxCzyAdmin.Checked == true)
             {
-                Twix twixEncjaDodajUzytkownika = new Twix();
-                var nowyUzytkownik = new Twix_Klienci();
-                nowyUzytkownik.IMIE = textBoxDodajImie.Text;
-                nowyUzytkownik.NAZWISKO = textBoxDodajNazwisko.Text;
-                nowyUzytkownik.NR_DOWODU = textBoxDodajNrDowodu.Text;
-                nowyUzytkownik.PESEL = textBoxDodajPesel.Text;
-                nowyUzytkownik.LOGIN = textBoxDodajLogin.Text;
-                nowyUzytkownik.HASLO = textBoxDodajHaslo.Text;               
-                twixEncjaDodajUzytkownika.Twix_Klienci.Add(nowyUzytkownik);
-                twixEncjaDodajUzytkownika.SaveChanges();
-                MessageBox.Show("+++DODANO+++");
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                czyAdm = 1;
+
             }
+            else czyAdm = 0;
+            if(uzytkownik.dodajUzytkownika(textBoxDodajImie.Text, textBoxDodajNazwisko.Text, textBoxDodajNrDowodu.Text, textBoxDodajPesel.Text, textBoxDodajLogin.Text, textBoxDodajHaslo.Text, czyAdm))
+            {
+                MessageBox.Show("+++DODANO+++");
+            }
+            else MessageBox.Show("Bład");
         }
 
         private void textBoxDodajImie_Click(object sender, EventArgs e)
@@ -264,6 +259,7 @@ namespace Twixv2
         {
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelPanelPracownika);
+            uzytkownik.wyloguj();
         }
 
         private void buttonUsunUzytkownikaCofnij_Click(object sender, EventArgs e)
@@ -302,13 +298,13 @@ namespace Twixv2
                 textBoxZaktualizujDaneLogin.Text = Convert.ToString(lista[5]);
                 textBoxZaktualizujDaneHaslo.Text = Convert.ToString(lista[6]);
                 textBoxZaktualizujDaneRanga.Text = Convert.ToString(lista[7]);
-                if (Convert.ToBoolean(lista[7]) == true)
+                if (Convert.ToBoolean(lista[8]) == true)
                 {
-                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = true;
+                    checkBoxZaktualizujDaneCzyAdministrator.Checked = true;
                 }
                 else
                 {
-                    checkBoxZaktualizujDaneCzyAdministrator.ThreeState = false;
+                    checkBoxZaktualizujDaneCzyAdministrator.Checked = false;
                 }
             }
             else
@@ -335,7 +331,7 @@ namespace Twixv2
         {
             KlientStrzelnicy uzytkownikZmiana = new KlientStrzelnicy();
             bool czyAdm = false;
-            if (checkBoxCzyAdmin.Checked)
+            if (checkBoxZaktualizujDaneCzyAdministrator.Checked)
             {
                 czyAdm = true;
             }
