@@ -8,15 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Twixv2
 {
-    public partial class Form1 : Form
+    public partial class FormOknoGlowne : Form
     {
+        private SoundPlayer odtwarzacz;
         KlientStrzelnicy uzytkownik = new KlientStrzelnicy();
-        public Form1()
+        public FormOknoGlowne()
         {
             InitializeComponent();
+            odtwarzacz = new SoundPlayer("GTA.wav");
+            odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajUzytkownika);
@@ -24,6 +28,24 @@ namespace Twixv2
             ukrywaniePanelu(panelUsunUzytkownika);
             ukrywaniePanelu(panelZaktualizujDane);
         }
+       
+        private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
+        {
+            polePesel.MaxLength = 11;
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                MessageBox.Show("Wprowadź tylko cyfry");
+                e.KeyChar = (char)0;
+            }
+            //tu bedzie weryfikacji pelnoletnosci
+        }
+
+        private void ustawieniapolaNrDowodu(TextBox poleNrDowodu, KeyPressEventArgs e)
+        {
+            poleNrDowodu.MaxLength = 9;
+            //tutaj bedzie sprawdzenie poprawnosci nr dowodu
+        }
+
         private void ukrywaniePanelu(Panel doUkrycia)
         {
             doUkrycia.Enabled = false;
@@ -74,6 +96,7 @@ namespace Twixv2
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
         {
+            odtwarzacz.Stop();
             Application.Exit();
         }
 
@@ -135,11 +158,7 @@ namespace Twixv2
 
         private void textBoxDodajPesel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < '0' || e.KeyChar > '9' )
-            {
-                MessageBox.Show("Wprowadź tylko cyfry");
-                e.KeyChar = (char)0;
-            }
+            ustawieniapolaPesel(textBoxDodajPesel, e);
         }
 
         private void buttonDodajUzytkownika_Click(object sender, EventArgs e)
@@ -196,12 +215,7 @@ namespace Twixv2
 
         private void textBoxRejestracjaPesel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textBoxRejestracjaPesel.MaxLength = 11;
-            if (e.KeyChar < '0' || e.KeyChar > '9' )
-            {
-                MessageBox.Show("Wprowadź tylko cyfry");
-                e.KeyChar = (char)0;
-            }
+            ustawieniapolaPesel(textBoxRejestracjaPesel, e);
         }
 
         private void textBoxDodajLogin_Leave(object sender, EventArgs e)
@@ -212,6 +226,7 @@ namespace Twixv2
                 MessageBox.Show("Login istnieje!");
             }
         }
+
 
         private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
         {
@@ -377,6 +392,16 @@ namespace Twixv2
         {
             ukrywaniePanelu(panelUsunUzytkownika);
             pokazywaniePanelu(panelPanelPracownika);
+        }
+
+        private void textBoxUsunUzytkownikaPodajPesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ustawieniapolaPesel(textBoxUsunUzytkownikaPesel, e);
+        }
+
+        private void textBoxZaktualizujDaneWyszukajPesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ustawieniapolaPesel(textBoxZaktualizujDaneWyszukajPesel, e);
         }
     }
     }
