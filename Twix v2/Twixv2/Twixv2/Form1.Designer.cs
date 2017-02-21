@@ -1035,6 +1035,7 @@
             this.textBoxZaktualizujDaneLogin.Name = "textBoxZaktualizujDaneLogin";
             this.textBoxZaktualizujDaneLogin.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDaneLogin.TabIndex = 24;
+            this.textBoxZaktualizujDaneLogin.Leave += new System.EventHandler(this.textBoxZaktualizujDaneLogin_Leave);
             // 
             // checkBoxZaktualizujDaneCzyAdministrator
             // 
@@ -1134,12 +1135,12 @@
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelZaktualizujDane);
-            this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
+            this.Controls.Add(this.panelZaktualizujDane);
+            this.Controls.Add(this.panelUsunUzytkownika);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);

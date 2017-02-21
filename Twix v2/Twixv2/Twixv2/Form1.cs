@@ -39,6 +39,16 @@ namespace Twixv2
             }
         }
 
+        private void sprawdzanieLoginu(TextBox login)
+        {
+            Twix twixWalidacjaLogin = new Twix();
+            if (twixWalidacjaLogin.Twix_Klienci.Any(o => o.LOGIN == login.Text))
+            {
+                MessageBox.Show("Login istnieje!");
+                login.Focus();
+            }
+        }
+
         public void czyPelnoletni (TextBox tekst)
         {
             DateTime data = DateTime.Now;
@@ -206,6 +216,7 @@ namespace Twixv2
         private void buttonOknoGlowneZaloguj_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelLogowanie);
+            textBoxLogowanieLogin.Focus();
         }
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
@@ -217,6 +228,7 @@ namespace Twixv2
         private void buttonOknoGlowneZarejestruj_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelRejestracja);
+            textBoxRejestracjaImie.Focus();
         }
 
         private void buttonRejestracjaWroc_Click(object sender, EventArgs e)
@@ -272,6 +284,7 @@ namespace Twixv2
         private void buttonDodajPracownika_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelDodajUzytkownika);
+            textBoxDodajImie.Focus();
         }
 
         private void textBoxDodajPesel_KeyPress(object sender, KeyPressEventArgs e)
@@ -333,21 +346,13 @@ namespace Twixv2
 
         private void textBoxDodajLogin_Leave(object sender, EventArgs e)
         {
-            Twix twixEncjaDodajUzytkownika = new Twix();
-            if (twixEncjaDodajUzytkownika.Twix_Klienci.Any(o => o.LOGIN == textBoxDodajLogin.Text))
-            {
-                MessageBox.Show("Login istnieje!");
-            }
+            sprawdzanieLoginu(textBoxDodajLogin);
         }
 
 
         private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
         {
-            Twix twixEncjaRejestracja = new Twix();
-            if (twixEncjaRejestracja.Twix_Klienci.Any(o => o.LOGIN == textBoxRejestracjaLogin.Text))
-            {
-                MessageBox.Show("Login zajęty :(");
-            }
+            sprawdzanieLoginu(textBoxRejestracjaLogin);
         }
 
         private void textBoxDodajHaslo_Click(object sender, EventArgs e)
@@ -384,12 +389,14 @@ namespace Twixv2
         private void buttonPanelPracownikaUsunUzytkownika_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelUsunUzytkownika);
+            textBoxUsunUzytkownikaPodajPesel.Focus();
         }
 
         private void buttonPanelPracownikaZmienDaneUzytkownika_Click(object sender, EventArgs e)
         {
             ukrywaniePanelu(panelPanelPracownika);
             pokazywaniePanelu(panelZaktualizujDane);
+            textBoxZaktualizujDaneWyszukajPesel.Focus();
         }
 
         private void buttonZaktualizujDaneWroc_Click(object sender, EventArgs e)
@@ -576,6 +583,11 @@ namespace Twixv2
         private void textBoxZaktualizujDanePesel_KeyPress(object sender, KeyPressEventArgs e)
         {
             ustawieniapolaPesel(textBoxZaktualizujDanePesel, e);
+        }
+
+        private void textBoxZaktualizujDaneLogin_Leave(object sender, EventArgs e)
+        {
+            sprawdzanieLoginu(textBoxZaktualizujDaneLogin);
         }
     }
     }
