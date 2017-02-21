@@ -37,7 +37,38 @@ namespace Twixv2
                 MessageBox.Show("Wprowadź tylko cyfry");
                 e.KeyChar = (char)0;
             }
-            //tu bedzie weryfikacji pelnoletnosci
+        }
+
+        public void czyPelnoletni (TextBox tekst)
+        {
+            DateTime data = DateTime.Now;
+            string dzien;
+            string miesiac;
+            string rok;
+            dzien = String.Format("{0:dd}", data);
+            miesiac = String.Format("{0:MM}", data);
+            rok = String.Format("{0:yyyy}", data);
+            string pesel = tekst.Text;
+            string rokPesel = pesel.Substring(0, 2);
+            string miesiacPesel = pesel.Substring(2, 2);
+            string dzienPesel = pesel.Substring(4, 2);
+            int intRokPesel = Int32.Parse(rokPesel);
+            int intMiesiacPesel = Int32.Parse(miesiacPesel);
+            int intDzienPesel = Int32.Parse(dzienPesel);
+            if (intMiesiacPesel > 20)
+            {
+                intRokPesel += 2000;
+                intMiesiacPesel = intMiesiacPesel - 20;
+            }
+            else
+            {
+                intRokPesel += 1900;
+            }
+            int rokDzis = Int32.Parse(rok);
+            int miesiacDzis = Int32.Parse(miesiac);
+            int dzienDzis = Int32.Parse(dzien);
+            int wiek = rokDzis - intRokPesel;
+            if ((wiek <= 18) && (intMiesiacPesel >= miesiacDzis) && (intDzienPesel > dzienDzis)) MessageBox.Show("Gówniarz");
         }
 
         private int wartoscZnaku(char litera)
@@ -525,6 +556,26 @@ namespace Twixv2
         private void textBoxRejestracjaNrDowodu_Click(object sender, EventArgs e)
         {
             textBoxRejestracjaNrDowodu.Clear();
+        }
+
+        private void textBoxRejestracjaPesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxRejestracjaPesel);
+        }
+
+        private void textBoxZaktualizujDanePesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxZaktualizujDanePesel);
+        }
+
+        private void textBoxDodajPesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxDodajPesel);
+        }
+
+        private void textBoxZaktualizujDanePesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ustawieniapolaPesel(textBoxZaktualizujDanePesel, e);
         }
     }
     }

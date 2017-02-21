@@ -453,6 +453,7 @@
             this.textBoxDodajPesel.TabIndex = 3;
             this.textBoxDodajPesel.Click += new System.EventHandler(this.textBoxDodajPesel_Click);
             this.textBoxDodajPesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDodajPesel_KeyPress);
+            this.textBoxDodajPesel.Leave += new System.EventHandler(this.textBoxDodajPesel_Leave);
             // 
             // textBoxDodajNazwisko
             // 
@@ -595,6 +596,7 @@
             this.textBoxRejestracjaPesel.Size = new System.Drawing.Size(100, 24);
             this.textBoxRejestracjaPesel.TabIndex = 8;
             this.textBoxRejestracjaPesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRejestracjaPesel_KeyPress);
+            this.textBoxRejestracjaPesel.Leave += new System.EventHandler(this.textBoxRejestracjaPesel_Leave);
             // 
             // textBoxRejestracjaNazwisko
             // 
@@ -1070,6 +1072,8 @@
             this.textBoxZaktualizujDanePesel.Name = "textBoxZaktualizujDanePesel";
             this.textBoxZaktualizujDanePesel.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDanePesel.TabIndex = 21;
+            this.textBoxZaktualizujDanePesel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxZaktualizujDanePesel_KeyPress);
+            this.textBoxZaktualizujDanePesel.Leave += new System.EventHandler(this.textBoxZaktualizujDanePesel_Leave);
             // 
             // textBoxZaktualizujDaneNazwisko
             // 
@@ -1130,12 +1134,12 @@
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
+            this.Controls.Add(this.panelRejestracja);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
