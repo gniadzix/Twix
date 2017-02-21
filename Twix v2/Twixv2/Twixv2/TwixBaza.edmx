@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TwixModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Twix_Bron_Amunicja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_BRONI" Type="int" Nullable="false" />
+          <Property Name="ID_AMUNICJI" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Twix_Klienci">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IMIE" Type="varchar" MaxLength="50" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="50" />
+          <Property Name="PESEL" Type="varchar" MaxLength="50" />
+          <Property Name="NR_DOWODU" Type="varchar" MaxLength="50" />
+          <Property Name="ID_RANGI" Type="int" />
+          <Property Name="LOGIN" Type="varchar" MaxLength="50" />
+          <Property Name="HASLO" Type="varchar" MaxLength="50" />
+          <Property Name="czyADMIN" Type="int" />
+          <Property Name="SUMAPKT" Type="int" />
+        </EntityType>
+        <EntityType Name="Twix_Rezerwacja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_KLIENTA" Type="int" />
+          <Property Name="DATA" Type="datetime" />
+          <Property Name="CZAS" Type="int" />
+          <Property Name="ID_TORU" Type="int" />
+        </EntityType>
+        <EntityType Name="Twix_Rezerwacja_Broni">
+          <Key>
+            <PropertyRef Name="ID_BRON_AMUNICJA" />
+            <PropertyRef Name="ID_REZERWACJI" />
+          </Key>
+          <Property Name="ID_BRON_AMUNICJA" Type="int" Nullable="false" />
+          <Property Name="ID_REZERWACJI" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Amunicji">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="KALIBER" Type="varchar" MaxLength="50" />
+          <Property Name="CENA" Type="money" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Broni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="50" />
+          <Property Name="CENA" Type="money" />
+          <Property Name="TYP" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Rangi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="50" />
+          <Property Name="SYMBOL" Type="image" />
+          <Property Name="ZNIZKA" Type="int" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Torow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Twix_Wyniki">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="WYNIK" Type="int" />
+          <Property Name="ID_KLIENTA" Type="int" />
+        </EntityType>
+        <Association Name="FK_ID_KLIENTA">
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="0..1" />
+          <End Role="Twix_Wyniki" Type="Self.Twix_Wyniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Klienci">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Wyniki">
+              <PropertyRef Name="ID_KLIENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_BronAmunicja_Twix_SL_Amunicji">
+          <End Role="Twix_SL_Amunicji" Type="Self.Twix_SL_Amunicji" Multiplicity="1" />
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Amunicji">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Bron_Amunicja">
+              <PropertyRef Name="ID_AMUNICJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_BronAmunicja_Twix_SL_Bron">
+          <End Role="Twix_SL_Broni" Type="Self.Twix_SL_Broni" Multiplicity="1" />
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Broni">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Bron_Amunicja">
+              <PropertyRef Name="ID_BRONI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Klienci_Twix_SL_Rangi">
+          <End Role="Twix_SL_Rangi" Type="Self.Twix_SL_Rangi" Multiplicity="0..1" />
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Rangi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Klienci">
+              <PropertyRef Name="ID_RANGI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Bron_Twix_Bron_Amunicja">
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="1" />
+          <End Role="Twix_Rezerwacja_Broni" Type="Self.Twix_Rezerwacja_Broni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Bron_Amunicja">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja_Broni">
+              <PropertyRef Name="ID_BRON_AMUNICJA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Bron_Twix_Rezerwacja">
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="1" />
+          <End Role="Twix_Rezerwacja_Broni" Type="Self.Twix_Rezerwacja_Broni" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Rezerwacja">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja_Broni">
+              <PropertyRef Name="ID_REZERWACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Twix_Klienci">
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="0..1" />
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Klienci">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja">
+              <PropertyRef Name="ID_KLIENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Twix_SL_Torow">
+          <End Role="Twix_SL_Torow" Type="Self.Twix_SL_Torow" Multiplicity="0..1" />
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Torow">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja">
+              <PropertyRef Name="ID_TORU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TwixModelStoreContainer">
+          <EntitySet Name="Twix_Bron_Amunicja" EntityType="Self.Twix_Bron_Amunicja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_Klienci" EntityType="Self.Twix_Klienci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_Rezerwacja" EntityType="Self.Twix_Rezerwacja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_Rezerwacja_Broni" EntityType="Self.Twix_Rezerwacja_Broni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_SL_Amunicji" EntityType="Self.Twix_SL_Amunicji" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_SL_Broni" EntityType="Self.Twix_SL_Broni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_SL_Rangi" EntityType="Self.Twix_SL_Rangi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_SL_Torow" EntityType="Self.Twix_SL_Torow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Twix_Wyniki" EntityType="Self.Twix_Wyniki" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ID_KLIENTA" Association="Self.FK_ID_KLIENTA">
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+            <End Role="Twix_Wyniki" EntitySet="Twix_Wyniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_BronAmunicja_Twix_SL_Amunicji" Association="Self.FK_Twix_BronAmunicja_Twix_SL_Amunicji">
+            <End Role="Twix_SL_Amunicji" EntitySet="Twix_SL_Amunicji" />
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_BronAmunicja_Twix_SL_Bron" Association="Self.FK_Twix_BronAmunicja_Twix_SL_Bron">
+            <End Role="Twix_SL_Broni" EntitySet="Twix_SL_Broni" />
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Klienci_Twix_SL_Rangi" Association="Self.FK_Twix_Klienci_Twix_SL_Rangi">
+            <End Role="Twix_SL_Rangi" EntitySet="Twix_SL_Rangi" />
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Bron_Twix_Bron_Amunicja" Association="Self.FK_Twix_Rezerwacja_Bron_Twix_Bron_Amunicja">
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+            <End Role="Twix_Rezerwacja_Broni" EntitySet="Twix_Rezerwacja_Broni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Bron_Twix_Rezerwacja" Association="Self.FK_Twix_Rezerwacja_Bron_Twix_Rezerwacja">
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+            <End Role="Twix_Rezerwacja_Broni" EntitySet="Twix_Rezerwacja_Broni" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Twix_Klienci" Association="Self.FK_Twix_Rezerwacja_Twix_Klienci">
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Twix_SL_Torow" Association="Self.FK_Twix_Rezerwacja_Twix_SL_Torow">
+            <End Role="Twix_SL_Torow" EntitySet="Twix_SL_Torow" />
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TwixModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Twix_Bron_Amunicja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_BRONI" Type="Int32" Nullable="false" />
+          <Property Name="ID_AMUNICJI" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Twix_SL_Amunicji" Relationship="Self.FK_Twix_BronAmunicja_Twix_SL_Amunicji" FromRole="Twix_Bron_Amunicja" ToRole="Twix_SL_Amunicji" />
+          <NavigationProperty Name="Twix_SL_Broni" Relationship="Self.FK_Twix_BronAmunicja_Twix_SL_Bron" FromRole="Twix_Bron_Amunicja" ToRole="Twix_SL_Broni" />
+          <NavigationProperty Name="Twix_Rezerwacja" Relationship="Self.Twix_Rezerwacja_Broni" FromRole="Twix_Bron_Amunicja" ToRole="Twix_Rezerwacja" />
+        </EntityType>
+        <EntityType Name="Twix_Klienci">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IMIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PESEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NR_DOWODU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_RANGI" Type="Int32" />
+          <Property Name="LOGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HASLO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="czyADMIN" Type="Int32" />
+          <Property Name="SUMAPKT" Type="Int32" />
+          <NavigationProperty Name="Twix_Wyniki" Relationship="Self.FK_ID_KLIENTA" FromRole="Twix_Klienci" ToRole="Twix_Wyniki" />
+          <NavigationProperty Name="Twix_SL_Rangi" Relationship="Self.FK_Twix_Klienci_Twix_SL_Rangi" FromRole="Twix_Klienci" ToRole="Twix_SL_Rangi" />
+          <NavigationProperty Name="Twix_Rezerwacja" Relationship="Self.FK_Twix_Rezerwacja_Twix_Klienci" FromRole="Twix_Klienci" ToRole="Twix_Rezerwacja" />
+        </EntityType>
+        <EntityType Name="Twix_Rezerwacja">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_KLIENTA" Type="Int32" />
+          <Property Name="DATA" Type="DateTime" Precision="3" />
+          <Property Name="CZAS" Type="Int32" />
+          <Property Name="ID_TORU" Type="Int32" />
+          <NavigationProperty Name="Twix_Klienci" Relationship="Self.FK_Twix_Rezerwacja_Twix_Klienci" FromRole="Twix_Rezerwacja" ToRole="Twix_Klienci" />
+          <NavigationProperty Name="Twix_SL_Torow" Relationship="Self.FK_Twix_Rezerwacja_Twix_SL_Torow" FromRole="Twix_Rezerwacja" ToRole="Twix_SL_Torow" />
+          <NavigationProperty Name="Twix_Bron_Amunicja" Relationship="Self.Twix_Rezerwacja_Broni" FromRole="Twix_Rezerwacja" ToRole="Twix_Bron_Amunicja" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Amunicji">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="KALIBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CENA" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Twix_Bron_Amunicja" Relationship="Self.FK_Twix_BronAmunicja_Twix_SL_Amunicji" FromRole="Twix_SL_Amunicji" ToRole="Twix_Bron_Amunicja" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Broni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CENA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TYP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Twix_Bron_Amunicja" Relationship="Self.FK_Twix_BronAmunicja_Twix_SL_Bron" FromRole="Twix_SL_Broni" ToRole="Twix_Bron_Amunicja" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Rangi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SYMBOL" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ZNIZKA" Type="Int32" />
+          <NavigationProperty Name="Twix_Klienci" Relationship="Self.FK_Twix_Klienci_Twix_SL_Rangi" FromRole="Twix_SL_Rangi" ToRole="Twix_Klienci" />
+        </EntityType>
+        <EntityType Name="Twix_SL_Torow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Twix_Rezerwacja" Relationship="Self.FK_Twix_Rezerwacja_Twix_SL_Torow" FromRole="Twix_SL_Torow" ToRole="Twix_Rezerwacja" />
+        </EntityType>
+        <EntityType Name="Twix_Wyniki">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="WYNIK" Type="Int32" />
+          <Property Name="ID_KLIENTA" Type="Int32" />
+          <NavigationProperty Name="Twix_Klienci" Relationship="Self.FK_ID_KLIENTA" FromRole="Twix_Wyniki" ToRole="Twix_Klienci" />
+        </EntityType>
+        <Association Name="FK_Twix_BronAmunicja_Twix_SL_Amunicji">
+          <End Role="Twix_SL_Amunicji" Type="Self.Twix_SL_Amunicji" Multiplicity="1" />
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Amunicji">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Bron_Amunicja">
+              <PropertyRef Name="ID_AMUNICJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_BronAmunicja_Twix_SL_Bron">
+          <End Role="Twix_SL_Broni" Type="Self.Twix_SL_Broni" Multiplicity="1" />
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Broni">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Bron_Amunicja">
+              <PropertyRef Name="ID_BRONI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ID_KLIENTA">
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="0..1" />
+          <End Role="Twix_Wyniki" Type="Self.Twix_Wyniki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Klienci">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Wyniki">
+              <PropertyRef Name="ID_KLIENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Klienci_Twix_SL_Rangi">
+          <End Role="Twix_SL_Rangi" Type="Self.Twix_SL_Rangi" Multiplicity="0..1" />
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Rangi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Klienci">
+              <PropertyRef Name="ID_RANGI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Twix_Klienci">
+          <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="0..1" />
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_Klienci">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja">
+              <PropertyRef Name="ID_KLIENTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Twix_Rezerwacja_Twix_SL_Torow">
+          <End Role="Twix_SL_Torow" Type="Self.Twix_SL_Torow" Multiplicity="0..1" />
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Twix_SL_Torow">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Twix_Rezerwacja">
+              <PropertyRef Name="ID_TORU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Twix_Rezerwacja_Broni">
+          <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
+          <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Twix" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Twix_Bron_Amunicja" EntityType="Self.Twix_Bron_Amunicja" />
+          <EntitySet Name="Twix_Klienci" EntityType="Self.Twix_Klienci" />
+          <EntitySet Name="Twix_Rezerwacja" EntityType="Self.Twix_Rezerwacja" />
+          <EntitySet Name="Twix_SL_Amunicji" EntityType="Self.Twix_SL_Amunicji" />
+          <EntitySet Name="Twix_SL_Broni" EntityType="Self.Twix_SL_Broni" />
+          <EntitySet Name="Twix_SL_Rangi" EntityType="Self.Twix_SL_Rangi" />
+          <EntitySet Name="Twix_SL_Torow" EntityType="Self.Twix_SL_Torow" />
+          <EntitySet Name="Twix_Wyniki" EntityType="Self.Twix_Wyniki" />
+          <AssociationSet Name="FK_Twix_BronAmunicja_Twix_SL_Amunicji" Association="Self.FK_Twix_BronAmunicja_Twix_SL_Amunicji">
+            <End Role="Twix_SL_Amunicji" EntitySet="Twix_SL_Amunicji" />
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_BronAmunicja_Twix_SL_Bron" Association="Self.FK_Twix_BronAmunicja_Twix_SL_Bron">
+            <End Role="Twix_SL_Broni" EntitySet="Twix_SL_Broni" />
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ID_KLIENTA" Association="Self.FK_ID_KLIENTA">
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+            <End Role="Twix_Wyniki" EntitySet="Twix_Wyniki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Klienci_Twix_SL_Rangi" Association="Self.FK_Twix_Klienci_Twix_SL_Rangi">
+            <End Role="Twix_SL_Rangi" EntitySet="Twix_SL_Rangi" />
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Twix_Klienci" Association="Self.FK_Twix_Rezerwacja_Twix_Klienci">
+            <End Role="Twix_Klienci" EntitySet="Twix_Klienci" />
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Twix_Rezerwacja_Twix_SL_Torow" Association="Self.FK_Twix_Rezerwacja_Twix_SL_Torow">
+            <End Role="Twix_SL_Torow" EntitySet="Twix_SL_Torow" />
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+          </AssociationSet>
+          <AssociationSet Name="Twix_Rezerwacja_Broni" Association="Self.Twix_Rezerwacja_Broni">
+            <End Role="Twix_Bron_Amunicja" EntitySet="Twix_Bron_Amunicja" />
+            <End Role="Twix_Rezerwacja" EntitySet="Twix_Rezerwacja" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TwixModelStoreContainer" CdmEntityContainer="Twix">
+          <EntitySetMapping Name="Twix_Bron_Amunicja">
+            <EntityTypeMapping TypeName="TwixModel.Twix_Bron_Amunicja">
+              <MappingFragment StoreEntitySet="Twix_Bron_Amunicja">
+                <ScalarProperty Name="ID_BRONI" ColumnName="ID_BRONI" />
+                <ScalarProperty Name="ID_AMUNICJI" ColumnName="ID_AMUNICJI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_Klienci">
+            <EntityTypeMapping TypeName="TwixModel.Twix_Klienci">
+              <MappingFragment StoreEntitySet="Twix_Klienci">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="NR_DOWODU" ColumnName="NR_DOWODU" />
+                <ScalarProperty Name="ID_RANGI" ColumnName="ID_RANGI" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+                <ScalarProperty Name="czyADMIN" ColumnName="czyADMIN" />
+                <ScalarProperty Name="SUMAPKT" ColumnName="SUMAPKT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_Rezerwacja">
+            <EntityTypeMapping TypeName="TwixModel.Twix_Rezerwacja">
+              <MappingFragment StoreEntitySet="Twix_Rezerwacja">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_KLIENTA" ColumnName="ID_KLIENTA" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="CZAS" ColumnName="CZAS" />
+                <ScalarProperty Name="ID_TORU" ColumnName="ID_TORU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_SL_Amunicji">
+            <EntityTypeMapping TypeName="TwixModel.Twix_SL_Amunicji">
+              <MappingFragment StoreEntitySet="Twix_SL_Amunicji">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KALIBER" ColumnName="KALIBER" />
+                <ScalarProperty Name="CENA" ColumnName="CENA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_SL_Broni">
+            <EntityTypeMapping TypeName="TwixModel.Twix_SL_Broni">
+              <MappingFragment StoreEntitySet="Twix_SL_Broni">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="CENA" ColumnName="CENA" />
+                <ScalarProperty Name="TYP" ColumnName="TYP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_SL_Rangi">
+            <EntityTypeMapping TypeName="TwixModel.Twix_SL_Rangi">
+              <MappingFragment StoreEntitySet="Twix_SL_Rangi">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
+                <ScalarProperty Name="ZNIZKA" ColumnName="ZNIZKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_SL_Torow">
+            <EntityTypeMapping TypeName="TwixModel.Twix_SL_Torow">
+              <MappingFragment StoreEntitySet="Twix_SL_Torow">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Twix_Wyniki">
+            <EntityTypeMapping TypeName="TwixModel.Twix_Wyniki">
+              <MappingFragment StoreEntitySet="Twix_Wyniki">
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WYNIK" ColumnName="WYNIK" />
+                <ScalarProperty Name="ID_KLIENTA" ColumnName="ID_KLIENTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Twix_Rezerwacja_Broni" TypeName="TwixModel.Twix_Rezerwacja_Broni" StoreEntitySet="Twix_Rezerwacja_Broni">
+            <EndProperty Name="Twix_Bron_Amunicja">
+              <ScalarProperty Name="ID" ColumnName="ID_BRON_AMUNICJA" />
+            </EndProperty>
+            <EndProperty Name="Twix_Rezerwacja">
+              <ScalarProperty Name="ID" ColumnName="ID_REZERWACJI" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
