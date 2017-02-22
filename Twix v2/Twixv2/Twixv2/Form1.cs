@@ -530,7 +530,7 @@ namespace Twixv2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sukces", "Dodano wynik", MessageBoxButtons.OK);
+            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
         }
 
         private void Wroc_Click(object sender, EventArgs e)
@@ -544,8 +544,6 @@ namespace Twixv2
 
         }
 
-      
-     
        
     }
     }

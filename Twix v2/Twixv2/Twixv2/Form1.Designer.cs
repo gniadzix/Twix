@@ -62,12 +62,6 @@
             this.buttonDodajUzytkownika = new System.Windows.Forms.Button();
             this.errorProviderLogowanie = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelRejestracja = new System.Windows.Forms.Panel();
-            this.panelDodajWynik = new System.Windows.Forms.Panel();
-            this.WybierzBron = new System.Windows.Forms.ComboBox();
-            this.WyszukajUzytkownika = new System.Windows.Forms.Button();
-            this.Wroc = new System.Windows.Forms.Button();
-            this.User = new System.Windows.Forms.TextBox();
-            this.Dodaj = new System.Windows.Forms.Button();
             this.buttonRejestracjaZarejestruj = new System.Windows.Forms.Button();
             this.textBoxRejestracjaPowtorzHaslo = new System.Windows.Forms.TextBox();
             this.labelRejestracjaPowtorzHaslo = new System.Windows.Forms.Label();
@@ -84,6 +78,12 @@
             this.labelRejestracjaNazwisko = new System.Windows.Forms.Label();
             this.labelRejestracjaImie = new System.Windows.Forms.Label();
             this.buttonRejestracjaWroc = new System.Windows.Forms.Button();
+            this.panelDodajWynik = new System.Windows.Forms.Panel();
+            this.WybierzBron = new System.Windows.Forms.ComboBox();
+            this.WyszukajUzytkownika = new System.Windows.Forms.Button();
+            this.Wroc = new System.Windows.Forms.Button();
+            this.User = new System.Windows.Forms.TextBox();
+            this.Dodaj = new System.Windows.Forms.Button();
             this.errorProviderRejestracjaHaslo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelUsunUzytkownika = new System.Windows.Forms.Panel();
             this.buttonUsunUzytkownikaUsunUzytkownika = new System.Windows.Forms.Button();
@@ -499,7 +499,6 @@
             // 
             this.panelRejestracja.BackgroundImage = global::Twixv2.Properties.Resources.Rejestracja_background;
             this.panelRejestracja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelRejestracja.Controls.Add(this.panelDodajWynik);
             this.panelRejestracja.Controls.Add(this.buttonRejestracjaZarejestruj);
             this.panelRejestracja.Controls.Add(this.textBoxRejestracjaPowtorzHaslo);
             this.panelRejestracja.Controls.Add(this.labelRejestracjaPowtorzHaslo);
@@ -520,74 +519,6 @@
             this.panelRejestracja.Name = "panelRejestracja";
             this.panelRejestracja.Size = new System.Drawing.Size(800, 600);
             this.panelRejestracja.TabIndex = 4;
-            // 
-            // panelDodajWynik
-            // 
-            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
-            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDodajWynik.Controls.Add(this.WybierzBron);
-            this.panelDodajWynik.Controls.Add(this.WyszukajUzytkownika);
-            this.panelDodajWynik.Controls.Add(this.Wroc);
-            this.panelDodajWynik.Controls.Add(this.User);
-            this.panelDodajWynik.Controls.Add(this.Dodaj);
-            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
-            this.panelDodajWynik.Name = "panelDodajWynik";
-            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
-            this.panelDodajWynik.TabIndex = 9;
-            // 
-            // WybierzBron
-            // 
-            this.WybierzBron.AutoCompleteCustomSource.AddRange(new string[] {
-            "AK47",
-            "CKM"});
-            this.WybierzBron.FormattingEnabled = true;
-            this.WybierzBron.Items.AddRange(new object[] {
-            "Wybierz Broń",
-            "CKM",
-            "AK47"});
-            this.WybierzBron.Location = new System.Drawing.Point(53, 208);
-            this.WybierzBron.Name = "WybierzBron";
-            this.WybierzBron.Size = new System.Drawing.Size(131, 21);
-            this.WybierzBron.TabIndex = 4;
-            this.WybierzBron.Text = "Wybierz Broń";
-            // 
-            // WyszukajUzytkownika
-            // 
-            this.WyszukajUzytkownika.Location = new System.Drawing.Point(53, 141);
-            this.WyszukajUzytkownika.Name = "WyszukajUzytkownika";
-            this.WyszukajUzytkownika.Size = new System.Drawing.Size(102, 25);
-            this.WyszukajUzytkownika.TabIndex = 3;
-            this.WyszukajUzytkownika.Text = "Wyszukaj";
-            this.WyszukajUzytkownika.UseVisualStyleBackColor = true;
-            // 
-            // Wroc
-            // 
-            this.Wroc.Location = new System.Drawing.Point(618, 484);
-            this.Wroc.Name = "Wroc";
-            this.Wroc.Size = new System.Drawing.Size(150, 43);
-            this.Wroc.TabIndex = 1;
-            this.Wroc.Text = "Wróć";
-            this.Wroc.UseVisualStyleBackColor = true;
-            this.Wroc.Click += new System.EventHandler(this.Wroc_Click);
-            // 
-            // User
-            // 
-            this.User.Location = new System.Drawing.Point(53, 79);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(131, 20);
-            this.User.TabIndex = 2;
-            this.User.Text = "Nazwa użytkownika";
-            this.User.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // Dodaj
-            // 
-            this.Dodaj.Location = new System.Drawing.Point(326, 271);
-            this.Dodaj.Name = "Dodaj";
-            this.Dodaj.Size = new System.Drawing.Size(144, 47);
-            this.Dodaj.TabIndex = 0;
-            this.Dodaj.Text = "Dodaj";
-            this.Dodaj.UseVisualStyleBackColor = true;
-            this.Dodaj.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonRejestracjaZarejestruj
             // 
@@ -754,6 +685,74 @@
             this.buttonRejestracjaWroc.TabIndex = 0;
             this.buttonRejestracjaWroc.UseVisualStyleBackColor = true;
             this.buttonRejestracjaWroc.Click += new System.EventHandler(this.buttonRejestracjaWroc_Click);
+            // 
+            // panelDodajWynik
+            // 
+            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
+            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDodajWynik.Controls.Add(this.WybierzBron);
+            this.panelDodajWynik.Controls.Add(this.WyszukajUzytkownika);
+            this.panelDodajWynik.Controls.Add(this.Wroc);
+            this.panelDodajWynik.Controls.Add(this.User);
+            this.panelDodajWynik.Controls.Add(this.Dodaj);
+            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
+            this.panelDodajWynik.Name = "panelDodajWynik";
+            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
+            this.panelDodajWynik.TabIndex = 9;
+            // 
+            // WybierzBron
+            // 
+            this.WybierzBron.AutoCompleteCustomSource.AddRange(new string[] {
+            "AK47",
+            "CKM"});
+            this.WybierzBron.FormattingEnabled = true;
+            this.WybierzBron.Items.AddRange(new object[] {
+            "Wybierz Broń",
+            "CKM",
+            "AK47"});
+            this.WybierzBron.Location = new System.Drawing.Point(53, 208);
+            this.WybierzBron.Name = "WybierzBron";
+            this.WybierzBron.Size = new System.Drawing.Size(131, 21);
+            this.WybierzBron.TabIndex = 4;
+            this.WybierzBron.Text = "Wybierz Broń";
+            // 
+            // WyszukajUzytkownika
+            // 
+            this.WyszukajUzytkownika.Location = new System.Drawing.Point(53, 141);
+            this.WyszukajUzytkownika.Name = "WyszukajUzytkownika";
+            this.WyszukajUzytkownika.Size = new System.Drawing.Size(102, 25);
+            this.WyszukajUzytkownika.TabIndex = 3;
+            this.WyszukajUzytkownika.Text = "Wyszukaj";
+            this.WyszukajUzytkownika.UseVisualStyleBackColor = true;
+            // 
+            // Wroc
+            // 
+            this.Wroc.Location = new System.Drawing.Point(618, 484);
+            this.Wroc.Name = "Wroc";
+            this.Wroc.Size = new System.Drawing.Size(150, 43);
+            this.Wroc.TabIndex = 1;
+            this.Wroc.Text = "Wróć";
+            this.Wroc.UseVisualStyleBackColor = true;
+            this.Wroc.Click += new System.EventHandler(this.Wroc_Click);
+            // 
+            // User
+            // 
+            this.User.Location = new System.Drawing.Point(53, 79);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(131, 20);
+            this.User.TabIndex = 2;
+            this.User.Text = "Nazwa użytkownika";
+            this.User.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // Dodaj
+            // 
+            this.Dodaj.Location = new System.Drawing.Point(326, 271);
+            this.Dodaj.Name = "Dodaj";
+            this.Dodaj.Size = new System.Drawing.Size(144, 47);
+            this.Dodaj.TabIndex = 0;
+            this.Dodaj.Text = "Dodaj";
+            this.Dodaj.UseVisualStyleBackColor = true;
+            this.Dodaj.Click += new System.EventHandler(this.button1_Click);
             // 
             // errorProviderRejestracjaHaslo
             // 
@@ -1209,6 +1208,7 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.panelDodajWynik);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
