@@ -194,6 +194,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DodajWynik_Background.jpg" />
+    <None Include="Resources\DodajWynik_Background_v2.jpg" />
     <Content Include="TwixBaza.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TwixBaza.edmx</DependentUpon>
