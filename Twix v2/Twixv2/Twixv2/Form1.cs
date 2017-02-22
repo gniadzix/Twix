@@ -604,6 +604,11 @@ namespace Twixv2
         {
             sprawdzanieLoginu(textBoxZaktualizujDaneLogin);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelDodajWynik);
+        }
     }
     }
 
