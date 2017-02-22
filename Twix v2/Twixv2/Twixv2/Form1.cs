@@ -21,13 +21,12 @@ namespace Twixv2
             InitializeComponent();
             //odtwarzacz = new SoundPlayer("GTA.wav");
            // odtwarzacz.PlayLooping();
-           ukrywaniePanelu(panelLogowanie);
-           ukrywaniePanelu(panelDodajWynik);
-           ukrywaniePanelu(panelRejestracja);
-           ukrywaniePanelu(panelDodajUzytkownika);
-           ukrywaniePanelu(panelPanelPracownika);
-           ukrywaniePanelu(panelUsunUzytkownika);
-           ukrywaniePanelu(panelZaktualizujDane);
+            ukrywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelRejestracja);
+            ukrywaniePanelu(panelDodajUzytkownika);
+            ukrywaniePanelu(panelPanelPracownika);
+            ukrywaniePanelu(panelUsunUzytkownika);
+            ukrywaniePanelu(panelZaktualizujDane);
         }
        
         private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
@@ -564,6 +563,31 @@ namespace Twixv2
         private void textBoxRejestracjaNrDowodu_Click(object sender, EventArgs e)
         {
             textBoxRejestracjaNrDowodu.Clear();
+        }
+
+        private void textBoxRejestracjaPesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxRejestracjaPesel);
+        }
+
+        private void textBoxZaktualizujDanePesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxZaktualizujDanePesel);
+        }
+
+        private void textBoxDodajPesel_Leave(object sender, EventArgs e)
+        {
+            czyPelnoletni(textBoxDodajPesel);
+        }
+
+        private void textBoxZaktualizujDanePesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ustawieniapolaPesel(textBoxZaktualizujDanePesel, e);
+        }
+
+        private void textBoxZaktualizujDaneLogin_Leave(object sender, EventArgs e)
+        {
+            sprawdzanieLoginu(textBoxZaktualizujDaneLogin);
         }
     }
     }
