@@ -59,26 +59,38 @@ namespace Twixv2
             miesiac = String.Format("{0:MM}", data);
             rok = String.Format("{0:yyyy}", data);
             string pesel = tekst.Text;
-            string rokPesel = pesel.Substring(0, 2);
-            string miesiacPesel = pesel.Substring(2, 2);
-            string dzienPesel = pesel.Substring(4, 2);
-            int intRokPesel = Int32.Parse(rokPesel);
-            int intMiesiacPesel = Int32.Parse(miesiacPesel);
-            int intDzienPesel = Int32.Parse(dzienPesel);
-            if (intMiesiacPesel > 20)
+            if (pesel == "")
             {
-                intRokPesel += 2000;
-                intMiesiacPesel = intMiesiacPesel - 20;
+                MessageBox.Show("Pole pesel nie może być puste");
+                tekst.Focus();
             }
             else
             {
-                intRokPesel += 1900;
+                string rokPesel = pesel.Substring(0, 2);
+                string miesiacPesel = pesel.Substring(2, 2);
+                string dzienPesel = pesel.Substring(4, 2);
+                int intRokPesel = Int32.Parse(rokPesel);
+                int intMiesiacPesel = Int32.Parse(miesiacPesel);
+                int intDzienPesel = Int32.Parse(dzienPesel);
+                if (intMiesiacPesel > 20)
+                {
+                    intRokPesel += 2000;
+                    intMiesiacPesel = intMiesiacPesel - 20;
+                }
+                else
+                {
+                    intRokPesel += 1900;
+                }
+                int rokDzis = Int32.Parse(rok);
+                int miesiacDzis = Int32.Parse(miesiac);
+                int dzienDzis = Int32.Parse(dzien);
+                int wiek = rokDzis - intRokPesel;
+                if ((wiek <= 18) && (intMiesiacPesel >= miesiacDzis) && (intDzienPesel > dzienDzis))
+                {
+                    MessageBox.Show("Gówniarz");
+                    tekst.Focus();
+                }
             }
-            int rokDzis = Int32.Parse(rok);
-            int miesiacDzis = Int32.Parse(miesiac);
-            int dzienDzis = Int32.Parse(dzien);
-            int wiek = rokDzis - intRokPesel;
-            if ((wiek <= 18) && (intMiesiacPesel >= miesiacDzis) && (intDzienPesel > dzienDzis)) MessageBox.Show("Gówniarz");
         }
 
         private int wartoscZnaku(char litera)
@@ -536,6 +548,7 @@ namespace Twixv2
             if(sprawdzanieNrDowodu(textBoxDodajNrDowodu) == false)
                 {
                     MessageBox.Show("Nieprawidłowy numer dowodu");
+                    textBoxDodajNrDowodu.Focus();
                 }
         }
 
@@ -544,6 +557,7 @@ namespace Twixv2
             if (sprawdzanieNrDowodu(textBoxRejestracjaNrDowodu) == false)
             {
                 MessageBox.Show("Nieprawidłowy numer dowodu");
+                textBoxRejestracjaNrDowodu.Focus();
             }
         }
 
@@ -552,6 +566,7 @@ namespace Twixv2
             if (sprawdzanieNrDowodu(textBoxZaktualizujDaneNrDowodu) == false)
             {
                 MessageBox.Show("Nieprawidłowy numer dowodu");
+                textBoxZaktualizujDaneNrDowodu.Focus();
             }
         }
 
