@@ -22,6 +22,7 @@ namespace Twixv2
             //odtwarzacz = new SoundPlayer("GTA.wav");
            // odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
+           // ukrywaniePanelu(panelDodajWynik);
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajUzytkownika);
             ukrywaniePanelu(panelPanelPracownika);
@@ -174,18 +175,23 @@ namespace Twixv2
 
         private void buttonOknoGlowneZaloguj_Click(object sender, EventArgs e)
         {
-            pokazywaniePanelu(panelLogowanie);
+           // pokazywaniePanelu(panelRejestracja);
+            pokazywaniePanelu(panelDodajWynik); 
+
+
         }
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
         {
-            odtwarzacz.Stop();
-            Application.Exit();
+            // odtwarzacz.Stop();
+            //Application.Exit();
+            pokazywaniePanelu(panelDodajWynik);
         }
 
         private void buttonOknoGlowneZarejestruj_Click(object sender, EventArgs e)
         {
-            pokazywaniePanelu(panelRejestracja);
+            //pokazywaniePanelu(panelRejestracja);
+            pokazywaniePanelu(panelDodajWynik);
         }
 
         private void buttonRejestracjaWroc_Click(object sender, EventArgs e)
@@ -525,6 +531,31 @@ namespace Twixv2
         private void textBoxRejestracjaNrDowodu_Click(object sender, EventArgs e)
         {
             textBoxRejestracjaNrDowodu.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sukces dodano wynik");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelDodajWynik);
+        }
+
+        private void panelDodajWynik_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(panelDodajWynik);
+        }
+
+        private void FormOknoGlowne_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }
