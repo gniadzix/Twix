@@ -63,6 +63,16 @@ namespace Twixv2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2017_02_02_at_18_34_31 {
+            get {
+                object obj = ResourceManager.GetObject("2017-02-02 at 18-34-31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_ZmienDane {
             get {
                 object obj = ResourceManager.GetObject("background_ZmienDane", resourceCulture);

@@ -609,6 +609,16 @@ namespace Twixv2
         {
             ukrywaniePanelu(panelDodajWynik);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(panelDodajWynik);
+        }
     }
     }
 
