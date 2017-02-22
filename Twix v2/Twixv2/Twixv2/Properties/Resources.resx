@@ -133,6 +133,12 @@
   <data name="button_zarejestruj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_zarejestruj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="button_zlikwidujklienta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_zlikwidujklienta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DodajWynik_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DodajWynik_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background_ZmienDane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_ZmienDane.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,7 +187,7 @@
   <data name="Zaloguj_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zaloguj_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_zlikwidujklienta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_zlikwidujklienta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DodajWynik_Background_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DodajWynik_Background_v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

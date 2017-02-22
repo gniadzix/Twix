@@ -21,12 +21,13 @@ namespace Twixv2
             InitializeComponent();
             //odtwarzacz = new SoundPlayer("GTA.wav");
            // odtwarzacz.PlayLooping();
-            ukrywaniePanelu(panelLogowanie);
-            ukrywaniePanelu(panelRejestracja);
-            ukrywaniePanelu(panelDodajUzytkownika);
-            ukrywaniePanelu(panelPanelPracownika);
-            ukrywaniePanelu(panelUsunUzytkownika);
-            ukrywaniePanelu(panelZaktualizujDane);
+           ukrywaniePanelu(panelLogowanie);
+           ukrywaniePanelu(panelDodajWynik);
+           ukrywaniePanelu(panelRejestracja);
+           ukrywaniePanelu(panelDodajUzytkownika);
+           ukrywaniePanelu(panelPanelPracownika);
+           ukrywaniePanelu(panelUsunUzytkownika);
+           ukrywaniePanelu(panelZaktualizujDane);
         }
        
         private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
@@ -526,6 +527,26 @@ namespace Twixv2
         {
             textBoxRejestracjaNrDowodu.Clear();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sukces", "Dodano wynik", MessageBoxButtons.OK);
+        }
+
+        private void Wroc_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelDodajWynik);
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      
+     
+       
     }
     }
 
