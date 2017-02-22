@@ -136,23 +136,26 @@
   <data name="button_zlikwidujklienta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_zlikwidujklienta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_zamknij" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_zamknij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button_zaloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_zaloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rejestracja_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rejestracja_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DodajWynik_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DodajWynik_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background_ZmienDane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_ZmienDane.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="button_zaloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_zaloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dodaj_uzytkownika_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dodaj_uzytkownika_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rejestracja_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rejestracja_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Home_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_zaakceptuj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_zaakceptuj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_dodaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_dodaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,11 @@
   <data name="button_wyloguj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_wyloguj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dodaj_uzytkownika_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dodaj_uzytkownika_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_delete_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_delete_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_wyszukaj" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_wyszukaj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,16 +181,13 @@
   <data name="button_cofnij" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_cofnij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_zaakceptuj" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_zaakceptuj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button_delete_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_delete_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_zamknij" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_zamknij.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Zaloguj_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Zaloguj_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2017-02-02 at 18-34-31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2017-02-02 at 18-34-31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DodajWynik_Background_v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DodajWynik_Background_v2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

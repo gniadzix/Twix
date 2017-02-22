@@ -22,7 +22,6 @@ namespace Twixv2
             //odtwarzacz = new SoundPlayer("GTA.wav");
            // odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
-           // ukrywaniePanelu(panelDodajWynik);
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajUzytkownika);
             ukrywaniePanelu(panelPanelPracownika);
@@ -38,7 +37,60 @@ namespace Twixv2
                 MessageBox.Show("Wprowadź tylko cyfry");
                 e.KeyChar = (char)0;
             }
-            //tu bedzie weryfikacji pelnoletnosci
+        }
+
+        private void sprawdzanieLoginu(TextBox login)
+        {
+            Twix twixWalidacjaLogin = new Twix();
+            if (twixWalidacjaLogin.Twix_Klienci.Any(o => o.LOGIN == login.Text))
+            {
+                MessageBox.Show("Login istnieje!");
+                login.Focus();
+            }
+        }
+
+        public void czyPelnoletni (TextBox tekst)
+        {
+            DateTime data = DateTime.Now;
+            string dzien;
+            string miesiac;
+            string rok;
+            dzien = String.Format("{0:dd}", data);
+            miesiac = String.Format("{0:MM}", data);
+            rok = String.Format("{0:yyyy}", data);
+            string pesel = tekst.Text;
+            if (pesel == "")
+            {
+                MessageBox.Show("Pole pesel nie może być puste");
+                tekst.Focus();
+            }
+            else
+            {
+                string rokPesel = pesel.Substring(0, 2);
+                string miesiacPesel = pesel.Substring(2, 2);
+                string dzienPesel = pesel.Substring(4, 2);
+                int intRokPesel = Int32.Parse(rokPesel);
+                int intMiesiacPesel = Int32.Parse(miesiacPesel);
+                int intDzienPesel = Int32.Parse(dzienPesel);
+                if (intMiesiacPesel > 20)
+                {
+                    intRokPesel += 2000;
+                    intMiesiacPesel = intMiesiacPesel - 20;
+                }
+                else
+                {
+                    intRokPesel += 1900;
+                }
+                int rokDzis = Int32.Parse(rok);
+                int miesiacDzis = Int32.Parse(miesiac);
+                int dzienDzis = Int32.Parse(dzien);
+                int wiek = rokDzis - intRokPesel;
+                if ((wiek <= 18) && (intMiesiacPesel >= miesiacDzis) && (intDzienPesel > dzienDzis))
+                {
+                    MessageBox.Show("Gówniarz");
+                    tekst.Focus();
+                }
+            }
         }
 
         private int wartoscZnaku(char litera)
@@ -175,23 +227,20 @@ namespace Twixv2
 
         private void buttonOknoGlowneZaloguj_Click(object sender, EventArgs e)
         {
-           // pokazywaniePanelu(panelRejestracja);
-            pokazywaniePanelu(panelDodajWynik); 
-
-
+            pokazywaniePanelu(panelLogowanie);
+            textBoxLogowanieLogin.Focus();
         }
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
         {
-            // odtwarzacz.Stop();
-            //Application.Exit();
-            pokazywaniePanelu(panelDodajWynik);
+            odtwarzacz.Stop();
+            Application.Exit();
         }
 
         private void buttonOknoGlowneZarejestruj_Click(object sender, EventArgs e)
         {
-            //pokazywaniePanelu(panelRejestracja);
-            pokazywaniePanelu(panelDodajWynik);
+            pokazywaniePanelu(panelRejestracja);
+            textBoxRejestracjaImie.Focus();
         }
 
         private void buttonRejestracjaWroc_Click(object sender, EventArgs e)
@@ -247,6 +296,7 @@ namespace Twixv2
         private void buttonDodajPracownika_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelDodajUzytkownika);
+            textBoxDodajImie.Focus();
         }
 
         private void textBoxDodajPesel_KeyPress(object sender, KeyPressEventArgs e)
@@ -308,21 +358,13 @@ namespace Twixv2
 
         private void textBoxDodajLogin_Leave(object sender, EventArgs e)
         {
-            Twix twixEncjaDodajUzytkownika = new Twix();
-            if (twixEncjaDodajUzytkownika.Twix_Klienci.Any(o => o.LOGIN == textBoxDodajLogin.Text))
-            {
-                MessageBox.Show("Login istnieje!");
-            }
+            sprawdzanieLoginu(textBoxDodajLogin);
         }
 
 
         private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
         {
-            Twix twixEncjaRejestracja = new Twix();
-            if (twixEncjaRejestracja.Twix_Klienci.Any(o => o.LOGIN == textBoxRejestracjaLogin.Text))
-            {
-                MessageBox.Show("Login zajęty :(");
-            }
+            sprawdzanieLoginu(textBoxRejestracjaLogin);
         }
 
         private void textBoxDodajHaslo_Click(object sender, EventArgs e)
@@ -359,12 +401,14 @@ namespace Twixv2
         private void buttonPanelPracownikaUsunUzytkownika_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelUsunUzytkownika);
+            textBoxUsunUzytkownikaPodajPesel.Focus();
         }
 
         private void buttonPanelPracownikaZmienDaneUzytkownika_Click(object sender, EventArgs e)
         {
             ukrywaniePanelu(panelPanelPracownika);
             pokazywaniePanelu(panelZaktualizujDane);
+            textBoxZaktualizujDaneWyszukajPesel.Focus();
         }
 
         private void buttonZaktualizujDaneWroc_Click(object sender, EventArgs e)
@@ -504,6 +548,7 @@ namespace Twixv2
             if(sprawdzanieNrDowodu(textBoxDodajNrDowodu) == false)
                 {
                     MessageBox.Show("Nieprawidłowy numer dowodu");
+                    textBoxDodajNrDowodu.Focus();
                 }
         }
 
@@ -512,6 +557,7 @@ namespace Twixv2
             if (sprawdzanieNrDowodu(textBoxRejestracjaNrDowodu) == false)
             {
                 MessageBox.Show("Nieprawidłowy numer dowodu");
+                textBoxRejestracjaNrDowodu.Focus();
             }
         }
 
@@ -520,6 +566,7 @@ namespace Twixv2
             if (sprawdzanieNrDowodu(textBoxZaktualizujDaneNrDowodu) == false)
             {
                 MessageBox.Show("Nieprawidłowy numer dowodu");
+                textBoxZaktualizujDaneNrDowodu.Focus();
             }
         }
 
@@ -533,29 +580,44 @@ namespace Twixv2
             textBoxRejestracjaNrDowodu.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBoxRejestracjaPesel_Leave(object sender, EventArgs e)
         {
-            MessageBox.Show("Sukces dodano wynik");
+            czyPelnoletni(textBoxRejestracjaPesel);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textBoxZaktualizujDanePesel_Leave(object sender, EventArgs e)
         {
-            ukrywaniePanelu(panelDodajWynik);
+            czyPelnoletni(textBoxZaktualizujDanePesel);
         }
 
-        private void panelDodajWynik_Paint(object sender, PaintEventArgs e)
+        private void textBoxDodajPesel_Leave(object sender, EventArgs e)
         {
+            czyPelnoletni(textBoxDodajPesel);
+        }
 
+        private void textBoxZaktualizujDanePesel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ustawieniapolaPesel(textBoxZaktualizujDanePesel, e);
+        }
+
+        private void textBoxZaktualizujDaneLogin_Leave(object sender, EventArgs e)
+        {
+            sprawdzanieLoginu(textBoxZaktualizujDaneLogin);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pokazywaniePanelu(panelDodajWynik);
+            ukrywaniePanelu(panelDodajWynik);
         }
 
-        private void FormOknoGlowne_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(panelDodajWynik);
         }
     }
     }

@@ -200,7 +200,7 @@ namespace Twixv2
                 twixEncjaDodajUzytkownika.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
