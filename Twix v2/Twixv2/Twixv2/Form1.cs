@@ -620,6 +620,11 @@ namespace Twixv2
         {
             pokazywaniePanelu(panelDodajWynik);
         }
+
+        private void panelRezerwacjaTerminu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     }
 

@@ -41,6 +41,13 @@
             this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
             this.panelPanelPracownika = new System.Windows.Forms.Panel();
+            this.panelDodajWynik = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaWyloguj = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaUsunUzytkownika = new System.Windows.Forms.Button();
@@ -117,23 +124,24 @@
             this.buttonZaktualizujDaneWyszukaj = new System.Windows.Forms.Button();
             this.textBoxZaktualizujDaneWyszukajPesel = new System.Windows.Forms.TextBox();
             this.labelZaktualizujDanePodajPesel = new System.Windows.Forms.Label();
-            this.panelDodajWynik = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panelRezerwacjaTerminu = new System.Windows.Forms.Panel();
+            this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
+            this.comboBoxTor = new System.Windows.Forms.ComboBox();
+            this.comboBoxCzas = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonRezerwuj = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
+            this.panelDodajWynik.SuspendLayout();
             this.panelDodajUzytkownika.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).BeginInit();
             this.panelRejestracja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaHaslo)).BeginInit();
             this.panelUsunUzytkownika.SuspendLayout();
             this.panelZaktualizujDane.SuspendLayout();
-            this.panelDodajWynik.SuspendLayout();
+            this.panelRezerwacjaTerminu.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -273,6 +281,83 @@
             this.panelPanelPracownika.Name = "panelPanelPracownika";
             this.panelPanelPracownika.Size = new System.Drawing.Size(800, 600);
             this.panelPanelPracownika.TabIndex = 6;
+            // 
+            // panelDodajWynik
+            // 
+            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
+            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDodajWynik.Controls.Add(this.button3);
+            this.panelDodajWynik.Controls.Add(this.comboBox1);
+            this.panelDodajWynik.Controls.Add(this.textBox1);
+            this.panelDodajWynik.Controls.Add(this.button2);
+            this.panelDodajWynik.Controls.Add(this.button1);
+            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
+            this.panelDodajWynik.Name = "panelDodajWynik";
+            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
+            this.panelDodajWynik.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(581, 488);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 33);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Wróć";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(66, 215);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(156, 24);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "Wybierz Broń";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.HideSelection = false;
+            this.textBox1.Location = new System.Drawing.Point(66, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 23);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Nazwa użytkownika";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(66, 153);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 34);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Wyszukaj";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(324, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 38);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(18, 240);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(159, 40);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Dodaj wynik";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // buttonPanelPracownikaZmienDaneUzytkownika
             // 
@@ -1135,82 +1220,79 @@
             this.labelZaktualizujDanePodajPesel.TabIndex = 0;
             this.labelZaktualizujDanePodajPesel.Text = "Podaj pesel";
             // 
-            // panelDodajWynik
+            // panelRezerwacjaTerminu
             // 
-            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
-            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDodajWynik.Controls.Add(this.button3);
-            this.panelDodajWynik.Controls.Add(this.comboBox1);
-            this.panelDodajWynik.Controls.Add(this.textBox1);
-            this.panelDodajWynik.Controls.Add(this.button2);
-            this.panelDodajWynik.Controls.Add(this.button1);
-            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
-            this.panelDodajWynik.Name = "panelDodajWynik";
-            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
-            this.panelDodajWynik.TabIndex = 9;
+            this.panelRezerwacjaTerminu.Controls.Add(this.label1);
+            this.panelRezerwacjaTerminu.Controls.Add(this.buttonRezerwuj);
+            this.panelRezerwacjaTerminu.Controls.Add(this.dateTimePicker1);
+            this.panelRezerwacjaTerminu.Controls.Add(this.comboBoxCzas);
+            this.panelRezerwacjaTerminu.Controls.Add(this.comboBoxTor);
+            this.panelRezerwacjaTerminu.Controls.Add(this.comboBoxWolneTerminy);
+            this.panelRezerwacjaTerminu.Location = new System.Drawing.Point(0, 0);
+            this.panelRezerwacjaTerminu.Name = "panelRezerwacjaTerminu";
+            this.panelRezerwacjaTerminu.Size = new System.Drawing.Size(800, 600);
+            this.panelRezerwacjaTerminu.TabIndex = 9;
+            this.panelRezerwacjaTerminu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRezerwacjaTerminu_Paint);
             // 
-            // button3
+            // comboBoxWolneTerminy
             // 
-            this.button3.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(581, 488);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 33);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Wróć";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.comboBoxWolneTerminy.AutoCompleteCustomSource.AddRange(new string[] {
+            "Wolne terminy"});
+            this.comboBoxWolneTerminy.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxWolneTerminy.FormattingEnabled = true;
+            this.comboBoxWolneTerminy.Location = new System.Drawing.Point(32, 91);
+            this.comboBoxWolneTerminy.Name = "comboBoxWolneTerminy";
+            this.comboBoxWolneTerminy.Size = new System.Drawing.Size(137, 24);
+            this.comboBoxWolneTerminy.TabIndex = 0;
+            this.comboBoxWolneTerminy.Text = "Wolne terminy";
             // 
-            // comboBox1
+            // comboBoxTor
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 215);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 24);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "Wybierz Broń";
+            this.comboBoxTor.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxTor.FormattingEnabled = true;
+            this.comboBoxTor.Location = new System.Drawing.Point(258, 91);
+            this.comboBoxTor.Name = "comboBoxTor";
+            this.comboBoxTor.Size = new System.Drawing.Size(134, 24);
+            this.comboBoxTor.TabIndex = 1;
+            this.comboBoxTor.Text = "Tor";
+            this.comboBoxTor.UseWaitCursor = true;
             // 
-            // textBox1
+            // comboBoxCzas
             // 
-            this.textBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(66, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Nazwa użytkownika";
+            this.comboBoxCzas.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxCzas.FormattingEnabled = true;
+            this.comboBoxCzas.Location = new System.Drawing.Point(492, 93);
+            this.comboBoxCzas.Name = "comboBoxCzas";
+            this.comboBoxCzas.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCzas.TabIndex = 2;
+            this.comboBoxCzas.Text = "Czas";
             // 
-            // button2
+            // dateTimePicker1
             // 
-            this.button2.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(66, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Wyszukaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(32, 260);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 4;
             // 
-            // button1
+            // buttonRezerwuj
             // 
-            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(324, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRezerwuj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRezerwuj.Location = new System.Drawing.Point(316, 344);
+            this.buttonRezerwuj.Name = "buttonRezerwuj";
+            this.buttonRezerwuj.Size = new System.Drawing.Size(75, 23);
+            this.buttonRezerwuj.TabIndex = 5;
+            this.buttonRezerwuj.Text = "Rezerwuj";
+            this.buttonRezerwuj.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // label1
             // 
-            this.button4.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(18, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Dodaj wynik";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(32, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Wybierz inną datę";
             // 
             // FormOknoGlowne
             // 
@@ -1218,7 +1300,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.panelRezerwacjaTerminu);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
@@ -1233,6 +1316,8 @@
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             this.panelPanelPracownika.ResumeLayout(false);
+            this.panelDodajWynik.ResumeLayout(false);
+            this.panelDodajWynik.PerformLayout();
             this.panelDodajUzytkownika.ResumeLayout(false);
             this.panelDodajUzytkownika.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).EndInit();
@@ -1243,8 +1328,8 @@
             this.panelUsunUzytkownika.PerformLayout();
             this.panelZaktualizujDane.ResumeLayout(false);
             this.panelZaktualizujDane.PerformLayout();
-            this.panelDodajWynik.ResumeLayout(false);
-            this.panelDodajWynik.PerformLayout();
+            this.panelRezerwacjaTerminu.ResumeLayout(false);
+            this.panelRezerwacjaTerminu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1345,6 +1430,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panelRezerwacjaTerminu;
+        private System.Windows.Forms.ComboBox comboBoxTor;
+        private System.Windows.Forms.ComboBox comboBoxWolneTerminy;
+        private System.Windows.Forms.Button buttonRezerwuj;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBoxCzas;
+        private System.Windows.Forms.Label label1;
     }
 }
 
