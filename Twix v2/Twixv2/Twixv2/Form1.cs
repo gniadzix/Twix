@@ -22,6 +22,7 @@ namespace Twixv2
             //odtwarzacz = new SoundPlayer("GTA.wav");
            // odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelRezerwacjaTerminu);
             ukrywaniePanelu(panelRejestracja);
             ukrywaniePanelu(panelDodajWynik);
             ukrywaniePanelu(panelDodajUzytkownika);
