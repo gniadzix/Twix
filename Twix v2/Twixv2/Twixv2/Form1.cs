@@ -29,6 +29,7 @@ namespace Twixv2
             ukrywaniePanelu(panelPanelPracownika);
             ukrywaniePanelu(panelUsunUzytkownika);
             ukrywaniePanelu(panelZaktualizujDane);
+            ukrywaniePanelu(panelDodajWynik);
         }
        
         private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
