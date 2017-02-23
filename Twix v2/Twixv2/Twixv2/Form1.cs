@@ -23,6 +23,7 @@ namespace Twixv2
            // odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelRejestracja);
+            ukrywaniePanelu(panelDodajWynik);
             ukrywaniePanelu(panelDodajUzytkownika);
             ukrywaniePanelu(panelPanelPracownika);
             ukrywaniePanelu(panelUsunUzytkownika);
@@ -233,7 +234,7 @@ namespace Twixv2
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
         {
-            odtwarzacz.Stop();
+          //  odtwarzacz.Stop();
             Application.Exit();
         }
 
