@@ -608,17 +608,9 @@ namespace Twixv2
             sprawdzanieLoginu(textBoxZaktualizujDaneLogin);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ukrywaniePanelu(panelDodajWynik);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+      
+       
+        private void buttonDodajWynik_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelDodajWynik);
         }
@@ -626,6 +618,32 @@ namespace Twixv2
         private void panelRezerwacjaTerminu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+
+        private void buttonDodajWynikDodaj_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
+        }
+
+        private void buttonDodajWynikWroc_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelDodajWynik);
+        }
+
+        private void buttonUzytkownikRezerwacjaTerminu_Click(object sender, EventArgs e)
+        {
+            pokazywaniePanelu(PanelUzytkownika);
+        }
+
+        private void buttonRezerwacjaTerminuWroc_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelRezerwacjaTerminu);
+        }
+
+        private void buttonUzytkownikWyloguj_Click(object sender, EventArgs e)
+        {
+            uzytkownik.wyloguj();
         }
     }
     }

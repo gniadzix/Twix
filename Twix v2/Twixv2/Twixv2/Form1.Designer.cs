@@ -41,13 +41,6 @@
             this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
             this.panelPanelPracownika = new System.Windows.Forms.Panel();
-            this.panelDodajWynik = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaWyloguj = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaUsunUzytkownika = new System.Windows.Forms.Button();
@@ -125,16 +118,30 @@
             this.textBoxZaktualizujDaneWyszukajPesel = new System.Windows.Forms.TextBox();
             this.labelZaktualizujDanePodajPesel = new System.Windows.Forms.Label();
             this.panelRezerwacjaTerminu = new System.Windows.Forms.Panel();
-            this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
-            this.comboBoxTor = new System.Windows.Forms.ComboBox();
-            this.comboBoxCzas = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.buttonRezerwuj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRezerwuj = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxCzas = new System.Windows.Forms.ComboBox();
+            this.comboBoxTor = new System.Windows.Forms.ComboBox();
+            this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
+            this.panelDodajWynik = new System.Windows.Forms.Panel();
+            this.comboBoxDodajWynikWbierzBron = new System.Windows.Forms.ComboBox();
+            this.textBoxDodajWynikNazwaUzytkownika = new System.Windows.Forms.TextBox();
+            this.buttonDodajWynikWyszukaj = new System.Windows.Forms.Button();
+            this.panelUzytkownika = new System.Windows.Forms.Panel();
+            this.buttonDodajWynik = new System.Windows.Forms.Button();
+            this.buttonDodajWynikDodaj = new System.Windows.Forms.Button();
+            this.buttonDodajWynikWroc = new System.Windows.Forms.Button();
+            this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
+            this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
+            this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.buttonRezerwacjaTerminuWroc = new System.Windows.Forms.Button();
+            this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
-            this.panelDodajWynik.SuspendLayout();
             this.panelDodajUzytkownika.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).BeginInit();
             this.panelRejestracja.SuspendLayout();
@@ -142,6 +149,8 @@
             this.panelUsunUzytkownika.SuspendLayout();
             this.panelZaktualizujDane.SuspendLayout();
             this.panelRezerwacjaTerminu.SuspendLayout();
+            this.panelDodajWynik.SuspendLayout();
+            this.panelUzytkownika.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -271,8 +280,7 @@
             // 
             this.panelPanelPracownika.BackgroundImage = global::Twixv2.Properties.Resources.PanelPracownika_background;
             this.panelPanelPracownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPanelPracownika.Controls.Add(this.panelDodajWynik);
-            this.panelPanelPracownika.Controls.Add(this.button4);
+            this.panelPanelPracownika.Controls.Add(this.buttonDodajWynik);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaZmienDaneUzytkownika);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaWyloguj);
             this.panelPanelPracownika.Controls.Add(this.buttonPanelPracownikaUsunUzytkownika);
@@ -281,83 +289,6 @@
             this.panelPanelPracownika.Name = "panelPanelPracownika";
             this.panelPanelPracownika.Size = new System.Drawing.Size(800, 600);
             this.panelPanelPracownika.TabIndex = 6;
-            // 
-            // panelDodajWynik
-            // 
-            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
-            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDodajWynik.Controls.Add(this.button3);
-            this.panelDodajWynik.Controls.Add(this.comboBox1);
-            this.panelDodajWynik.Controls.Add(this.textBox1);
-            this.panelDodajWynik.Controls.Add(this.button2);
-            this.panelDodajWynik.Controls.Add(this.button1);
-            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
-            this.panelDodajWynik.Name = "panelDodajWynik";
-            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
-            this.panelDodajWynik.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(581, 488);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 33);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Wróć";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 215);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 24);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "Wybierz Broń";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(66, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Nazwa użytkownika";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(66, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Wyszukaj";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(324, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(18, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Dodaj wynik";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // buttonPanelPracownikaZmienDaneUzytkownika
             // 
@@ -1222,6 +1153,7 @@
             // 
             // panelRezerwacjaTerminu
             // 
+            this.panelRezerwacjaTerminu.Controls.Add(this.buttonRezerwacjaTerminuWroc);
             this.panelRezerwacjaTerminu.Controls.Add(this.label1);
             this.panelRezerwacjaTerminu.Controls.Add(this.buttonRezerwuj);
             this.panelRezerwacjaTerminu.Controls.Add(this.dateTimePicker1);
@@ -1233,6 +1165,54 @@
             this.panelRezerwacjaTerminu.Size = new System.Drawing.Size(800, 600);
             this.panelRezerwacjaTerminu.TabIndex = 9;
             this.panelRezerwacjaTerminu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRezerwacjaTerminu_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(32, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Wybierz inną datę";
+            // 
+            // buttonRezerwuj
+            // 
+            this.buttonRezerwuj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRezerwuj.Location = new System.Drawing.Point(316, 344);
+            this.buttonRezerwuj.Name = "buttonRezerwuj";
+            this.buttonRezerwuj.Size = new System.Drawing.Size(75, 23);
+            this.buttonRezerwuj.TabIndex = 5;
+            this.buttonRezerwuj.Text = "Rezerwuj";
+            this.buttonRezerwuj.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(32, 260);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // comboBoxCzas
+            // 
+            this.comboBoxCzas.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxCzas.FormattingEnabled = true;
+            this.comboBoxCzas.Location = new System.Drawing.Point(492, 93);
+            this.comboBoxCzas.Name = "comboBoxCzas";
+            this.comboBoxCzas.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCzas.TabIndex = 2;
+            this.comboBoxCzas.Text = "Czas";
+            // 
+            // comboBoxTor
+            // 
+            this.comboBoxTor.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxTor.FormattingEnabled = true;
+            this.comboBoxTor.Location = new System.Drawing.Point(258, 91);
+            this.comboBoxTor.Name = "comboBoxTor";
+            this.comboBoxTor.Size = new System.Drawing.Size(134, 24);
+            this.comboBoxTor.TabIndex = 1;
+            this.comboBoxTor.Text = "Tor";
+            this.comboBoxTor.UseWaitCursor = true;
             // 
             // comboBoxWolneTerminy
             // 
@@ -1246,53 +1226,162 @@
             this.comboBoxWolneTerminy.TabIndex = 0;
             this.comboBoxWolneTerminy.Text = "Wolne terminy";
             // 
-            // comboBoxTor
+            // panelDodajWynik
             // 
-            this.comboBoxTor.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxTor.FormattingEnabled = true;
-            this.comboBoxTor.Location = new System.Drawing.Point(258, 91);
-            this.comboBoxTor.Name = "comboBoxTor";
-            this.comboBoxTor.Size = new System.Drawing.Size(134, 24);
-            this.comboBoxTor.TabIndex = 1;
-            this.comboBoxTor.Text = "Tor";
-            this.comboBoxTor.UseWaitCursor = true;
+            this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
+            this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDodajWynik.Controls.Add(this.buttonDodajWynikWroc);
+            this.panelDodajWynik.Controls.Add(this.buttonDodajWynikDodaj);
+            this.panelDodajWynik.Controls.Add(this.comboBoxDodajWynikWbierzBron);
+            this.panelDodajWynik.Controls.Add(this.textBoxDodajWynikNazwaUzytkownika);
+            this.panelDodajWynik.Controls.Add(this.buttonDodajWynikWyszukaj);
+            this.panelDodajWynik.Location = new System.Drawing.Point(0, 0);
+            this.panelDodajWynik.Name = "panelDodajWynik";
+            this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
+            this.panelDodajWynik.TabIndex = 10;
             // 
-            // comboBoxCzas
+            // comboBoxDodajWynikWbierzBron
             // 
-            this.comboBoxCzas.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxCzas.FormattingEnabled = true;
-            this.comboBoxCzas.Location = new System.Drawing.Point(492, 93);
-            this.comboBoxCzas.Name = "comboBoxCzas";
-            this.comboBoxCzas.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxCzas.TabIndex = 2;
-            this.comboBoxCzas.Text = "Czas";
+            this.comboBoxDodajWynikWbierzBron.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxDodajWynikWbierzBron.FormattingEnabled = true;
+            this.comboBoxDodajWynikWbierzBron.Location = new System.Drawing.Point(62, 221);
+            this.comboBoxDodajWynikWbierzBron.Name = "comboBoxDodajWynikWbierzBron";
+            this.comboBoxDodajWynikWbierzBron.Size = new System.Drawing.Size(156, 24);
+            this.comboBoxDodajWynikWbierzBron.TabIndex = 5;
+            this.comboBoxDodajWynikWbierzBron.Text = "Wybierz Broń";
             // 
-            // dateTimePicker1
+            // textBoxDodajWynikNazwaUzytkownika
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 260);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.textBoxDodajWynikNazwaUzytkownika.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDodajWynikNazwaUzytkownika.Location = new System.Drawing.Point(62, 103);
+            this.textBoxDodajWynikNazwaUzytkownika.Name = "textBoxDodajWynikNazwaUzytkownika";
+            this.textBoxDodajWynikNazwaUzytkownika.Size = new System.Drawing.Size(156, 23);
+            this.textBoxDodajWynikNazwaUzytkownika.TabIndex = 1;
+            this.textBoxDodajWynikNazwaUzytkownika.Text = "Nazwa Użytkownika";
             // 
-            // buttonRezerwuj
+            // buttonDodajWynikWyszukaj
             // 
-            this.buttonRezerwuj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRezerwuj.Location = new System.Drawing.Point(316, 344);
-            this.buttonRezerwuj.Name = "buttonRezerwuj";
-            this.buttonRezerwuj.Size = new System.Drawing.Size(75, 23);
-            this.buttonRezerwuj.TabIndex = 5;
-            this.buttonRezerwuj.Text = "Rezerwuj";
-            this.buttonRezerwuj.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikWyszukaj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynikWyszukaj.Location = new System.Drawing.Point(62, 158);
+            this.buttonDodajWynikWyszukaj.Name = "buttonDodajWynikWyszukaj";
+            this.buttonDodajWynikWyszukaj.Size = new System.Drawing.Size(128, 34);
+            this.buttonDodajWynikWyszukaj.TabIndex = 0;
+            this.buttonDodajWynikWyszukaj.Text = "Wyszukaj";
+            this.buttonDodajWynikWyszukaj.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // panelUzytkownika
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(32, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Wybierz inną datę";
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikWyloguj);
+            this.panelUzytkownika.Controls.Add(this.monthCalendar1);
+            this.panelUzytkownika.Controls.Add(this.button1);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikMojeStatystyki);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRanking);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRezerwacjaTerminu);
+            this.panelUzytkownika.Location = new System.Drawing.Point(0, 0);
+            this.panelUzytkownika.Name = "panelUzytkownika";
+            this.panelUzytkownika.Size = new System.Drawing.Size(800, 600);
+            this.panelUzytkownika.TabIndex = 11;
+            // 
+            // buttonDodajWynik
+            // 
+            this.buttonDodajWynik.Font = new System.Drawing.Font("Pricedown Bl", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynik.Location = new System.Drawing.Point(18, 246);
+            this.buttonDodajWynik.Name = "buttonDodajWynik";
+            this.buttonDodajWynik.Size = new System.Drawing.Size(159, 40);
+            this.buttonDodajWynik.TabIndex = 4;
+            this.buttonDodajWynik.Text = "DodajWynik";
+            this.buttonDodajWynik.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajWynikDodaj
+            // 
+            this.buttonDodajWynikDodaj.Font = new System.Drawing.Font("Pricedown Bl", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynikDodaj.Location = new System.Drawing.Point(323, 272);
+            this.buttonDodajWynikDodaj.Name = "buttonDodajWynikDodaj";
+            this.buttonDodajWynikDodaj.Size = new System.Drawing.Size(147, 38);
+            this.buttonDodajWynikDodaj.TabIndex = 8;
+            this.buttonDodajWynikDodaj.Text = "Dodaj";
+            this.buttonDodajWynikDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikDodaj.Click += new System.EventHandler(this.buttonDodajWynikDodaj_Click);
+            // 
+            // buttonDodajWynikWroc
+            // 
+            this.buttonDodajWynikWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynikWroc.Location = new System.Drawing.Point(572, 487);
+            this.buttonDodajWynikWroc.Name = "buttonDodajWynikWroc";
+            this.buttonDodajWynikWroc.Size = new System.Drawing.Size(128, 33);
+            this.buttonDodajWynikWroc.TabIndex = 9;
+            this.buttonDodajWynikWroc.Text = "Wróć";
+            this.buttonDodajWynikWroc.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikWroc.Click += new System.EventHandler(this.buttonDodajWynikWroc_Click);
+            // 
+            // buttonUzytkownikRezerwacjaTerminu
+            // 
+            this.buttonUzytkownikRezerwacjaTerminu.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikRezerwacjaTerminu.Location = new System.Drawing.Point(52, 71);
+            this.buttonUzytkownikRezerwacjaTerminu.Name = "buttonUzytkownikRezerwacjaTerminu";
+            this.buttonUzytkownikRezerwacjaTerminu.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikRezerwacjaTerminu.TabIndex = 0;
+            this.buttonUzytkownikRezerwacjaTerminu.Text = "Rezerwacja Terminu";
+            this.buttonUzytkownikRezerwacjaTerminu.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikRezerwacjaTerminu.Click += new System.EventHandler(this.buttonUzytkownikRezerwacjaTerminu_Click);
+            // 
+            // buttonUzytkownikRanking
+            // 
+            this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
+            this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
+            this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikRanking.TabIndex = 1;
+            this.buttonUzytkownikRanking.Text = "Ranking";
+            this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
+            // 
+            // buttonUzytkownikMojeStatystyki
+            // 
+            this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
+            this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
+            this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
+            this.buttonUzytkownikMojeStatystyki.Text = "Moje Statystyki";
+            this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(568, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 51);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Kalkulator Kosztów";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(520, 238);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
+            // 
+            // buttonRezerwacjaTerminuWroc
+            // 
+            this.buttonRezerwacjaTerminuWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRezerwacjaTerminuWroc.Location = new System.Drawing.Point(558, 455);
+            this.buttonRezerwacjaTerminuWroc.Name = "buttonRezerwacjaTerminuWroc";
+            this.buttonRezerwacjaTerminuWroc.Size = new System.Drawing.Size(83, 29);
+            this.buttonRezerwacjaTerminuWroc.TabIndex = 7;
+            this.buttonRezerwacjaTerminuWroc.Text = "Wróć";
+            this.buttonRezerwacjaTerminuWroc.UseVisualStyleBackColor = true;
+            this.buttonRezerwacjaTerminuWroc.Click += new System.EventHandler(this.buttonRezerwacjaTerminuWroc_Click);
+            // 
+            // buttonUzytkownikWyloguj
+            // 
+            this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(52, 452);
+            this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
+            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(89, 29);
+            this.buttonUzytkownikWyloguj.TabIndex = 5;
+            this.buttonUzytkownikWyloguj.Text = "Wyloguj";
+            this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
             // 
             // FormOknoGlowne
             // 
@@ -1301,23 +1390,23 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelRezerwacjaTerminu);
-            this.Controls.Add(this.panelPanelPracownika);
-            this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
+            this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
+            this.Controls.Add(this.panelRezerwacjaTerminu);
+            this.Controls.Add(this.panelDodajWynik);
+            this.Controls.Add(this.panelUzytkownika);
+            this.Controls.Add(this.panelPanelPracownika);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             this.panelPanelPracownika.ResumeLayout(false);
-            this.panelDodajWynik.ResumeLayout(false);
-            this.panelDodajWynik.PerformLayout();
             this.panelDodajUzytkownika.ResumeLayout(false);
             this.panelDodajUzytkownika.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogowanie)).EndInit();
@@ -1330,6 +1419,9 @@
             this.panelZaktualizujDane.PerformLayout();
             this.panelRezerwacjaTerminu.ResumeLayout(false);
             this.panelRezerwacjaTerminu.PerformLayout();
+            this.panelDodajWynik.ResumeLayout(false);
+            this.panelDodajWynik.PerformLayout();
+            this.panelUzytkownika.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1423,13 +1515,6 @@
         private System.Windows.Forms.Button buttonUsunUzytkownikaWyszukaj;
         private System.Windows.Forms.TextBox textBoxUsunUzytkownikaPodajPesel;
         private System.Windows.Forms.Label labelUsunUzytkownikaPodajPesel;
-        private System.Windows.Forms.Panel panelDodajWynik;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panelRezerwacjaTerminu;
         private System.Windows.Forms.ComboBox comboBoxTor;
         private System.Windows.Forms.ComboBox comboBoxWolneTerminy;
@@ -1437,6 +1522,21 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBoxCzas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelDodajWynik;
+        private System.Windows.Forms.ComboBox comboBoxDodajWynikWbierzBron;
+        private System.Windows.Forms.TextBox textBoxDodajWynikNazwaUzytkownika;
+        private System.Windows.Forms.Button buttonDodajWynikWyszukaj;
+        private System.Windows.Forms.Panel panelUzytkownika;
+        private System.Windows.Forms.Button buttonDodajWynik;
+        private System.Windows.Forms.Button buttonDodajWynikDodaj;
+        private System.Windows.Forms.Button buttonDodajWynikWroc;
+        private System.Windows.Forms.Button buttonUzytkownikRezerwacjaTerminu;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonUzytkownikMojeStatystyki;
+        private System.Windows.Forms.Button buttonUzytkownikRanking;
+        private System.Windows.Forms.Button buttonRezerwacjaTerminuWroc;
+        private System.Windows.Forms.Button buttonUzytkownikWyloguj;
     }
 }
 
