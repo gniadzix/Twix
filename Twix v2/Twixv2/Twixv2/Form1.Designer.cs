@@ -41,6 +41,7 @@
             this.buttonLogowanieZaloguj = new System.Windows.Forms.Button();
             this.buttonLogowanieWroc = new System.Windows.Forms.Button();
             this.panelPanelPracownika = new System.Windows.Forms.Panel();
+            this.buttonDodajWynik = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaZmienDaneUzytkownika = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaWyloguj = new System.Windows.Forms.Button();
             this.buttonPanelPracownikaUsunUzytkownika = new System.Windows.Forms.Button();
@@ -118,6 +119,7 @@
             this.textBoxZaktualizujDaneWyszukajPesel = new System.Windows.Forms.TextBox();
             this.labelZaktualizujDanePodajPesel = new System.Windows.Forms.Label();
             this.panelRezerwacjaTerminu = new System.Windows.Forms.Panel();
+            this.buttonRezerwacjaTerminuWroc = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRezerwuj = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -125,20 +127,18 @@
             this.comboBoxTor = new System.Windows.Forms.ComboBox();
             this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
             this.panelDodajWynik = new System.Windows.Forms.Panel();
+            this.buttonDodajWynikWroc = new System.Windows.Forms.Button();
+            this.buttonDodajWynikDodaj = new System.Windows.Forms.Button();
             this.comboBoxDodajWynikWbierzBron = new System.Windows.Forms.ComboBox();
             this.textBoxDodajWynikNazwaUzytkownika = new System.Windows.Forms.TextBox();
             this.buttonDodajWynikWyszukaj = new System.Windows.Forms.Button();
             this.panelUzytkownika = new System.Windows.Forms.Panel();
-            this.buttonDodajWynik = new System.Windows.Forms.Button();
-            this.buttonDodajWynikDodaj = new System.Windows.Forms.Button();
-            this.buttonDodajWynikWroc = new System.Windows.Forms.Button();
-            this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
-            this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
-            this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.buttonRezerwacjaTerminuWroc = new System.Windows.Forms.Button();
             this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
+            this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
+            this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -289,6 +289,17 @@
             this.panelPanelPracownika.Name = "panelPanelPracownika";
             this.panelPanelPracownika.Size = new System.Drawing.Size(800, 600);
             this.panelPanelPracownika.TabIndex = 6;
+            // 
+            // buttonDodajWynik
+            // 
+            this.buttonDodajWynik.Font = new System.Drawing.Font("Pricedown Bl", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynik.Location = new System.Drawing.Point(18, 246);
+            this.buttonDodajWynik.Name = "buttonDodajWynik";
+            this.buttonDodajWynik.Size = new System.Drawing.Size(159, 40);
+            this.buttonDodajWynik.TabIndex = 4;
+            this.buttonDodajWynik.Text = "DodajWynik";
+            this.buttonDodajWynik.UseVisualStyleBackColor = true;
+            this.buttonDodajWynik.Click += new System.EventHandler(this.buttonDodajWynik_Click_1);
             // 
             // buttonPanelPracownikaZmienDaneUzytkownika
             // 
@@ -1166,6 +1177,17 @@
             this.panelRezerwacjaTerminu.TabIndex = 9;
             this.panelRezerwacjaTerminu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRezerwacjaTerminu_Paint);
             // 
+            // buttonRezerwacjaTerminuWroc
+            // 
+            this.buttonRezerwacjaTerminuWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRezerwacjaTerminuWroc.Location = new System.Drawing.Point(558, 455);
+            this.buttonRezerwacjaTerminuWroc.Name = "buttonRezerwacjaTerminuWroc";
+            this.buttonRezerwacjaTerminuWroc.Size = new System.Drawing.Size(83, 29);
+            this.buttonRezerwacjaTerminuWroc.TabIndex = 7;
+            this.buttonRezerwacjaTerminuWroc.Text = "Wróć";
+            this.buttonRezerwacjaTerminuWroc.UseVisualStyleBackColor = true;
+            this.buttonRezerwacjaTerminuWroc.Click += new System.EventHandler(this.buttonRezerwacjaTerminuWroc_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1240,6 +1262,28 @@
             this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
             this.panelDodajWynik.TabIndex = 10;
             // 
+            // buttonDodajWynikWroc
+            // 
+            this.buttonDodajWynikWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynikWroc.Location = new System.Drawing.Point(572, 487);
+            this.buttonDodajWynikWroc.Name = "buttonDodajWynikWroc";
+            this.buttonDodajWynikWroc.Size = new System.Drawing.Size(128, 33);
+            this.buttonDodajWynikWroc.TabIndex = 9;
+            this.buttonDodajWynikWroc.Text = "Wróć";
+            this.buttonDodajWynikWroc.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikWroc.Click += new System.EventHandler(this.buttonDodajWynikWroc_Click);
+            // 
+            // buttonDodajWynikDodaj
+            // 
+            this.buttonDodajWynikDodaj.Font = new System.Drawing.Font("Pricedown Bl", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDodajWynikDodaj.Location = new System.Drawing.Point(323, 272);
+            this.buttonDodajWynikDodaj.Name = "buttonDodajWynikDodaj";
+            this.buttonDodajWynikDodaj.Size = new System.Drawing.Size(147, 38);
+            this.buttonDodajWynikDodaj.TabIndex = 8;
+            this.buttonDodajWynikDodaj.Text = "Dodaj";
+            this.buttonDodajWynikDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikDodaj.Click += new System.EventHandler(this.buttonDodajWynikDodaj_Click);
+            // 
             // comboBoxDodajWynikWbierzBron
             // 
             this.comboBoxDodajWynikWbierzBron.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1249,6 +1293,7 @@
             this.comboBoxDodajWynikWbierzBron.Size = new System.Drawing.Size(156, 24);
             this.comboBoxDodajWynikWbierzBron.TabIndex = 5;
             this.comboBoxDodajWynikWbierzBron.Text = "Wybierz Broń";
+            this.comboBoxDodajWynikWbierzBron.SelectedIndexChanged += new System.EventHandler(this.comboBoxDodajWynikWbierzBron_SelectedIndexChanged);
             // 
             // textBoxDodajWynikNazwaUzytkownika
             // 
@@ -1258,6 +1303,7 @@
             this.textBoxDodajWynikNazwaUzytkownika.Size = new System.Drawing.Size(156, 23);
             this.textBoxDodajWynikNazwaUzytkownika.TabIndex = 1;
             this.textBoxDodajWynikNazwaUzytkownika.Text = "Nazwa Użytkownika";
+            this.textBoxDodajWynikNazwaUzytkownika.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxDodajWynikNazwaUzytkownika_MouseClick);
             // 
             // buttonDodajWynikWyszukaj
             // 
@@ -1282,37 +1328,52 @@
             this.panelUzytkownika.Size = new System.Drawing.Size(800, 600);
             this.panelUzytkownika.TabIndex = 11;
             // 
-            // buttonDodajWynik
+            // buttonUzytkownikWyloguj
             // 
-            this.buttonDodajWynik.Font = new System.Drawing.Font("Pricedown Bl", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynik.Location = new System.Drawing.Point(18, 246);
-            this.buttonDodajWynik.Name = "buttonDodajWynik";
-            this.buttonDodajWynik.Size = new System.Drawing.Size(159, 40);
-            this.buttonDodajWynik.TabIndex = 4;
-            this.buttonDodajWynik.Text = "DodajWynik";
-            this.buttonDodajWynik.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(52, 452);
+            this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
+            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(89, 29);
+            this.buttonUzytkownikWyloguj.TabIndex = 5;
+            this.buttonUzytkownikWyloguj.Text = "Wyloguj";
+            this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
             // 
-            // buttonDodajWynikDodaj
+            // monthCalendar1
             // 
-            this.buttonDodajWynikDodaj.Font = new System.Drawing.Font("Pricedown Bl", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynikDodaj.Location = new System.Drawing.Point(323, 272);
-            this.buttonDodajWynikDodaj.Name = "buttonDodajWynikDodaj";
-            this.buttonDodajWynikDodaj.Size = new System.Drawing.Size(147, 38);
-            this.buttonDodajWynikDodaj.TabIndex = 8;
-            this.buttonDodajWynikDodaj.Text = "Dodaj";
-            this.buttonDodajWynikDodaj.UseVisualStyleBackColor = true;
-            this.buttonDodajWynikDodaj.Click += new System.EventHandler(this.buttonDodajWynikDodaj_Click);
+            this.monthCalendar1.Location = new System.Drawing.Point(520, 238);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
             // 
-            // buttonDodajWynikWroc
+            // button1
             // 
-            this.buttonDodajWynikWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynikWroc.Location = new System.Drawing.Point(572, 487);
-            this.buttonDodajWynikWroc.Name = "buttonDodajWynikWroc";
-            this.buttonDodajWynikWroc.Size = new System.Drawing.Size(128, 33);
-            this.buttonDodajWynikWroc.TabIndex = 9;
-            this.buttonDodajWynikWroc.Text = "Wróć";
-            this.buttonDodajWynikWroc.UseVisualStyleBackColor = true;
-            this.buttonDodajWynikWroc.Click += new System.EventHandler(this.buttonDodajWynikWroc_Click);
+            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(568, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 51);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Kalkulator Kosztów";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // buttonUzytkownikMojeStatystyki
+            // 
+            this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
+            this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
+            this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
+            this.buttonUzytkownikMojeStatystyki.Text = "Moje Statystyki";
+            this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
+            // 
+            // buttonUzytkownikRanking
+            // 
+            this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
+            this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
+            this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikRanking.TabIndex = 1;
+            this.buttonUzytkownikRanking.Text = "Ranking";
+            this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
             // 
             // buttonUzytkownikRezerwacjaTerminu
             // 
@@ -1325,64 +1386,6 @@
             this.buttonUzytkownikRezerwacjaTerminu.UseVisualStyleBackColor = true;
             this.buttonUzytkownikRezerwacjaTerminu.Click += new System.EventHandler(this.buttonUzytkownikRezerwacjaTerminu_Click);
             // 
-            // buttonUzytkownikRanking
-            // 
-            this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
-            this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
-            this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
-            this.buttonUzytkownikRanking.TabIndex = 1;
-            this.buttonUzytkownikRanking.Text = "Ranking";
-            this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
-            // 
-            // buttonUzytkownikMojeStatystyki
-            // 
-            this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
-            this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
-            this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
-            this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
-            this.buttonUzytkownikMojeStatystyki.Text = "Moje Statystyki";
-            this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(568, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Kalkulator Kosztów";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(520, 238);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 4;
-            // 
-            // buttonRezerwacjaTerminuWroc
-            // 
-            this.buttonRezerwacjaTerminuWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRezerwacjaTerminuWroc.Location = new System.Drawing.Point(558, 455);
-            this.buttonRezerwacjaTerminuWroc.Name = "buttonRezerwacjaTerminuWroc";
-            this.buttonRezerwacjaTerminuWroc.Size = new System.Drawing.Size(83, 29);
-            this.buttonRezerwacjaTerminuWroc.TabIndex = 7;
-            this.buttonRezerwacjaTerminuWroc.Text = "Wróć";
-            this.buttonRezerwacjaTerminuWroc.UseVisualStyleBackColor = true;
-            this.buttonRezerwacjaTerminuWroc.Click += new System.EventHandler(this.buttonRezerwacjaTerminuWroc_Click);
-            // 
-            // buttonUzytkownikWyloguj
-            // 
-            this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(52, 452);
-            this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
-            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(89, 29);
-            this.buttonUzytkownikWyloguj.TabIndex = 5;
-            this.buttonUzytkownikWyloguj.Text = "Wyloguj";
-            this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
-            this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
-            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1393,6 +1396,7 @@
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
+            this.Controls.Add(this.panelDodajWynik);
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
@@ -1401,7 +1405,6 @@
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelRezerwacjaTerminu);
-            this.Controls.Add(this.panelDodajWynik);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);

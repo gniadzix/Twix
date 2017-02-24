@@ -36,7 +36,7 @@ namespace Twixv2
                 // ranga = klient.ID_RANGI;
                 if (czyAdmin == 1)
                 {
-                     czyAdminBool = true;
+                    czyAdminBool = true;
                 }
                 return true;
             }
@@ -125,7 +125,7 @@ namespace Twixv2
                 klient.NR_DOWODU = nrDow;
                 klient.LOGIN = log;
                 klient.HASLO = has;
-                if(czyAdm == true)
+                if (czyAdm == true)
                 {
                     klient.czyADMIN = 1;
                 }
@@ -143,7 +143,7 @@ namespace Twixv2
             }
         }
 
-        public bool usunUzytkownika (string pes)
+        public bool usunUzytkownika(string pes)
         {
             try
             {
@@ -160,7 +160,7 @@ namespace Twixv2
 
         }
 
-        public bool wyloguj ()
+        public bool wyloguj()
         {
             try
             {
@@ -205,6 +205,36 @@ namespace Twixv2
                 return false;
             }
         }
-    
+        public ArrayList slownikBroni()
+        {
+            
+            Twix encjaTwix = new Twix();
+            ArrayList bronie = new ArrayList();
+            bronie.Add("Wybierz broń");
+
+            int i = 0;
+            for (i = 1; i <= 32; i++)
+            {
+                var bron = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.ID == i);
+                bronie.Add(bron.NAZWA);
+            }
+            return bronie;
+
+        }
+        public ArrayList nazwyUzytkownkow()
+        {
+            Twix encjaTwix = new Twix();
+            ArrayList uzytkownicy = new ArrayList();
+            int i = 0;
+            for(i=1;i<=2;i++)
+            {
+                
+               var nazwa = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == i);
+               uzytkownicy.Add(nazwa.IMIE);
+                
+            }
+            return uzytkownicy;
+
+        }
     }
 }

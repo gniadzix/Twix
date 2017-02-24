@@ -31,6 +31,30 @@ namespace Twixv2
             ukrywaniePanelu(panelUsunUzytkownika);
             ukrywaniePanelu(panelZaktualizujDane);
             ukrywaniePanelu(panelDodajWynik);
+            uzupelnianie_comboboxDodajWynikWybierzBron();
+       
+
+
+        }
+        public void uzupelnianie_comboboxDodajWynikWybierzBron()
+        {
+            ArrayList bron = new ArrayList();
+            bron = uzytkownik.slownikBroni();
+            comboBoxDodajWynikWbierzBron.TabIndex = 0;
+            comboBoxDodajWynikWbierzBron.DataSource = bron;
+
+        }
+        public void autouzupelnianie_textBoxDodajWynikNazwaUzytkownika()
+        {  
+            textBoxDodajWynikNazwaUzytkownika.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxDodajWynikNazwaUzytkownika.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection uzytkownicy = new AutoCompleteStringCollection();
+            ArrayList user = new ArrayList();
+
+            user=uzytkownik.nazwyUzytkownkow();
+            uzytkownicy.Add(user[1].ToString());
+            
+            textBoxDodajWynikNazwaUzytkownika.AutoCompleteCustomSource=uzytkownicy;
         }
        
         private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
@@ -630,6 +654,8 @@ namespace Twixv2
         private void buttonDodajWynikWroc_Click(object sender, EventArgs e)
         {
             ukrywaniePanelu(panelDodajWynik);
+            textBoxDodajWynikNazwaUzytkownika.Text="Nazwa użytkownika";
+            
         }
 
         private void buttonUzytkownikRezerwacjaTerminu_Click(object sender, EventArgs e)
@@ -645,6 +671,25 @@ namespace Twixv2
         private void buttonUzytkownikWyloguj_Click(object sender, EventArgs e)
         {
             uzytkownik.wyloguj();
+        }
+
+        private void buttonDodajWynik_Click_1(object sender, EventArgs e)
+        {
+            comboBoxDodajWynikWbierzBron.SelectedIndex = 0;
+            pokazywaniePanelu(panelDodajWynik);
+          
+        }
+
+        private void comboBoxDodajWynikWbierzBron_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+            
+        }
+   
+        private void textBoxDodajWynikNazwaUzytkownika_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxDodajWynikNazwaUzytkownika.Clear();
+           
         }
     }
     }
