@@ -633,7 +633,7 @@ namespace Twixv2
 
         private void buttonUzytkownikRezerwacjaTerminu_Click(object sender, EventArgs e)
         {
-            pokazywaniePanelu(PanelUzytkownika);
+            pokazywaniePanelu(panelUzytkownika);
         }
 
         private void buttonRezerwacjaTerminuWroc_Click(object sender, EventArgs e)

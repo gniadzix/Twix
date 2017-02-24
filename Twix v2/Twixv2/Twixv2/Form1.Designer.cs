@@ -1393,6 +1393,8 @@
             this.Controls.Add(this.buttonOknoGlowneWyjdz);
             this.Controls.Add(this.buttonOknoGlowneZarejestruj);
             this.Controls.Add(this.buttonOknoGlowneZaloguj);
+            this.Controls.Add(this.panelUzytkownika);
+            this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelZaktualizujDane);
@@ -1400,8 +1402,6 @@
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelRezerwacjaTerminu);
             this.Controls.Add(this.panelDodajWynik);
-            this.Controls.Add(this.panelUzytkownika);
-            this.Controls.Add(this.panelPanelPracownika);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
