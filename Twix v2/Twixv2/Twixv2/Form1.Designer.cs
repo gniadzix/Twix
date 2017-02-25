@@ -126,6 +126,9 @@
             this.comboBoxCzas = new System.Windows.Forms.ComboBox();
             this.comboBoxTor = new System.Windows.Forms.ComboBox();
             this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
+            this.panelKalkulatorKosztow = new System.Windows.Forms.Panel();
+            this.buttonKalkulatorKosztowOblicz = new System.Windows.Forms.Button();
+            this.buttonKalkulatorKosztowCofnij = new System.Windows.Forms.Button();
             this.panelDodajWynik = new System.Windows.Forms.Panel();
             this.buttonDodajWynikWroc = new System.Windows.Forms.Button();
             this.buttonDodajWynikDodaj = new System.Windows.Forms.Button();
@@ -135,10 +138,14 @@
             this.panelUzytkownika = new System.Windows.Forms.Panel();
             this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonOtworzPanelKalkulatorKosztow = new System.Windows.Forms.Button();
             this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
             this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
             this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
+            this.panelOknoGlowne = new System.Windows.Forms.Panel();
+            this.textBoxKalkulatorKosztowIloscStrzalow = new System.Windows.Forms.TextBox();
+            this.comboBoxKalkulatorKosztowWybierzBron = new System.Windows.Forms.ComboBox();
+            this.labelKalkulatorKosztowWynik = new System.Windows.Forms.Label();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -149,8 +156,10 @@
             this.panelUsunUzytkownika.SuspendLayout();
             this.panelZaktualizujDane.SuspendLayout();
             this.panelRezerwacjaTerminu.SuspendLayout();
+            this.panelKalkulatorKosztow.SuspendLayout();
             this.panelDodajWynik.SuspendLayout();
             this.panelUzytkownika.SuspendLayout();
+            this.panelOknoGlowne.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -168,8 +177,8 @@
             // 
             this.buttonOknoGlowneZaloguj.BackColor = System.Drawing.Color.Transparent;
             this.buttonOknoGlowneZaloguj.BackgroundImage = global::Twixv2.Properties.Resources.button_zaloguj;
-            this.buttonOknoGlowneZaloguj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonOknoGlowneZaloguj.Location = new System.Drawing.Point(630, 164);
+            this.buttonOknoGlowneZaloguj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonOknoGlowneZaloguj.Location = new System.Drawing.Point(640, 267);
             this.buttonOknoGlowneZaloguj.Name = "buttonOknoGlowneZaloguj";
             this.buttonOknoGlowneZaloguj.Size = new System.Drawing.Size(138, 46);
             this.buttonOknoGlowneZaloguj.TabIndex = 0;
@@ -179,8 +188,8 @@
             // buttonOknoGlowneZarejestruj
             // 
             this.buttonOknoGlowneZarejestruj.BackgroundImage = global::Twixv2.Properties.Resources.button_zarejestruj;
-            this.buttonOknoGlowneZarejestruj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonOknoGlowneZarejestruj.Location = new System.Drawing.Point(545, 257);
+            this.buttonOknoGlowneZarejestruj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonOknoGlowneZarejestruj.Location = new System.Drawing.Point(558, 344);
             this.buttonOknoGlowneZarejestruj.Name = "buttonOknoGlowneZarejestruj";
             this.buttonOknoGlowneZarejestruj.Size = new System.Drawing.Size(223, 46);
             this.buttonOknoGlowneZarejestruj.TabIndex = 1;
@@ -190,8 +199,8 @@
             // buttonOknoGlowneWyjdz
             // 
             this.buttonOknoGlowneWyjdz.BackgroundImage = global::Twixv2.Properties.Resources.button_zamknij;
-            this.buttonOknoGlowneWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonOknoGlowneWyjdz.Location = new System.Drawing.Point(618, 409);
+            this.buttonOknoGlowneWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonOknoGlowneWyjdz.Location = new System.Drawing.Point(631, 490);
             this.buttonOknoGlowneWyjdz.Name = "buttonOknoGlowneWyjdz";
             this.buttonOknoGlowneWyjdz.Size = new System.Drawing.Size(150, 43);
             this.buttonOknoGlowneWyjdz.TabIndex = 2;
@@ -292,12 +301,13 @@
             // 
             // buttonDodajWynik
             // 
+            this.buttonDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.button_dodaj_wynik;
+            this.buttonDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDodajWynik.Font = new System.Drawing.Font("Pricedown Bl", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonDodajWynik.Location = new System.Drawing.Point(18, 246);
             this.buttonDodajWynik.Name = "buttonDodajWynik";
             this.buttonDodajWynik.Size = new System.Drawing.Size(159, 40);
             this.buttonDodajWynik.TabIndex = 4;
-            this.buttonDodajWynik.Text = "DodajWynik";
             this.buttonDodajWynik.UseVisualStyleBackColor = true;
             this.buttonDodajWynik.Click += new System.EventHandler(this.buttonDodajWynik_Click_1);
             // 
@@ -448,7 +458,7 @@
             // buttonCofnijDoPaneluPracownika
             // 
             this.buttonCofnijDoPaneluPracownika.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
-            this.buttonCofnijDoPaneluPracownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCofnijDoPaneluPracownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonCofnijDoPaneluPracownika.Location = new System.Drawing.Point(40, 356);
             this.buttonCofnijDoPaneluPracownika.Name = "buttonCofnijDoPaneluPracownika";
             this.buttonCofnijDoPaneluPracownika.Size = new System.Drawing.Size(90, 38);
@@ -513,7 +523,7 @@
             // buttonDodajUzytkownika
             // 
             this.buttonDodajUzytkownika.BackgroundImage = global::Twixv2.Properties.Resources.button_dodaj;
-            this.buttonDodajUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonDodajUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDodajUzytkownika.Location = new System.Drawing.Point(40, 280);
             this.buttonDodajUzytkownika.Name = "buttonDodajUzytkownika";
             this.buttonDodajUzytkownika.Size = new System.Drawing.Size(90, 38);
@@ -553,7 +563,7 @@
             // buttonRejestracjaZarejestruj
             // 
             this.buttonRejestracjaZarejestruj.BackgroundImage = global::Twixv2.Properties.Resources.button_zarejestruj;
-            this.buttonRejestracjaZarejestruj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRejestracjaZarejestruj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRejestracjaZarejestruj.Enabled = false;
             this.buttonRejestracjaZarejestruj.Location = new System.Drawing.Point(66, 212);
             this.buttonRejestracjaZarejestruj.Name = "buttonRejestracjaZarejestruj";
@@ -709,7 +719,7 @@
             // buttonRejestracjaWroc
             // 
             this.buttonRejestracjaWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
-            this.buttonRejestracjaWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRejestracjaWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRejestracjaWroc.Location = new System.Drawing.Point(18, 399);
             this.buttonRejestracjaWroc.Name = "buttonRejestracjaWroc";
             this.buttonRejestracjaWroc.Size = new System.Drawing.Size(91, 37);
@@ -760,7 +770,7 @@
             // 
             this.buttonUsunUzytkownikaCofnij.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
             this.buttonUsunUzytkownikaCofnij.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUsunUzytkownikaCofnij.Location = new System.Drawing.Point(53, 520);
+            this.buttonUsunUzytkownikaCofnij.Location = new System.Drawing.Point(34, 490);
             this.buttonUsunUzytkownikaCofnij.Name = "buttonUsunUzytkownikaCofnij";
             this.buttonUsunUzytkownikaCofnij.Size = new System.Drawing.Size(119, 43);
             this.buttonUsunUzytkownikaCofnij.TabIndex = 55;
@@ -940,7 +950,7 @@
             // 
             this.buttonZaktualizujDaneZatwierdz.BackgroundImage = global::Twixv2.Properties.Resources.button_zaakceptuj;
             this.buttonZaktualizujDaneZatwierdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonZaktualizujDaneZatwierdz.Location = new System.Drawing.Point(289, 118);
+            this.buttonZaktualizujDaneZatwierdz.Location = new System.Drawing.Point(266, 219);
             this.buttonZaktualizujDaneZatwierdz.Name = "buttonZaktualizujDaneZatwierdz";
             this.buttonZaktualizujDaneZatwierdz.Size = new System.Drawing.Size(202, 50);
             this.buttonZaktualizujDaneZatwierdz.TabIndex = 36;
@@ -951,7 +961,7 @@
             // 
             this.buttonZaktualizujDaneZmienDane.BackgroundImage = global::Twixv2.Properties.Resources.button_aktywuj_pola;
             this.buttonZaktualizujDaneZmienDane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonZaktualizujDaneZmienDane.Location = new System.Drawing.Point(289, 61);
+            this.buttonZaktualizujDaneZmienDane.Location = new System.Drawing.Point(266, 162);
             this.buttonZaktualizujDaneZmienDane.Name = "buttonZaktualizujDaneZmienDane";
             this.buttonZaktualizujDaneZmienDane.Size = new System.Drawing.Size(175, 40);
             this.buttonZaktualizujDaneZmienDane.TabIndex = 35;
@@ -962,7 +972,7 @@
             // 
             this.buttonZaktualizujDaneWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
             this.buttonZaktualizujDaneWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(220, 409);
+            this.buttonZaktualizujDaneWroc.Location = new System.Drawing.Point(647, 502);
             this.buttonZaktualizujDaneWroc.Name = "buttonZaktualizujDaneWroc";
             this.buttonZaktualizujDaneWroc.Size = new System.Drawing.Size(119, 43);
             this.buttonZaktualizujDaneWroc.TabIndex = 34;
@@ -972,7 +982,7 @@
             // textBoxZaktualizujDaneRanga
             // 
             this.textBoxZaktualizujDaneRanga.Enabled = false;
-            this.textBoxZaktualizujDaneRanga.Location = new System.Drawing.Point(94, 324);
+            this.textBoxZaktualizujDaneRanga.Location = new System.Drawing.Point(18, 331);
             this.textBoxZaktualizujDaneRanga.Name = "textBoxZaktualizujDaneRanga";
             this.textBoxZaktualizujDaneRanga.Size = new System.Drawing.Size(120, 21);
             this.textBoxZaktualizujDaneRanga.TabIndex = 33;
@@ -980,9 +990,9 @@
             // labelZaktualizujDaneRanga
             // 
             this.labelZaktualizujDaneRanga.AutoSize = true;
-            this.labelZaktualizujDaneRanga.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneRanga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneRanga.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneRanga.Location = new System.Drawing.Point(220, 319);
+            this.labelZaktualizujDaneRanga.Location = new System.Drawing.Point(144, 326);
             this.labelZaktualizujDaneRanga.Name = "labelZaktualizujDaneRanga";
             this.labelZaktualizujDaneRanga.Size = new System.Drawing.Size(60, 23);
             this.labelZaktualizujDaneRanga.TabIndex = 32;
@@ -991,9 +1001,9 @@
             // labelZaktualizujDaneHaslo
             // 
             this.labelZaktualizujDaneHaslo.AutoSize = true;
-            this.labelZaktualizujDaneHaslo.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneHaslo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneHaslo.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneHaslo.Location = new System.Drawing.Point(223, 290);
+            this.labelZaktualizujDaneHaslo.Location = new System.Drawing.Point(147, 297);
             this.labelZaktualizujDaneHaslo.Name = "labelZaktualizujDaneHaslo";
             this.labelZaktualizujDaneHaslo.Size = new System.Drawing.Size(57, 23);
             this.labelZaktualizujDaneHaslo.TabIndex = 31;
@@ -1002,9 +1012,9 @@
             // labelZaktualizujDaneLogin
             // 
             this.labelZaktualizujDaneLogin.AutoSize = true;
-            this.labelZaktualizujDaneLogin.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneLogin.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneLogin.Location = new System.Drawing.Point(223, 255);
+            this.labelZaktualizujDaneLogin.Location = new System.Drawing.Point(147, 262);
             this.labelZaktualizujDaneLogin.Name = "labelZaktualizujDaneLogin";
             this.labelZaktualizujDaneLogin.Size = new System.Drawing.Size(50, 23);
             this.labelZaktualizujDaneLogin.TabIndex = 30;
@@ -1013,9 +1023,9 @@
             // labelZaktualizujDaneNrDowodu
             // 
             this.labelZaktualizujDaneNrDowodu.AutoSize = true;
-            this.labelZaktualizujDaneNrDowodu.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneNrDowodu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneNrDowodu.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(223, 227);
+            this.labelZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(147, 234);
             this.labelZaktualizujDaneNrDowodu.Name = "labelZaktualizujDaneNrDowodu";
             this.labelZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(100, 23);
             this.labelZaktualizujDaneNrDowodu.TabIndex = 29;
@@ -1024,9 +1034,9 @@
             // labelZaktualizujDanePesel
             // 
             this.labelZaktualizujDanePesel.AutoSize = true;
-            this.labelZaktualizujDanePesel.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDanePesel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDanePesel.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDanePesel.Location = new System.Drawing.Point(223, 199);
+            this.labelZaktualizujDanePesel.Location = new System.Drawing.Point(147, 206);
             this.labelZaktualizujDanePesel.Name = "labelZaktualizujDanePesel";
             this.labelZaktualizujDanePesel.Size = new System.Drawing.Size(57, 23);
             this.labelZaktualizujDanePesel.TabIndex = 28;
@@ -1035,9 +1045,9 @@
             // labelZaktualizujDaneNazwisko
             // 
             this.labelZaktualizujDaneNazwisko.AutoSize = true;
-            this.labelZaktualizujDaneNazwisko.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneNazwisko.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneNazwisko.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneNazwisko.Location = new System.Drawing.Point(223, 172);
+            this.labelZaktualizujDaneNazwisko.Location = new System.Drawing.Point(147, 179);
             this.labelZaktualizujDaneNazwisko.Name = "labelZaktualizujDaneNazwisko";
             this.labelZaktualizujDaneNazwisko.Size = new System.Drawing.Size(91, 23);
             this.labelZaktualizujDaneNazwisko.TabIndex = 27;
@@ -1046,9 +1056,9 @@
             // labelZaktualizujDaneImie
             // 
             this.labelZaktualizujDaneImie.AutoSize = true;
-            this.labelZaktualizujDaneImie.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDaneImie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDaneImie.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZaktualizujDaneImie.Location = new System.Drawing.Point(223, 145);
+            this.labelZaktualizujDaneImie.Location = new System.Drawing.Point(147, 152);
             this.labelZaktualizujDaneImie.Name = "labelZaktualizujDaneImie";
             this.labelZaktualizujDaneImie.Size = new System.Drawing.Size(45, 23);
             this.labelZaktualizujDaneImie.TabIndex = 26;
@@ -1058,7 +1068,7 @@
             // 
             this.textBoxZaktualizujDaneHaslo.Enabled = false;
             this.textBoxZaktualizujDaneHaslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDaneHaslo.Location = new System.Drawing.Point(94, 289);
+            this.textBoxZaktualizujDaneHaslo.Location = new System.Drawing.Point(18, 296);
             this.textBoxZaktualizujDaneHaslo.MaxLength = 10;
             this.textBoxZaktualizujDaneHaslo.Name = "textBoxZaktualizujDaneHaslo";
             this.textBoxZaktualizujDaneHaslo.Size = new System.Drawing.Size(120, 24);
@@ -1068,7 +1078,7 @@
             // 
             this.textBoxZaktualizujDaneLogin.Enabled = false;
             this.textBoxZaktualizujDaneLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDaneLogin.Location = new System.Drawing.Point(94, 256);
+            this.textBoxZaktualizujDaneLogin.Location = new System.Drawing.Point(18, 263);
             this.textBoxZaktualizujDaneLogin.Name = "textBoxZaktualizujDaneLogin";
             this.textBoxZaktualizujDaneLogin.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDaneLogin.TabIndex = 24;
@@ -1077,11 +1087,11 @@
             // checkBoxZaktualizujDaneCzyAdministrator
             // 
             this.checkBoxZaktualizujDaneCzyAdministrator.AutoSize = true;
-            this.checkBoxZaktualizujDaneCzyAdministrator.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxZaktualizujDaneCzyAdministrator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.checkBoxZaktualizujDaneCzyAdministrator.Enabled = false;
             this.checkBoxZaktualizujDaneCzyAdministrator.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxZaktualizujDaneCzyAdministrator.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(94, 364);
+            this.checkBoxZaktualizujDaneCzyAdministrator.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxZaktualizujDaneCzyAdministrator.Location = new System.Drawing.Point(18, 371);
             this.checkBoxZaktualizujDaneCzyAdministrator.Name = "checkBoxZaktualizujDaneCzyAdministrator";
             this.checkBoxZaktualizujDaneCzyAdministrator.Size = new System.Drawing.Size(93, 27);
             this.checkBoxZaktualizujDaneCzyAdministrator.TabIndex = 23;
@@ -1093,7 +1103,7 @@
             this.textBoxZaktualizujDaneNrDowodu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxZaktualizujDaneNrDowodu.Enabled = false;
             this.textBoxZaktualizujDaneNrDowodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(94, 228);
+            this.textBoxZaktualizujDaneNrDowodu.Location = new System.Drawing.Point(18, 235);
             this.textBoxZaktualizujDaneNrDowodu.MaxLength = 9;
             this.textBoxZaktualizujDaneNrDowodu.Name = "textBoxZaktualizujDaneNrDowodu";
             this.textBoxZaktualizujDaneNrDowodu.Size = new System.Drawing.Size(120, 24);
@@ -1105,7 +1115,7 @@
             // 
             this.textBoxZaktualizujDanePesel.Enabled = false;
             this.textBoxZaktualizujDanePesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(94, 200);
+            this.textBoxZaktualizujDanePesel.Location = new System.Drawing.Point(18, 207);
             this.textBoxZaktualizujDanePesel.MaxLength = 11;
             this.textBoxZaktualizujDanePesel.Name = "textBoxZaktualizujDanePesel";
             this.textBoxZaktualizujDanePesel.Size = new System.Drawing.Size(120, 24);
@@ -1117,7 +1127,7 @@
             // 
             this.textBoxZaktualizujDaneNazwisko.Enabled = false;
             this.textBoxZaktualizujDaneNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(94, 172);
+            this.textBoxZaktualizujDaneNazwisko.Location = new System.Drawing.Point(18, 179);
             this.textBoxZaktualizujDaneNazwisko.Name = "textBoxZaktualizujDaneNazwisko";
             this.textBoxZaktualizujDaneNazwisko.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDaneNazwisko.TabIndex = 20;
@@ -1126,7 +1136,7 @@
             // 
             this.textBoxZaktualizujDaneImie.Enabled = false;
             this.textBoxZaktualizujDaneImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(94, 144);
+            this.textBoxZaktualizujDaneImie.Location = new System.Drawing.Point(18, 151);
             this.textBoxZaktualizujDaneImie.Name = "textBoxZaktualizujDaneImie";
             this.textBoxZaktualizujDaneImie.Size = new System.Drawing.Size(120, 24);
             this.textBoxZaktualizujDaneImie.TabIndex = 19;
@@ -1135,7 +1145,7 @@
             // 
             this.buttonZaktualizujDaneWyszukaj.BackgroundImage = global::Twixv2.Properties.Resources.button_wyszukaj;
             this.buttonZaktualizujDaneWyszukaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonZaktualizujDaneWyszukaj.Location = new System.Drawing.Point(94, 79);
+            this.buttonZaktualizujDaneWyszukaj.Location = new System.Drawing.Point(18, 86);
             this.buttonZaktualizujDaneWyszukaj.Name = "buttonZaktualizujDaneWyszukaj";
             this.buttonZaktualizujDaneWyszukaj.Size = new System.Drawing.Size(181, 47);
             this.buttonZaktualizujDaneWyszukaj.TabIndex = 2;
@@ -1145,7 +1155,7 @@
             // textBoxZaktualizujDaneWyszukajPesel
             // 
             this.textBoxZaktualizujDaneWyszukajPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(126, 48);
+            this.textBoxZaktualizujDaneWyszukajPesel.Location = new System.Drawing.Point(25, 59);
             this.textBoxZaktualizujDaneWyszukajPesel.Name = "textBoxZaktualizujDaneWyszukajPesel";
             this.textBoxZaktualizujDaneWyszukajPesel.Size = new System.Drawing.Size(100, 24);
             this.textBoxZaktualizujDaneWyszukajPesel.TabIndex = 1;
@@ -1154,9 +1164,9 @@
             // labelZaktualizujDanePodajPesel
             // 
             this.labelZaktualizujDanePodajPesel.AutoSize = true;
-            this.labelZaktualizujDanePodajPesel.BackColor = System.Drawing.Color.Transparent;
+            this.labelZaktualizujDanePodajPesel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.labelZaktualizujDanePodajPesel.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
-            this.labelZaktualizujDanePodajPesel.Location = new System.Drawing.Point(9, 46);
+            this.labelZaktualizujDanePodajPesel.Location = new System.Drawing.Point(20, 33);
             this.labelZaktualizujDanePodajPesel.Name = "labelZaktualizujDanePodajPesel";
             this.labelZaktualizujDanePodajPesel.Size = new System.Drawing.Size(111, 23);
             this.labelZaktualizujDanePodajPesel.TabIndex = 0;
@@ -1164,6 +1174,8 @@
             // 
             // panelRezerwacjaTerminu
             // 
+            this.panelRezerwacjaTerminu.BackgroundImage = global::Twixv2.Properties.Resources.zarezerwuj_background;
+            this.panelRezerwacjaTerminu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelRezerwacjaTerminu.Controls.Add(this.buttonRezerwacjaTerminuWroc);
             this.panelRezerwacjaTerminu.Controls.Add(this.label1);
             this.panelRezerwacjaTerminu.Controls.Add(this.buttonRezerwuj);
@@ -1179,33 +1191,35 @@
             // 
             // buttonRezerwacjaTerminuWroc
             // 
+            this.buttonRezerwacjaTerminuWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonRezerwacjaTerminuWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRezerwacjaTerminuWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRezerwacjaTerminuWroc.Location = new System.Drawing.Point(558, 455);
+            this.buttonRezerwacjaTerminuWroc.Location = new System.Drawing.Point(678, 502);
             this.buttonRezerwacjaTerminuWroc.Name = "buttonRezerwacjaTerminuWroc";
-            this.buttonRezerwacjaTerminuWroc.Size = new System.Drawing.Size(83, 29);
+            this.buttonRezerwacjaTerminuWroc.Size = new System.Drawing.Size(100, 45);
             this.buttonRezerwacjaTerminuWroc.TabIndex = 7;
-            this.buttonRezerwacjaTerminuWroc.Text = "Wróć";
             this.buttonRezerwacjaTerminuWroc.UseVisualStyleBackColor = true;
             this.buttonRezerwacjaTerminuWroc.Click += new System.EventHandler(this.buttonRezerwacjaTerminuWroc_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Pricedown Bl", 14F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(32, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.Size = new System.Drawing.Size(164, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Wybierz inną datę";
             // 
             // buttonRezerwuj
             // 
+            this.buttonRezerwuj.BackgroundImage = global::Twixv2.Properties.Resources.button_rezerwuj;
+            this.buttonRezerwuj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRezerwuj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRezerwuj.Location = new System.Drawing.Point(316, 344);
+            this.buttonRezerwuj.Location = new System.Drawing.Point(70, 442);
             this.buttonRezerwuj.Name = "buttonRezerwuj";
-            this.buttonRezerwuj.Size = new System.Drawing.Size(75, 23);
+            this.buttonRezerwuj.Size = new System.Drawing.Size(125, 47);
             this.buttonRezerwuj.TabIndex = 5;
-            this.buttonRezerwuj.Text = "Rezerwuj";
             this.buttonRezerwuj.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
@@ -1217,21 +1231,21 @@
             // 
             // comboBoxCzas
             // 
-            this.comboBoxCzas.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxCzas.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxCzas.FormattingEnabled = true;
             this.comboBoxCzas.Location = new System.Drawing.Point(492, 93);
             this.comboBoxCzas.Name = "comboBoxCzas";
-            this.comboBoxCzas.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCzas.Size = new System.Drawing.Size(121, 31);
             this.comboBoxCzas.TabIndex = 2;
             this.comboBoxCzas.Text = "Czas";
             // 
             // comboBoxTor
             // 
-            this.comboBoxTor.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxTor.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxTor.FormattingEnabled = true;
             this.comboBoxTor.Location = new System.Drawing.Point(258, 91);
             this.comboBoxTor.Name = "comboBoxTor";
-            this.comboBoxTor.Size = new System.Drawing.Size(134, 24);
+            this.comboBoxTor.Size = new System.Drawing.Size(134, 31);
             this.comboBoxTor.TabIndex = 1;
             this.comboBoxTor.Text = "Tor";
             this.comboBoxTor.UseWaitCursor = true;
@@ -1240,13 +1254,49 @@
             // 
             this.comboBoxWolneTerminy.AutoCompleteCustomSource.AddRange(new string[] {
             "Wolne terminy"});
-            this.comboBoxWolneTerminy.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxWolneTerminy.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxWolneTerminy.FormattingEnabled = true;
             this.comboBoxWolneTerminy.Location = new System.Drawing.Point(32, 91);
             this.comboBoxWolneTerminy.Name = "comboBoxWolneTerminy";
-            this.comboBoxWolneTerminy.Size = new System.Drawing.Size(137, 24);
+            this.comboBoxWolneTerminy.Size = new System.Drawing.Size(158, 31);
             this.comboBoxWolneTerminy.TabIndex = 0;
             this.comboBoxWolneTerminy.Text = "Wolne terminy";
+            // 
+            // panelKalkulatorKosztow
+            // 
+            this.panelKalkulatorKosztow.BackgroundImage = global::Twixv2.Properties.Resources.Kalkulator_kosztow_background;
+            this.panelKalkulatorKosztow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelKalkulatorKosztow.Controls.Add(this.labelKalkulatorKosztowWynik);
+            this.panelKalkulatorKosztow.Controls.Add(this.comboBoxKalkulatorKosztowWybierzBron);
+            this.panelKalkulatorKosztow.Controls.Add(this.textBoxKalkulatorKosztowIloscStrzalow);
+            this.panelKalkulatorKosztow.Controls.Add(this.buttonKalkulatorKosztowOblicz);
+            this.panelKalkulatorKosztow.Controls.Add(this.buttonKalkulatorKosztowCofnij);
+            this.panelKalkulatorKosztow.Location = new System.Drawing.Point(0, 0);
+            this.panelKalkulatorKosztow.Name = "panelKalkulatorKosztow";
+            this.panelKalkulatorKosztow.Size = new System.Drawing.Size(800, 600);
+            this.panelKalkulatorKosztow.TabIndex = 8;
+            // 
+            // buttonKalkulatorKosztowOblicz
+            // 
+            this.buttonKalkulatorKosztowOblicz.BackgroundImage = global::Twixv2.Properties.Resources.button_oblicz;
+            this.buttonKalkulatorKosztowOblicz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonKalkulatorKosztowOblicz.Location = new System.Drawing.Point(85, 142);
+            this.buttonKalkulatorKosztowOblicz.Name = "buttonKalkulatorKosztowOblicz";
+            this.buttonKalkulatorKosztowOblicz.Size = new System.Drawing.Size(108, 47);
+            this.buttonKalkulatorKosztowOblicz.TabIndex = 1;
+            this.buttonKalkulatorKosztowOblicz.UseVisualStyleBackColor = true;
+            this.buttonKalkulatorKosztowOblicz.Click += new System.EventHandler(this.buttonKalkulatorKosztowOblicz_Click);
+            // 
+            // buttonKalkulatorKosztowCofnij
+            // 
+            this.buttonKalkulatorKosztowCofnij.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonKalkulatorKosztowCofnij.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonKalkulatorKosztowCofnij.Location = new System.Drawing.Point(640, 505);
+            this.buttonKalkulatorKosztowCofnij.Name = "buttonKalkulatorKosztowCofnij";
+            this.buttonKalkulatorKosztowCofnij.Size = new System.Drawing.Size(99, 45);
+            this.buttonKalkulatorKosztowCofnij.TabIndex = 0;
+            this.buttonKalkulatorKosztowCofnij.UseVisualStyleBackColor = true;
+            this.buttonKalkulatorKosztowCofnij.Click += new System.EventHandler(this.buttonKalkulatorKosztowCofnij_Click);
             // 
             // panelDodajWynik
             // 
@@ -1264,62 +1314,67 @@
             // 
             // buttonDodajWynikWroc
             // 
+            this.buttonDodajWynikWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonDodajWynikWroc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDodajWynikWroc.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynikWroc.Location = new System.Drawing.Point(572, 487);
+            this.buttonDodajWynikWroc.Location = new System.Drawing.Point(661, 499);
             this.buttonDodajWynikWroc.Name = "buttonDodajWynikWroc";
-            this.buttonDodajWynikWroc.Size = new System.Drawing.Size(128, 33);
+            this.buttonDodajWynikWroc.Size = new System.Drawing.Size(105, 46);
             this.buttonDodajWynikWroc.TabIndex = 9;
-            this.buttonDodajWynikWroc.Text = "Wróć";
             this.buttonDodajWynikWroc.UseVisualStyleBackColor = true;
             this.buttonDodajWynikWroc.Click += new System.EventHandler(this.buttonDodajWynikWroc_Click);
             // 
             // buttonDodajWynikDodaj
             // 
+            this.buttonDodajWynikDodaj.BackgroundImage = global::Twixv2.Properties.Resources.button_dodaj;
+            this.buttonDodajWynikDodaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDodajWynikDodaj.Font = new System.Drawing.Font("Pricedown Bl", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynikDodaj.Location = new System.Drawing.Point(323, 272);
+            this.buttonDodajWynikDodaj.Location = new System.Drawing.Point(338, 272);
             this.buttonDodajWynikDodaj.Name = "buttonDodajWynikDodaj";
-            this.buttonDodajWynikDodaj.Size = new System.Drawing.Size(147, 38);
+            this.buttonDodajWynikDodaj.Size = new System.Drawing.Size(103, 41);
             this.buttonDodajWynikDodaj.TabIndex = 8;
-            this.buttonDodajWynikDodaj.Text = "Dodaj";
             this.buttonDodajWynikDodaj.UseVisualStyleBackColor = true;
             this.buttonDodajWynikDodaj.Click += new System.EventHandler(this.buttonDodajWynikDodaj_Click);
             // 
             // comboBoxDodajWynikWbierzBron
             // 
-            this.comboBoxDodajWynikWbierzBron.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxDodajWynikWbierzBron.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxDodajWynikWbierzBron.FormattingEnabled = true;
-            this.comboBoxDodajWynikWbierzBron.Location = new System.Drawing.Point(62, 221);
+            this.comboBoxDodajWynikWbierzBron.Location = new System.Drawing.Point(18, 177);
             this.comboBoxDodajWynikWbierzBron.Name = "comboBoxDodajWynikWbierzBron";
-            this.comboBoxDodajWynikWbierzBron.Size = new System.Drawing.Size(156, 24);
+            this.comboBoxDodajWynikWbierzBron.Size = new System.Drawing.Size(198, 31);
             this.comboBoxDodajWynikWbierzBron.TabIndex = 5;
             this.comboBoxDodajWynikWbierzBron.Text = "Wybierz Broń";
             this.comboBoxDodajWynikWbierzBron.SelectedIndexChanged += new System.EventHandler(this.comboBoxDodajWynikWbierzBron_SelectedIndexChanged);
             // 
             // textBoxDodajWynikNazwaUzytkownika
             // 
-            this.textBoxDodajWynikNazwaUzytkownika.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxDodajWynikNazwaUzytkownika.Location = new System.Drawing.Point(62, 103);
+            this.textBoxDodajWynikNazwaUzytkownika.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDodajWynikNazwaUzytkownika.Location = new System.Drawing.Point(18, 59);
             this.textBoxDodajWynikNazwaUzytkownika.Name = "textBoxDodajWynikNazwaUzytkownika";
-            this.textBoxDodajWynikNazwaUzytkownika.Size = new System.Drawing.Size(156, 23);
+            this.textBoxDodajWynikNazwaUzytkownika.Size = new System.Drawing.Size(198, 30);
             this.textBoxDodajWynikNazwaUzytkownika.TabIndex = 1;
             this.textBoxDodajWynikNazwaUzytkownika.Text = "Nazwa Użytkownika";
             this.textBoxDodajWynikNazwaUzytkownika.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxDodajWynikNazwaUzytkownika_MouseClick);
             // 
             // buttonDodajWynikWyszukaj
             // 
+            this.buttonDodajWynikWyszukaj.BackgroundImage = global::Twixv2.Properties.Resources.button_wyszukaj;
+            this.buttonDodajWynikWyszukaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDodajWynikWyszukaj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWynikWyszukaj.Location = new System.Drawing.Point(62, 158);
+            this.buttonDodajWynikWyszukaj.Location = new System.Drawing.Point(18, 114);
             this.buttonDodajWynikWyszukaj.Name = "buttonDodajWynikWyszukaj";
-            this.buttonDodajWynikWyszukaj.Size = new System.Drawing.Size(128, 34);
+            this.buttonDodajWynikWyszukaj.Size = new System.Drawing.Size(137, 43);
             this.buttonDodajWynikWyszukaj.TabIndex = 0;
-            this.buttonDodajWynikWyszukaj.Text = "Wyszukaj";
             this.buttonDodajWynikWyszukaj.UseVisualStyleBackColor = true;
             // 
             // panelUzytkownika
             // 
+            this.panelUzytkownika.BackgroundImage = global::Twixv2.Properties.Resources.Panel_uzytkownika_background;
+            this.panelUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelUzytkownika.Controls.Add(this.buttonUzytkownikWyloguj);
             this.panelUzytkownika.Controls.Add(this.monthCalendar1);
-            this.panelUzytkownika.Controls.Add(this.button1);
+            this.panelUzytkownika.Controls.Add(this.buttonOtworzPanelKalkulatorKosztow);
             this.panelUzytkownika.Controls.Add(this.buttonUzytkownikMojeStatystyki);
             this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRanking);
             this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRezerwacjaTerminu);
@@ -1330,61 +1385,109 @@
             // 
             // buttonUzytkownikWyloguj
             // 
+            this.buttonUzytkownikWyloguj.BackgroundImage = global::Twixv2.Properties.Resources.button_wyloguj;
+            this.buttonUzytkownikWyloguj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(52, 452);
+            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(63, 502);
             this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
-            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(89, 29);
+            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(132, 44);
             this.buttonUzytkownikWyloguj.TabIndex = 5;
-            this.buttonUzytkownikWyloguj.Text = "Wyloguj";
             this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
             this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(520, 238);
+            this.monthCalendar1.Location = new System.Drawing.Point(609, 388);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
             // 
-            // button1
+            // buttonOtworzPanelKalkulatorKosztow
             // 
-            this.button1.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(568, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Kalkulator Kosztów";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImage = global::Twixv2.Properties.Resources.button_koszty;
+            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonOtworzPanelKalkulatorKosztow.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonOtworzPanelKalkulatorKosztow.Location = new System.Drawing.Point(568, 71);
+            this.buttonOtworzPanelKalkulatorKosztow.Name = "buttonOtworzPanelKalkulatorKosztow";
+            this.buttonOtworzPanelKalkulatorKosztow.Size = new System.Drawing.Size(119, 51);
+            this.buttonOtworzPanelKalkulatorKosztow.TabIndex = 3;
+            this.buttonOtworzPanelKalkulatorKosztow.UseVisualStyleBackColor = true;
+            this.buttonOtworzPanelKalkulatorKosztow.Click += new System.EventHandler(this.buttonOtworzPanelKalkulatorKosztow_Click);
             // 
             // buttonUzytkownikMojeStatystyki
             // 
+            this.buttonUzytkownikMojeStatystyki.BackgroundImage = global::Twixv2.Properties.Resources.button_statystyki;
+            this.buttonUzytkownikMojeStatystyki.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
             this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
             this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
             this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
-            this.buttonUzytkownikMojeStatystyki.Text = "Moje Statystyki";
             this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
             // 
             // buttonUzytkownikRanking
             // 
+            this.buttonUzytkownikRanking.BackgroundImage = global::Twixv2.Properties.Resources.button_ranking;
+            this.buttonUzytkownikRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
             this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
             this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
             this.buttonUzytkownikRanking.TabIndex = 1;
-            this.buttonUzytkownikRanking.Text = "Ranking";
             this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
             // 
             // buttonUzytkownikRezerwacjaTerminu
             // 
+            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImage = global::Twixv2.Properties.Resources.button_rezerwacja_terminu;
+            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUzytkownikRezerwacjaTerminu.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUzytkownikRezerwacjaTerminu.Location = new System.Drawing.Point(52, 71);
             this.buttonUzytkownikRezerwacjaTerminu.Name = "buttonUzytkownikRezerwacjaTerminu";
             this.buttonUzytkownikRezerwacjaTerminu.Size = new System.Drawing.Size(119, 51);
             this.buttonUzytkownikRezerwacjaTerminu.TabIndex = 0;
-            this.buttonUzytkownikRezerwacjaTerminu.Text = "Rezerwacja Terminu";
             this.buttonUzytkownikRezerwacjaTerminu.UseVisualStyleBackColor = true;
             this.buttonUzytkownikRezerwacjaTerminu.Click += new System.EventHandler(this.buttonUzytkownikRezerwacjaTerminu_Click);
+            // 
+            // panelOknoGlowne
+            // 
+            this.panelOknoGlowne.BackgroundImage = global::Twixv2.Properties.Resources.Home_background1;
+            this.panelOknoGlowne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelOknoGlowne.Controls.Add(this.buttonOknoGlowneZaloguj);
+            this.panelOknoGlowne.Controls.Add(this.buttonOknoGlowneWyjdz);
+            this.panelOknoGlowne.Controls.Add(this.buttonOknoGlowneZarejestruj);
+            this.panelOknoGlowne.Location = new System.Drawing.Point(0, 0);
+            this.panelOknoGlowne.Name = "panelOknoGlowne";
+            this.panelOknoGlowne.Size = new System.Drawing.Size(800, 600);
+            this.panelOknoGlowne.TabIndex = 12;
+            // 
+            // textBoxKalkulatorKosztowIloscStrzalow
+            // 
+            this.textBoxKalkulatorKosztowIloscStrzalow.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKalkulatorKosztowIloscStrzalow.Location = new System.Drawing.Point(74, 91);
+            this.textBoxKalkulatorKosztowIloscStrzalow.Name = "textBoxKalkulatorKosztowIloscStrzalow";
+            this.textBoxKalkulatorKosztowIloscStrzalow.Size = new System.Drawing.Size(145, 30);
+            this.textBoxKalkulatorKosztowIloscStrzalow.TabIndex = 2;
+            this.textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
+            this.textBoxKalkulatorKosztowIloscStrzalow.Click += new System.EventHandler(this.textBox1_Click);
+            // 
+            // comboBoxKalkulatorKosztowWybierzBron
+            // 
+            this.comboBoxKalkulatorKosztowWybierzBron.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxKalkulatorKosztowWybierzBron.FormattingEnabled = true;
+            this.comboBoxKalkulatorKosztowWybierzBron.Location = new System.Drawing.Point(74, 40);
+            this.comboBoxKalkulatorKosztowWybierzBron.Name = "comboBoxKalkulatorKosztowWybierzBron";
+            this.comboBoxKalkulatorKosztowWybierzBron.Size = new System.Drawing.Size(145, 31);
+            this.comboBoxKalkulatorKosztowWybierzBron.TabIndex = 6;
+            this.comboBoxKalkulatorKosztowWybierzBron.Text = "Wybierz Broń";
+            // 
+            // labelKalkulatorKosztowWynik
+            // 
+            this.labelKalkulatorKosztowWynik.AutoSize = true;
+            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(85, 223);
+            this.labelKalkulatorKosztowWynik.Name = "labelKalkulatorKosztowWynik";
+            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(160, 23);
+            this.labelKalkulatorKosztowWynik.TabIndex = 7;
+            this.labelKalkulatorKosztowWynik.Text = "aaaaaaaaaaaaaaa";
             // 
             // FormOknoGlowne
             // 
@@ -1392,11 +1495,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.buttonOknoGlowneWyjdz);
-            this.Controls.Add(this.buttonOknoGlowneZarejestruj);
-            this.Controls.Add(this.buttonOknoGlowneZaloguj);
-            this.Controls.Add(this.panelDodajWynik);
+            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.panelKalkulatorKosztow);
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
@@ -1405,6 +1505,8 @@
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelRezerwacjaTerminu);
+            this.Controls.Add(this.panelDodajWynik);
+            this.Controls.Add(this.panelOknoGlowne);
             this.Name = "FormOknoGlowne";
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
@@ -1422,9 +1524,12 @@
             this.panelZaktualizujDane.PerformLayout();
             this.panelRezerwacjaTerminu.ResumeLayout(false);
             this.panelRezerwacjaTerminu.PerformLayout();
+            this.panelKalkulatorKosztow.ResumeLayout(false);
+            this.panelKalkulatorKosztow.PerformLayout();
             this.panelDodajWynik.ResumeLayout(false);
             this.panelDodajWynik.PerformLayout();
             this.panelUzytkownika.ResumeLayout(false);
+            this.panelOknoGlowne.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1535,11 +1640,18 @@
         private System.Windows.Forms.Button buttonDodajWynikWroc;
         private System.Windows.Forms.Button buttonUzytkownikRezerwacjaTerminu;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOtworzPanelKalkulatorKosztow;
         private System.Windows.Forms.Button buttonUzytkownikMojeStatystyki;
         private System.Windows.Forms.Button buttonUzytkownikRanking;
         private System.Windows.Forms.Button buttonRezerwacjaTerminuWroc;
         private System.Windows.Forms.Button buttonUzytkownikWyloguj;
+        private System.Windows.Forms.Panel panelKalkulatorKosztow;
+        private System.Windows.Forms.Button buttonKalkulatorKosztowCofnij;
+        private System.Windows.Forms.Button buttonKalkulatorKosztowOblicz;
+        private System.Windows.Forms.Panel panelOknoGlowne;
+        private System.Windows.Forms.TextBox textBoxKalkulatorKosztowIloscStrzalow;
+        private System.Windows.Forms.ComboBox comboBoxKalkulatorKosztowWybierzBron;
+        private System.Windows.Forms.Label labelKalkulatorKosztowWynik;
     }
 }
 

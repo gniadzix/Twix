@@ -20,8 +20,9 @@ namespace Twixv2
         {
             InitializeComponent();
             //odtwarzacz = new SoundPlayer("GTA.wav");
-           // odtwarzacz.PlayLooping();
+            //odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelKalkulatorKosztow);
             ukrywaniePanelu(panelUzytkownika);
             ukrywaniePanelu(panelRezerwacjaTerminu);
             ukrywaniePanelu(panelRejestracja);
@@ -31,18 +32,13 @@ namespace Twixv2
             ukrywaniePanelu(panelUsunUzytkownika);
             ukrywaniePanelu(panelZaktualizujDane);
             ukrywaniePanelu(panelDodajWynik);
-            uzupelnianie_comboboxDodajWynikWybierzBron();
-            autouzupelnianie_textBoxDodajWynikNazwaUzytkownika();
-       
-
-
         }
-        public void uzupelnianie_comboboxDodajWynikWybierzBron()
+        public void uzupelnianie_comboboxWybierzBron(ComboBox cb)
         {
             ArrayList bron = new ArrayList();
             bron = uzytkownik.slownikBroni();
-            comboBoxDodajWynikWbierzBron.TabIndex = 0;
-            comboBoxDodajWynikWbierzBron.DataSource = bron;
+            cb.TabIndex = 0;
+            cb.DataSource = bron;
 
         }
         public void autouzupelnianie_textBoxDodajWynikNazwaUzytkownika()
@@ -250,13 +246,16 @@ namespace Twixv2
 
         private void buttonLogowanieWroc_Click(object sender, EventArgs e)
         {
+            pokazywaniePanelu(panelOknoGlowne);
             ukrywaniePanelu(panelLogowanie);
             errorProviderLogowanie.Clear();
+            
         }
 
         private void buttonOknoGlowneZaloguj_Click(object sender, EventArgs e)
         {
             pokazywaniePanelu(panelLogowanie);
+            ukrywaniePanelu(panelOknoGlowne);
             textBoxLogowanieLogin.Focus();
         }
 
@@ -267,13 +266,15 @@ namespace Twixv2
         }
 
         private void buttonOknoGlowneZarejestruj_Click(object sender, EventArgs e)
-        {
+        {    
             pokazywaniePanelu(panelRejestracja);
+            ukrywaniePanelu(panelOknoGlowne);
             textBoxRejestracjaImie.Focus();
         }
 
         private void buttonRejestracjaWroc_Click(object sender, EventArgs e)
         {
+            pokazywaniePanelu(panelOknoGlowne);
             ukrywaniePanelu(panelRejestracja);
         }
 
@@ -314,7 +315,8 @@ namespace Twixv2
             }
             else if(logowanie == true && uzytkownik.czyAdminBool == false)
             {
-                MessageBox.Show("Jesteś zwykłym userem!" + Environment.NewLine + "Spróbuj ponownie", "Logowanie");
+                ukrywaniePanelu(panelLogowanie);
+                pokazywaniePanelu(panelUzytkownika);
             }
             else
             {
@@ -417,6 +419,7 @@ namespace Twixv2
 
         private void buttonPanelPracownikaWyloguj_Click(object sender, EventArgs e)
         {
+            pokazywaniePanelu(panelOknoGlowne);
             ukrywaniePanelu(panelLogowanie);
             ukrywaniePanelu(panelPanelPracownika);
             uzytkownik.wyloguj();
@@ -655,27 +658,32 @@ namespace Twixv2
         private void buttonDodajWynikWroc_Click(object sender, EventArgs e)
         {
             ukrywaniePanelu(panelDodajWynik);
-            textBoxDodajWynikNazwaUzytkownika.Text="Nazwa użytkownika";
-            
+            textBoxDodajWynikNazwaUzytkownika.Text="Nazwa użytkownika";  
         }
 
         private void buttonUzytkownikRezerwacjaTerminu_Click(object sender, EventArgs e)
         {
-            pokazywaniePanelu(panelUzytkownika);
+            ukrywaniePanelu(panelUzytkownika);
+            pokazywaniePanelu(panelRezerwacjaTerminu);
         }
 
         private void buttonRezerwacjaTerminuWroc_Click(object sender, EventArgs e)
         {
             ukrywaniePanelu(panelRezerwacjaTerminu);
+            pokazywaniePanelu(panelUzytkownika);
         }
 
         private void buttonUzytkownikWyloguj_Click(object sender, EventArgs e)
         {
+            pokazywaniePanelu(panelOknoGlowne);
+            ukrywaniePanelu(panelUzytkownika);
             uzytkownik.wyloguj();
         }
 
         private void buttonDodajWynik_Click_1(object sender, EventArgs e)
         {
+            uzupelnianie_comboboxWybierzBron(comboBoxDodajWynikWbierzBron);
+            autouzupelnianie_textBoxDodajWynikNazwaUzytkownika();
             comboBoxDodajWynikWbierzBron.SelectedIndex = 0;
             pokazywaniePanelu(panelDodajWynik);
           
@@ -691,6 +699,29 @@ namespace Twixv2
         {
             textBoxDodajWynikNazwaUzytkownika.Clear();
            
+        }
+
+        private void buttonOtworzPanelKalkulatorKosztow_Click(object sender, EventArgs e)
+        {
+            uzupelnianie_comboboxWybierzBron(comboBoxKalkulatorKosztowWybierzBron);
+            ukrywaniePanelu(panelUzytkownika);
+            pokazywaniePanelu(panelKalkulatorKosztow);
+        }
+
+        private void buttonKalkulatorKosztowCofnij_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelKalkulatorKosztow);
+            pokazywaniePanelu(panelUzytkownika);
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBoxKalkulatorKosztowIloscStrzalow.Clear();
+        }
+
+        private void buttonKalkulatorKosztowOblicz_Click(object sender, EventArgs e)
+        {
+           // liczenie kosztów
         }
     }
     }

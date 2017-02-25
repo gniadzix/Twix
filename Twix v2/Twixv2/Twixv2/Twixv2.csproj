@@ -196,6 +196,16 @@
   <ItemGroup>
     <None Include="Resources\DodajWynik_Background.jpg" />
     <None Include="Resources\DodajWynik_Background_v2.jpg" />
+    <None Include="Resources\button_rezerwacja_terminu.png" />
+    <None Include="Resources\button_ranking.png" />
+    <None Include="Resources\button_statystyki.png" />
+    <None Include="Resources\button_koszty.png" />
+    <None Include="Resources\Panel_uzytkownika_background.jpg" />
+    <None Include="Resources\button_dodaj_wynik.png" />
+    <None Include="Resources\button_rezerwuj.png" />
+    <None Include="Resources\zarezerwuj_background.jpg" />
+    <None Include="Resources\Kalkulator_kosztow_background.jpg" />
+    <None Include="Resources\button_oblicz.png" />
     <Content Include="TwixBaza.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TwixBaza.edmx</DependentUpon>
