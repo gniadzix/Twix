@@ -32,6 +32,7 @@ namespace Twixv2
             ukrywaniePanelu(panelZaktualizujDane);
             ukrywaniePanelu(panelDodajWynik);
             uzupelnianie_comboboxDodajWynikWybierzBron();
+            autouzupelnianie_textBoxDodajWynikNazwaUzytkownika();
        
 
 
@@ -51,9 +52,9 @@ namespace Twixv2
             AutoCompleteStringCollection uzytkownicy = new AutoCompleteStringCollection();
             ArrayList user = new ArrayList();
 
-            user=uzytkownik.nazwyUzytkownkow();
+            user=uzytkownik.nazwyUzytkownikow();
+            uzytkownicy.Add(user[0].ToString());
             uzytkownicy.Add(user[1].ToString());
-            
             textBoxDodajWynikNazwaUzytkownika.AutoCompleteCustomSource=uzytkownicy;
         }
        

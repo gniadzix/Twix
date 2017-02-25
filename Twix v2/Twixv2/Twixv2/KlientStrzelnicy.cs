@@ -221,18 +221,18 @@ namespace Twixv2
             return bronie;
 
         }
-        public ArrayList nazwyUzytkownkow()
+        public ArrayList nazwyUzytkownikow()
         {
             Twix encjaTwix = new Twix();
             ArrayList uzytkownicy = new ArrayList();
             int i = 0;
-            for(i=1;i<=2;i++)
+
+            for (i=0; i < 2; i++)
             {
-                
-               var nazwa = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == i);
-               uzytkownicy.Add(nazwa.IMIE);
-                
-            }
+                var nazwa = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == i);
+                uzytkownicy.Add(nazwa.LOGIN);
+            }    
+           
             return uzytkownicy;
 
         }
