@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Twixv2
 {
@@ -18,6 +19,7 @@ namespace Twixv2
         private Nullable<int> ranga;
         private int czyAdmin;
         public bool czyAdminBool = false;
+        private Nullable<int> suma;
 
         public bool pobranieDanych(string log, string has)
         {
@@ -33,6 +35,8 @@ namespace Twixv2
                 login = klient.LOGIN;
                 haslo = klient.HASLO;
                 czyAdmin = klient.czyADMIN.GetValueOrDefault();
+                sumowanie();
+                suma = klient.SUMAPKT;
                 // ranga = klient.ID_RANGI;
                 if (czyAdmin == 1)
                 {
@@ -234,7 +238,22 @@ namespace Twixv2
             }    
            
             return uzytkownicy;
-
+        }
+        public void sumowanie()
+        {
+            try
+            {
+                Twix encjaTwix = new Twix();
+                var wynik = encjaTwix.Twix_Wyniki.Select(a => a.ID_KLIENTA == id);
+                var sum = encjaTwix.Twix_Wyniki.Where(a => a.ID_KLIENTA == id).Sum(s => s.WYNIK);
+                var aktualizacjaPkt = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == id);
+                aktualizacjaPkt.SUMAPKT = sum;
+                encjaTwix.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Bład");
+            }
         }
     }
 }
