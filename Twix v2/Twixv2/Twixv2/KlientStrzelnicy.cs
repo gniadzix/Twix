@@ -103,7 +103,49 @@ namespace Twixv2
             }
 
         }
+        public bool dodajWynik(String bron, int wynik, String login)
+        {
+            try
+            {
+                Twix encjaTwix = new Twix();
+                var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == login);
+                id = klient.ID;
+                var wyniki = new Twix_Wyniki();
+                wyniki.ID_KLIENTA = klient.ID;
+                wyniki.WYNIK = wynik;
+                //wyniki.bron=bron;
+                encjaTwix.Twix_Wyniki.Add(wyniki);
+                encjaTwix.SaveChanges();
 
+
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }
+        public short wyszukajPoLoginie(string login)
+        {
+            try
+            {
+                Twix encjaTwix = new Twix();
+                var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == login);
+
+                string log;
+                log = klient.LOGIN;
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
+          
+
+        }
         public ArrayList daneKlienta()
         {
             ArrayList dane = new ArrayList();

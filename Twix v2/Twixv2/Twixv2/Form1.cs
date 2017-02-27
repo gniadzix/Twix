@@ -651,8 +651,9 @@ namespace Twixv2
 
 
         private void buttonDodajWynikDodaj_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Dodano wynik", "Sukces", MessageBoxButtons.OK);
+        {    
+
+            
         }
 
         private void buttonDodajWynikWroc_Click(object sender, EventArgs e)
@@ -722,6 +723,26 @@ namespace Twixv2
         private void buttonKalkulatorKosztowOblicz_Click(object sender, EventArgs e)
         {
            // liczenie kosztów
+        }
+
+        private void buttonDodajWynikWyszukaj_Click(object sender, EventArgs e)
+        {
+            if (uzytkownik.wyszukajPoLoginie(textBoxDodajWynikNazwaUzytkownika.Text) == 1)
+                MessageBox.Show("Wyszukano użytkownika", "Sukces", MessageBoxButtons.OK);
+            else
+            {
+                MessageBox.Show("Nieporawna nazwa użytkownika", "Błąd", MessageBoxButtons.OK);
+                textBoxDodajWynikNazwaUzytkownika.Clear();
+
+            }
+           // MessageBox.Show(textBoxDodajWynikNazwaUzytkownika.Text);
+
+        }
+
+        private void textBoxDodajWynikWynik_MouseClick(object sender, MouseEventArgs e)
+        {
+            textBoxDodajWynikWynik.Clear();
+
         }
     }
     }

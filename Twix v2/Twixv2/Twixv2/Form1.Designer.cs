@@ -127,6 +127,9 @@
             this.comboBoxTor = new System.Windows.Forms.ComboBox();
             this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
             this.panelKalkulatorKosztow = new System.Windows.Forms.Panel();
+            this.labelKalkulatorKosztowWynik = new System.Windows.Forms.Label();
+            this.comboBoxKalkulatorKosztowWybierzBron = new System.Windows.Forms.ComboBox();
+            this.textBoxKalkulatorKosztowIloscStrzalow = new System.Windows.Forms.TextBox();
             this.buttonKalkulatorKosztowOblicz = new System.Windows.Forms.Button();
             this.buttonKalkulatorKosztowCofnij = new System.Windows.Forms.Button();
             this.panelDodajWynik = new System.Windows.Forms.Panel();
@@ -143,9 +146,7 @@
             this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
             this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
-            this.textBoxKalkulatorKosztowIloscStrzalow = new System.Windows.Forms.TextBox();
-            this.comboBoxKalkulatorKosztowWybierzBron = new System.Windows.Forms.ComboBox();
-            this.labelKalkulatorKosztowWynik = new System.Windows.Forms.Label();
+            this.textBoxDodajWynikWynik = new System.Windows.Forms.TextBox();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -1276,6 +1277,36 @@
             this.panelKalkulatorKosztow.Size = new System.Drawing.Size(800, 600);
             this.panelKalkulatorKosztow.TabIndex = 8;
             // 
+            // labelKalkulatorKosztowWynik
+            // 
+            this.labelKalkulatorKosztowWynik.AutoSize = true;
+            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(85, 223);
+            this.labelKalkulatorKosztowWynik.Name = "labelKalkulatorKosztowWynik";
+            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(160, 23);
+            this.labelKalkulatorKosztowWynik.TabIndex = 7;
+            this.labelKalkulatorKosztowWynik.Text = "aaaaaaaaaaaaaaa";
+            // 
+            // comboBoxKalkulatorKosztowWybierzBron
+            // 
+            this.comboBoxKalkulatorKosztowWybierzBron.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxKalkulatorKosztowWybierzBron.FormattingEnabled = true;
+            this.comboBoxKalkulatorKosztowWybierzBron.Location = new System.Drawing.Point(74, 40);
+            this.comboBoxKalkulatorKosztowWybierzBron.Name = "comboBoxKalkulatorKosztowWybierzBron";
+            this.comboBoxKalkulatorKosztowWybierzBron.Size = new System.Drawing.Size(145, 31);
+            this.comboBoxKalkulatorKosztowWybierzBron.TabIndex = 6;
+            this.comboBoxKalkulatorKosztowWybierzBron.Text = "Wybierz Broń";
+            // 
+            // textBoxKalkulatorKosztowIloscStrzalow
+            // 
+            this.textBoxKalkulatorKosztowIloscStrzalow.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKalkulatorKosztowIloscStrzalow.Location = new System.Drawing.Point(74, 91);
+            this.textBoxKalkulatorKosztowIloscStrzalow.Name = "textBoxKalkulatorKosztowIloscStrzalow";
+            this.textBoxKalkulatorKosztowIloscStrzalow.Size = new System.Drawing.Size(145, 30);
+            this.textBoxKalkulatorKosztowIloscStrzalow.TabIndex = 2;
+            this.textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
+            this.textBoxKalkulatorKosztowIloscStrzalow.Click += new System.EventHandler(this.textBox1_Click);
+            // 
             // buttonKalkulatorKosztowOblicz
             // 
             this.buttonKalkulatorKosztowOblicz.BackgroundImage = global::Twixv2.Properties.Resources.button_oblicz;
@@ -1302,6 +1333,7 @@
             // 
             this.panelDodajWynik.BackgroundImage = global::Twixv2.Properties.Resources.DodajWynik_Background_v2;
             this.panelDodajWynik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDodajWynik.Controls.Add(this.textBoxDodajWynikWynik);
             this.panelDodajWynik.Controls.Add(this.buttonDodajWynikWroc);
             this.panelDodajWynik.Controls.Add(this.buttonDodajWynikDodaj);
             this.panelDodajWynik.Controls.Add(this.comboBoxDodajWynikWbierzBron);
@@ -1367,6 +1399,7 @@
             this.buttonDodajWynikWyszukaj.Size = new System.Drawing.Size(137, 43);
             this.buttonDodajWynikWyszukaj.TabIndex = 0;
             this.buttonDodajWynikWyszukaj.UseVisualStyleBackColor = true;
+            this.buttonDodajWynikWyszukaj.Click += new System.EventHandler(this.buttonDodajWynikWyszukaj_Click);
             // 
             // panelUzytkownika
             // 
@@ -1459,35 +1492,15 @@
             this.panelOknoGlowne.Size = new System.Drawing.Size(800, 600);
             this.panelOknoGlowne.TabIndex = 12;
             // 
-            // textBoxKalkulatorKosztowIloscStrzalow
+            // textBoxDodajWynikWynik
             // 
-            this.textBoxKalkulatorKosztowIloscStrzalow.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxKalkulatorKosztowIloscStrzalow.Location = new System.Drawing.Point(74, 91);
-            this.textBoxKalkulatorKosztowIloscStrzalow.Name = "textBoxKalkulatorKosztowIloscStrzalow";
-            this.textBoxKalkulatorKosztowIloscStrzalow.Size = new System.Drawing.Size(145, 30);
-            this.textBoxKalkulatorKosztowIloscStrzalow.TabIndex = 2;
-            this.textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
-            this.textBoxKalkulatorKosztowIloscStrzalow.Click += new System.EventHandler(this.textBox1_Click);
-            // 
-            // comboBoxKalkulatorKosztowWybierzBron
-            // 
-            this.comboBoxKalkulatorKosztowWybierzBron.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxKalkulatorKosztowWybierzBron.FormattingEnabled = true;
-            this.comboBoxKalkulatorKosztowWybierzBron.Location = new System.Drawing.Point(74, 40);
-            this.comboBoxKalkulatorKosztowWybierzBron.Name = "comboBoxKalkulatorKosztowWybierzBron";
-            this.comboBoxKalkulatorKosztowWybierzBron.Size = new System.Drawing.Size(145, 31);
-            this.comboBoxKalkulatorKosztowWybierzBron.TabIndex = 6;
-            this.comboBoxKalkulatorKosztowWybierzBron.Text = "Wybierz Broń";
-            // 
-            // labelKalkulatorKosztowWynik
-            // 
-            this.labelKalkulatorKosztowWynik.AutoSize = true;
-            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(85, 223);
-            this.labelKalkulatorKosztowWynik.Name = "labelKalkulatorKosztowWynik";
-            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(160, 23);
-            this.labelKalkulatorKosztowWynik.TabIndex = 7;
-            this.labelKalkulatorKosztowWynik.Text = "aaaaaaaaaaaaaaa";
+            this.textBoxDodajWynikWynik.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDodajWynikWynik.Location = new System.Drawing.Point(18, 242);
+            this.textBoxDodajWynikWynik.Name = "textBoxDodajWynikWynik";
+            this.textBoxDodajWynikWynik.Size = new System.Drawing.Size(198, 23);
+            this.textBoxDodajWynikWynik.TabIndex = 10;
+            this.textBoxDodajWynikWynik.Text = "Wynik";
+            this.textBoxDodajWynikWynik.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxDodajWynikWynik_MouseClick);
             // 
             // FormOknoGlowne
             // 
@@ -1652,6 +1665,7 @@
         private System.Windows.Forms.TextBox textBoxKalkulatorKosztowIloscStrzalow;
         private System.Windows.Forms.ComboBox comboBoxKalkulatorKosztowWybierzBron;
         private System.Windows.Forms.Label labelKalkulatorKosztowWynik;
+        private System.Windows.Forms.TextBox textBoxDodajWynikWynik;
     }
 }
 
