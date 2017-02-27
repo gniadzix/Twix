@@ -133,6 +133,7 @@
             this.buttonKalkulatorKosztowOblicz = new System.Windows.Forms.Button();
             this.buttonKalkulatorKosztowCofnij = new System.Windows.Forms.Button();
             this.panelDodajWynik = new System.Windows.Forms.Panel();
+            this.textBoxDodajWynikWynik = new System.Windows.Forms.TextBox();
             this.buttonDodajWynikWroc = new System.Windows.Forms.Button();
             this.buttonDodajWynikDodaj = new System.Windows.Forms.Button();
             this.comboBoxDodajWynikWbierzBron = new System.Windows.Forms.ComboBox();
@@ -146,7 +147,6 @@
             this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
             this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
-            this.textBoxDodajWynikWynik = new System.Windows.Forms.TextBox();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -1344,6 +1344,16 @@
             this.panelDodajWynik.Size = new System.Drawing.Size(800, 600);
             this.panelDodajWynik.TabIndex = 10;
             // 
+            // textBoxDodajWynikWynik
+            // 
+            this.textBoxDodajWynikWynik.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDodajWynikWynik.Location = new System.Drawing.Point(18, 242);
+            this.textBoxDodajWynikWynik.Name = "textBoxDodajWynikWynik";
+            this.textBoxDodajWynikWynik.Size = new System.Drawing.Size(198, 23);
+            this.textBoxDodajWynikWynik.TabIndex = 10;
+            this.textBoxDodajWynikWynik.Text = "Wynik";
+            this.textBoxDodajWynikWynik.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxDodajWynikWynik_MouseClick);
+            // 
             // buttonDodajWynikWroc
             // 
             this.buttonDodajWynikWroc.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
@@ -1492,16 +1502,6 @@
             this.panelOknoGlowne.Size = new System.Drawing.Size(800, 600);
             this.panelOknoGlowne.TabIndex = 12;
             // 
-            // textBoxDodajWynikWynik
-            // 
-            this.textBoxDodajWynikWynik.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxDodajWynikWynik.Location = new System.Drawing.Point(18, 242);
-            this.textBoxDodajWynikWynik.Name = "textBoxDodajWynikWynik";
-            this.textBoxDodajWynikWynik.Size = new System.Drawing.Size(198, 23);
-            this.textBoxDodajWynikWynik.TabIndex = 10;
-            this.textBoxDodajWynikWynik.Text = "Wynik";
-            this.textBoxDodajWynikWynik.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxDodajWynikWynik_MouseClick);
-            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1521,6 +1521,7 @@
             this.Controls.Add(this.panelDodajWynik);
             this.Controls.Add(this.panelOknoGlowne);
             this.Name = "FormOknoGlowne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Twix";
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();

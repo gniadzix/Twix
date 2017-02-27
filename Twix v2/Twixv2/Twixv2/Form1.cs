@@ -9,16 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace Twixv2
 {
     public partial class FormOknoGlowne : Form
     {
-        private SoundPlayer odtwarzacz;
+       // private SoundPlayer odtwarzacz;
         KlientStrzelnicy uzytkownik = new KlientStrzelnicy();
         public FormOknoGlowne()
         {
+            Thread tr = new Thread(new ThreadStart(LoadingStart));
+            tr.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            tr.Abort();
             //odtwarzacz = new SoundPlayer("GTA.wav");
             //odtwarzacz.PlayLooping();
             ukrywaniePanelu(panelLogowanie);
@@ -33,6 +38,11 @@ namespace Twixv2
             ukrywaniePanelu(panelZaktualizujDane);
             ukrywaniePanelu(panelDodajWynik);
         }
+        public void LoadingStart()
+        {
+            Application.Run(new Start());
+        }
+
         public void uzupelnianie_comboboxWybierzBron(ComboBox cb)
         {
             ArrayList bron = new ArrayList();
