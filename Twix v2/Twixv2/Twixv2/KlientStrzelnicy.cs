@@ -20,7 +20,7 @@ namespace Twixv2
         private int czyAdmin;
         public bool czyAdminBool = false;
         private Nullable<int> suma;
-
+        int[ , ] rangi = new int[17, 2] { {0, 200}, { 201, 400}, {401, 600}, {601, 800}, {801, 1000}, {1001, 1200}, {1201, 1400}, {1401, 1600}, {1601, 1800}, {1801, 2000}, {2001, 2200}, {2201, 2400}, {2401, 2600}, {2601, 2800}, {2801, 3000}, {3001, 3200}, {3201, 100000}};
         public bool pobranieDanych(string log, string has)
         {
             try
@@ -37,7 +37,9 @@ namespace Twixv2
                 czyAdmin = klient.czyADMIN.GetValueOrDefault();
                 sumowanie();
                 suma = klient.SUMAPKT;
-                // ranga = klient.ID_RANGI;
+                nadawanieRangi();
+                //ranga = obliczanieRangi();
+                ranga = klient.ID_RANGI;
                 if (czyAdmin == 1)
                 {
                     czyAdminBool = true;
@@ -253,6 +255,33 @@ namespace Twixv2
             catch
             {
                 MessageBox.Show("Bład");
+            }
+        }
+        public int obliczanieRangi()
+        {
+            for (int i = 0; i < 17; i++)
+            {
+                if ((suma >= rangi[i, 0])&& suma <= rangi[i, 1])
+                {
+                    return i+1;
+                }
+            }
+            return -1;
+        }
+        public void nadawanieRangi()
+        {
+            int rang = obliczanieRangi();
+            //int? nullRang = rang;
+            try
+            {
+                Twix encjaTwix = new Twix();
+                var aktualizacjaRangi = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == id);
+                aktualizacjaRangi.ID_RANGI = rang;
+                encjaTwix.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Błąd");
             }
         }
     }
