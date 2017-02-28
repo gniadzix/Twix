@@ -743,7 +743,13 @@ namespace Twixv2
 
         private void buttonKalkulatorKosztowOblicz_Click(object sender, EventArgs e)
         {
-           // liczenie kosztów
+            string nazwabroni = comboBoxKalkulatorKosztowWybierzBron.Text;
+            int iloscstrzalow = Convert.ToInt32(textBoxKalkulatorKosztowIloscStrzalow.Text);
+            Twix encjaTwix = new Twix();
+            var bron = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.NAZWA == nazwabroni);
+            int cena = (int)bron.CENA;
+            int koszt = cena * iloscstrzalow;
+            labelKalkulatorKosztowWynik.Text = "Będzie Cię to kosztować \n" + Convert.ToString(koszt) + " PLN";
         }
 
         private void buttonDodajWynikWyszukaj_Click(object sender, EventArgs e)

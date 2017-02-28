@@ -1280,12 +1280,12 @@
             // labelKalkulatorKosztowWynik
             // 
             this.labelKalkulatorKosztowWynik.AutoSize = true;
-            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(85, 223);
+            this.labelKalkulatorKosztowWynik.BackColor = System.Drawing.Color.Transparent;
+            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 18F, System.Drawing.FontStyle.Bold);
+            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(20, 224);
             this.labelKalkulatorKosztowWynik.Name = "labelKalkulatorKosztowWynik";
-            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(160, 23);
+            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(0, 29);
             this.labelKalkulatorKosztowWynik.TabIndex = 7;
-            this.labelKalkulatorKosztowWynik.Text = "aaaaaaaaaaaaaaa";
             // 
             // comboBoxKalkulatorKosztowWybierzBron
             // 
