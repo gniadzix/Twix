@@ -67,10 +67,11 @@ namespace Twixv2
         private void ustawieniapolaPesel(TextBox polePesel, KeyPressEventArgs e)
         {
             polePesel.MaxLength = 11;
-            if (e.KeyChar < '0' || e.KeyChar > '9')
-            {
-                MessageBox.Show("Wprowadź tylko cyfry");
-                e.KeyChar = (char)0;
+            const char Delete = (char)8;
+            if (!char.IsNumber(e.KeyChar)  && e.KeyChar != Delete)
+            { 
+                e.Handled = true;
+                MessageBox.Show("PODAJ TYLKO CYFRY");
             }
         }
 
