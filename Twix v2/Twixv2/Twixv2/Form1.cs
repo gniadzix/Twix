@@ -90,9 +90,9 @@ namespace Twixv2
             string dzien;
             string miesiac;
             string rok;
-            dzien = String.Format("{0:dd}", data);
-            miesiac = String.Format("{0:MM}", data);
-            rok = String.Format("{0:yyyy}", data);
+            dzien = data.Day.ToString();
+            miesiac = data.Month.ToString();
+            rok = data.Year.ToString();
             string pesel = tekst.Text;
             if (pesel == "")
             {
@@ -120,7 +120,17 @@ namespace Twixv2
                 int miesiacDzis = Int32.Parse(miesiac);
                 int dzienDzis = Int32.Parse(dzien);
                 int wiek = rokDzis - intRokPesel;
-                if ((wiek <= 18) && (intMiesiacPesel >= miesiacDzis) && (intDzienPesel > dzienDzis))
+                if (wiek < 18)
+                {
+                    MessageBox.Show("Gówniarz");
+                    tekst.Focus();
+                }
+                else if ((wiek == 18) && (intMiesiacPesel > miesiacDzis))
+                {
+                    MessageBox.Show("Gówniarz");
+                    tekst.Focus();
+                }
+                else if ((wiek == 18) && (intMiesiacPesel == miesiacDzis) && (intDzienPesel > dzienDzis))
                 {
                     MessageBox.Show("Gówniarz");
                     tekst.Focus();
@@ -181,7 +191,7 @@ namespace Twixv2
         {
             int sumakontrolna;
             string nrDowodu = poleNrDowodu.Text;
-            if (nrDowodu == "") return false;
+            if ((nrDowodu == "") || (nrDowodu.Count() < 8)) return false;
             char[] litery = new char[9];
             litery = nrDowodu.ToCharArray();
             for (int i = 0; i < 3; i++)
