@@ -772,6 +772,9 @@ namespace Twixv2
 
         private void buttonKalkulatorKosztowCofnij_Click(object sender, EventArgs e)
         {
+            labelKalkulatorKosztowWynik.Text = "";
+            pictureBoxKalkulatorKosztowMoneyGIF.Visible = false;
+            textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
             ukrywaniePanelu(panelKalkulatorKosztow);
             pokazywaniePanelu(panelUzytkownika);
         }
