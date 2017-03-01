@@ -302,6 +302,7 @@ namespace Twixv2
         }
         public int obliczanieRangi()
         {
+            if (suma == null) suma = 0;
             for (int i = 0; i < 17; i++)
             {
                 if ((suma >= rangi[i, 0])&& suma <= rangi[i, 1])
