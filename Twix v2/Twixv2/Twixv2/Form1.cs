@@ -662,7 +662,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaPesel.Clear();
-                if((errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
