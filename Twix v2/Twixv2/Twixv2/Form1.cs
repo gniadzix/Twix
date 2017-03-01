@@ -85,7 +85,7 @@ namespace Twixv2
             }
         }
 
-        public void czyPelnoletni (TextBox tekst)
+        public int czyPelnoletni (TextBox tekst)
         {
             DateTime data = DateTime.Now;
             string dzien;
@@ -97,8 +97,9 @@ namespace Twixv2
             string pesel = tekst.Text;
             if (pesel == "")
             {
-                MessageBox.Show("Pole pesel nie może być puste");
-                tekst.Focus();
+                //MessageBox.Show("Pole pesel nie może być puste");
+                //tekst.Focus();
+                return -1;
             }
             else
             {
@@ -123,20 +124,24 @@ namespace Twixv2
                 int wiek = rokDzis - intRokPesel;
                 if (wiek < 18)
                 {
-                    MessageBox.Show("Gówniarz");
-                    tekst.Focus();
+                    //MessageBox.Show("Gówniarz");
+                    //tekst.Focus();
+                    return 0;
                 }
                 else if ((wiek == 18) && (intMiesiacPesel > miesiacDzis))
                 {
-                    MessageBox.Show("Gówniarz");
-                    tekst.Focus();
+                    //MessageBox.Show("Gówniarz");
+                    //tekst.Focus();
+                    return 0;
                 }
                 else if ((wiek == 18) && (intMiesiacPesel == miesiacDzis) && (intDzienPesel > dzienDzis))
                 {
-                    MessageBox.Show("Gówniarz");
-                    tekst.Focus();
+                    //MessageBox.Show("Gówniarz");
+                    //tekst.Focus();
+                    return 0;
                 }
             }
+            return 1;
         }
 
         private int wartoscZnaku(char litera)
@@ -310,7 +315,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaHaslo.Clear();
-                buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
@@ -616,7 +621,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaNrDow.Clear();
-                buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
@@ -641,7 +646,24 @@ namespace Twixv2
 
         private void textBoxRejestracjaPesel_Leave(object sender, EventArgs e)
         {
-            czyPelnoletni(textBoxRejestracjaPesel);
+            int sprawdzenie = czyPelnoletni(textBoxRejestracjaPesel);
+            if (sprawdzenie == -1)
+            {
+                errorProviderRejestracjaPesel.Icon = Properties.Resources.blad;
+                errorProviderRejestracjaPesel.SetError(textBoxRejestracjaPesel, "Pole pesel nie może byc puste");
+                buttonRejestracjaZarejestruj.Enabled = false;
+            }
+            else if(sprawdzenie == 0)
+            {
+                errorProviderRejestracjaPesel.Icon = Properties.Resources.blad;
+                errorProviderRejestracjaPesel.SetError(textBoxRejestracjaPesel, "Osoba niepełnoletnia");
+                buttonRejestracjaZarejestruj.Enabled = false;
+            }
+            else
+            {
+                errorProviderRejestracjaPesel.Clear();
+                if((errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+            }
         }
 
         private void textBoxZaktualizujDanePesel_Leave(object sender, EventArgs e)

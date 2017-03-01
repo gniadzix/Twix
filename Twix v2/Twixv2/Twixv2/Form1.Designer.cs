@@ -148,6 +148,7 @@
             this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
             this.errorProviderRejestracjaNrDow = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderRejestracjaPesel = new System.Windows.Forms.ErrorProvider(this.components);
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -163,6 +164,7 @@
             this.panelUzytkownika.SuspendLayout();
             this.panelOknoGlowne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -1508,6 +1510,10 @@
             // 
             this.errorProviderRejestracjaNrDow.ContainerControl = this;
             // 
+            // errorProviderRejestracjaPesel
+            // 
+            this.errorProviderRejestracjaPesel.ContainerControl = this;
+            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1551,6 +1557,7 @@
             this.panelUzytkownika.ResumeLayout(false);
             this.panelOknoGlowne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1675,6 +1682,7 @@
         private System.Windows.Forms.Label labelKalkulatorKosztowWynik;
         private System.Windows.Forms.TextBox textBoxDodajWynikWynik;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaNrDow;
+        private System.Windows.Forms.ErrorProvider errorProviderRejestracjaPesel;
     }
 }
 
