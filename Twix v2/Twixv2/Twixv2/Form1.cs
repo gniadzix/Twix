@@ -609,8 +609,14 @@ namespace Twixv2
         {
             if (sprawdzanieNrDowodu(textBoxRejestracjaNrDowodu) == false)
             {
-                MessageBox.Show("Nieprawidłowy numer dowodu");
-                textBoxRejestracjaNrDowodu.Focus();
+                errorProviderRejestracjaNrDow.Icon = Properties.Resources.blad;
+                errorProviderRejestracjaNrDow.SetError(textBoxRejestracjaNrDowodu, "Niepoprawny numer dowodu");
+                buttonRejestracjaZarejestruj.Enabled = false;
+            }
+            else
+            {
+                errorProviderRejestracjaNrDow.Clear();
+                buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 

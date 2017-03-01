@@ -147,6 +147,7 @@
             this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
             this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
+            this.errorProviderRejestracjaNrDow = new System.Windows.Forms.ErrorProvider(this.components);
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -161,6 +162,7 @@
             this.panelDodajWynik.SuspendLayout();
             this.panelUzytkownika.SuspendLayout();
             this.panelOknoGlowne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -1502,6 +1504,10 @@
             this.panelOknoGlowne.Size = new System.Drawing.Size(800, 600);
             this.panelOknoGlowne.TabIndex = 12;
             // 
+            // errorProviderRejestracjaNrDow
+            // 
+            this.errorProviderRejestracjaNrDow.ContainerControl = this;
+            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1544,6 +1550,7 @@
             this.panelDodajWynik.PerformLayout();
             this.panelUzytkownika.ResumeLayout(false);
             this.panelOknoGlowne.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1667,6 +1674,7 @@
         private System.Windows.Forms.ComboBox comboBoxKalkulatorKosztowWybierzBron;
         private System.Windows.Forms.Label labelKalkulatorKosztowWynik;
         private System.Windows.Forms.TextBox textBoxDodajWynikWynik;
+        private System.Windows.Forms.ErrorProvider errorProviderRejestracjaNrDow;
     }
 }
 

@@ -121,12 +121,15 @@
     <value>False</value>
   </metadata>
   <metadata name="errorProviderLogowanie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>21, 6</value>
+    <value>20, 20</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>85</value>
   </metadata>
   <metadata name="errorProviderRejestracjaHaslo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 17</value>
+    <value>200, 23</value>
+  </metadata>
+  <metadata name="errorProviderRejestracjaNrDow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>412, 23</value>
   </metadata>
 </root>
