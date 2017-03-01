@@ -288,9 +288,10 @@ namespace Twixv2
             try
             {
                 Twix encjaTwix = new Twix();
-                var wynik = encjaTwix.Twix_Wyniki.Select(a => a.ID_KLIENTA == id);
-                var sum = encjaTwix.Twix_Wyniki.Where(a => a.ID_KLIENTA == id).Sum(s => s.WYNIK);
+                //var wynik = encjaTwix.Twix_Wyniki.Select(a => a.ID_KLIENTA == id);
+                var sum = encjaTwix.Twix_Wyniki.Where(a => a.ID_KLIENTA == id && a.WYNIK != null).Sum(s => s.WYNIK);
                 var aktualizacjaPkt = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == id);
+                if (sum == null) sum = 0;
                 aktualizacjaPkt.SUMAPKT = sum;
                 encjaTwix.SaveChanges();
             }
