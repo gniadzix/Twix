@@ -777,7 +777,8 @@ namespace Twixv2
             var bron = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.NAZWA == nazwabroni);
             int cena = (int)bron.CENA;
             int koszt = cena * iloscstrzalow;
-            labelKalkulatorKosztowWynik.Text = "Będzie Cię to kosztować \n" + Convert.ToString(koszt) + " PLN";
+            pictureBoxKalkulatorKosztowMoneyGIF.Visible = true;
+            labelKalkulatorKosztowWynik.Text = "PŁACISZ\n" + Convert.ToString(koszt) + " PLN";
         }
 
         private void buttonDodajWynikWyszukaj_Click(object sender, EventArgs e)

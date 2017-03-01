@@ -216,6 +216,7 @@
     <None Include="Resources\Kalkulator_kosztow_background.jpg" />
     <None Include="Resources\button_oblicz.png" />
     <None Include="Resources\start.jpg" />
+    <None Include="Resources\money.gif" />
     <Content Include="TwixBaza.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TwixBaza.edmx</DependentUpon>

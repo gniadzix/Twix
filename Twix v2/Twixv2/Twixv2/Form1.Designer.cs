@@ -127,6 +127,7 @@
             this.comboBoxTor = new System.Windows.Forms.ComboBox();
             this.comboBoxWolneTerminy = new System.Windows.Forms.ComboBox();
             this.panelKalkulatorKosztow = new System.Windows.Forms.Panel();
+            this.pictureBoxKalkulatorKosztowMoneyGIF = new System.Windows.Forms.PictureBox();
             this.labelKalkulatorKosztowWynik = new System.Windows.Forms.Label();
             this.comboBoxKalkulatorKosztowWybierzBron = new System.Windows.Forms.ComboBox();
             this.textBoxKalkulatorKosztowIloscStrzalow = new System.Windows.Forms.TextBox();
@@ -160,6 +161,7 @@
             this.panelZaktualizujDane.SuspendLayout();
             this.panelRezerwacjaTerminu.SuspendLayout();
             this.panelKalkulatorKosztow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKalkulatorKosztowMoneyGIF)).BeginInit();
             this.panelDodajWynik.SuspendLayout();
             this.panelUzytkownika.SuspendLayout();
             this.panelOknoGlowne.SuspendLayout();
@@ -275,7 +277,7 @@
             this.buttonLogowanieZaloguj.Location = new System.Drawing.Point(458, 294);
             this.buttonLogowanieZaloguj.Name = "buttonLogowanieZaloguj";
             this.buttonLogowanieZaloguj.Size = new System.Drawing.Size(106, 42);
-            this.buttonLogowanieZaloguj.TabIndex = 1;
+            this.buttonLogowanieZaloguj.TabIndex = 0;
             this.buttonLogowanieZaloguj.UseVisualStyleBackColor = true;
             this.buttonLogowanieZaloguj.Click += new System.EventHandler(this.buttonLogowanieZaloguj_Click);
             // 
@@ -286,7 +288,7 @@
             this.buttonLogowanieWroc.Location = new System.Drawing.Point(545, 362);
             this.buttonLogowanieWroc.Name = "buttonLogowanieWroc";
             this.buttonLogowanieWroc.Size = new System.Drawing.Size(98, 41);
-            this.buttonLogowanieWroc.TabIndex = 0;
+            this.buttonLogowanieWroc.TabIndex = 1;
             this.buttonLogowanieWroc.UseVisualStyleBackColor = true;
             this.buttonLogowanieWroc.Click += new System.EventHandler(this.buttonLogowanieWroc_Click);
             // 
@@ -1271,6 +1273,7 @@
             // 
             this.panelKalkulatorKosztow.BackgroundImage = global::Twixv2.Properties.Resources.Kalkulator_kosztow_background;
             this.panelKalkulatorKosztow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelKalkulatorKosztow.Controls.Add(this.pictureBoxKalkulatorKosztowMoneyGIF);
             this.panelKalkulatorKosztow.Controls.Add(this.labelKalkulatorKosztowWynik);
             this.panelKalkulatorKosztow.Controls.Add(this.comboBoxKalkulatorKosztowWybierzBron);
             this.panelKalkulatorKosztow.Controls.Add(this.textBoxKalkulatorKosztowIloscStrzalow);
@@ -1281,32 +1284,45 @@
             this.panelKalkulatorKosztow.Size = new System.Drawing.Size(800, 600);
             this.panelKalkulatorKosztow.TabIndex = 8;
             // 
+            // pictureBoxKalkulatorKosztowMoneyGIF
+            // 
+            this.pictureBoxKalkulatorKosztowMoneyGIF.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxKalkulatorKosztowMoneyGIF.Image = global::Twixv2.Properties.Resources.money;
+            this.pictureBoxKalkulatorKosztowMoneyGIF.Location = new System.Drawing.Point(492, 28);
+            this.pictureBoxKalkulatorKosztowMoneyGIF.Name = "pictureBoxKalkulatorKosztowMoneyGIF";
+            this.pictureBoxKalkulatorKosztowMoneyGIF.Size = new System.Drawing.Size(258, 236);
+            this.pictureBoxKalkulatorKosztowMoneyGIF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxKalkulatorKosztowMoneyGIF.TabIndex = 8;
+            this.pictureBoxKalkulatorKosztowMoneyGIF.TabStop = false;
+            this.pictureBoxKalkulatorKosztowMoneyGIF.Visible = false;
+            // 
             // labelKalkulatorKosztowWynik
             // 
             this.labelKalkulatorKosztowWynik.AutoSize = true;
             this.labelKalkulatorKosztowWynik.BackColor = System.Drawing.Color.Transparent;
-            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 18F, System.Drawing.FontStyle.Bold);
-            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(20, 224);
+            this.labelKalkulatorKosztowWynik.Font = new System.Drawing.Font("Pricedown Bl", 30F, System.Drawing.FontStyle.Bold);
+            this.labelKalkulatorKosztowWynik.Location = new System.Drawing.Point(66, 199);
             this.labelKalkulatorKosztowWynik.Name = "labelKalkulatorKosztowWynik";
-            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(0, 29);
+            this.labelKalkulatorKosztowWynik.Size = new System.Drawing.Size(0, 48);
             this.labelKalkulatorKosztowWynik.TabIndex = 7;
+            this.labelKalkulatorKosztowWynik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxKalkulatorKosztowWybierzBron
             // 
-            this.comboBoxKalkulatorKosztowWybierzBron.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxKalkulatorKosztowWybierzBron.Font = new System.Drawing.Font("Pricedown Bl", 16F, System.Drawing.FontStyle.Bold);
             this.comboBoxKalkulatorKosztowWybierzBron.FormattingEnabled = true;
             this.comboBoxKalkulatorKosztowWybierzBron.Location = new System.Drawing.Point(74, 40);
             this.comboBoxKalkulatorKosztowWybierzBron.Name = "comboBoxKalkulatorKosztowWybierzBron";
-            this.comboBoxKalkulatorKosztowWybierzBron.Size = new System.Drawing.Size(145, 31);
+            this.comboBoxKalkulatorKosztowWybierzBron.Size = new System.Drawing.Size(152, 33);
             this.comboBoxKalkulatorKosztowWybierzBron.TabIndex = 6;
             this.comboBoxKalkulatorKosztowWybierzBron.Text = "Wybierz Broń";
             // 
             // textBoxKalkulatorKosztowIloscStrzalow
             // 
-            this.textBoxKalkulatorKosztowIloscStrzalow.Font = new System.Drawing.Font("Pricedown Bl", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKalkulatorKosztowIloscStrzalow.Font = new System.Drawing.Font("Pricedown Bl", 16F, System.Drawing.FontStyle.Bold);
             this.textBoxKalkulatorKosztowIloscStrzalow.Location = new System.Drawing.Point(74, 91);
             this.textBoxKalkulatorKosztowIloscStrzalow.Name = "textBoxKalkulatorKosztowIloscStrzalow";
-            this.textBoxKalkulatorKosztowIloscStrzalow.Size = new System.Drawing.Size(145, 30);
+            this.textBoxKalkulatorKosztowIloscStrzalow.Size = new System.Drawing.Size(152, 33);
             this.textBoxKalkulatorKosztowIloscStrzalow.TabIndex = 2;
             this.textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
             this.textBoxKalkulatorKosztowIloscStrzalow.Click += new System.EventHandler(this.textBox1_Click);
@@ -1521,6 +1537,10 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.panelLogowanie);
+            this.Controls.Add(this.panelRezerwacjaTerminu);
+            this.Controls.Add(this.panelDodajWynik);
+            this.Controls.Add(this.panelOknoGlowne);
             this.Controls.Add(this.panelKalkulatorKosztow);
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
@@ -1528,10 +1548,6 @@
             this.Controls.Add(this.panelRejestracja);
             this.Controls.Add(this.panelZaktualizujDane);
             this.Controls.Add(this.panelUsunUzytkownika);
-            this.Controls.Add(this.panelLogowanie);
-            this.Controls.Add(this.panelRezerwacjaTerminu);
-            this.Controls.Add(this.panelDodajWynik);
-            this.Controls.Add(this.panelOknoGlowne);
             this.Name = "FormOknoGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Twix";
@@ -1552,6 +1568,7 @@
             this.panelRezerwacjaTerminu.PerformLayout();
             this.panelKalkulatorKosztow.ResumeLayout(false);
             this.panelKalkulatorKosztow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKalkulatorKosztowMoneyGIF)).EndInit();
             this.panelDodajWynik.ResumeLayout(false);
             this.panelDodajWynik.PerformLayout();
             this.panelUzytkownika.ResumeLayout(false);
@@ -1683,6 +1700,7 @@
         private System.Windows.Forms.TextBox textBoxDodajWynikWynik;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaNrDow;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaPesel;
+        private System.Windows.Forms.PictureBox pictureBoxKalkulatorKosztowMoneyGIF;
     }
 }
 
