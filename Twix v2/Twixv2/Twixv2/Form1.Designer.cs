@@ -150,6 +150,7 @@
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
             this.errorProviderRejestracjaNrDow = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderRejestracjaPesel = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderRejestracjaLogin = new System.Windows.Forms.ErrorProvider(this.components);
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -167,6 +168,7 @@
             this.panelOknoGlowne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -638,7 +640,6 @@
             this.textBoxRejestracjaNrDowodu.Name = "textBoxRejestracjaNrDowodu";
             this.textBoxRejestracjaNrDowodu.Size = new System.Drawing.Size(100, 24);
             this.textBoxRejestracjaNrDowodu.TabIndex = 9;
-            this.textBoxRejestracjaNrDowodu.Click += new System.EventHandler(this.textBoxRejestracjaNrDowodu_Click);
             this.textBoxRejestracjaNrDowodu.Leave += new System.EventHandler(this.textBoxRejestracjaNrDowodu_Leave);
             // 
             // textBoxRejestracjaPesel
@@ -1530,6 +1531,10 @@
             // 
             this.errorProviderRejestracjaPesel.ContainerControl = this;
             // 
+            // errorProviderRejestracjaLogin
+            // 
+            this.errorProviderRejestracjaLogin.ContainerControl = this;
+            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1537,6 +1542,9 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.panelRejestracja);
+            this.Controls.Add(this.panelZaktualizujDane);
+            this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelRezerwacjaTerminu);
             this.Controls.Add(this.panelDodajWynik);
@@ -1545,9 +1553,6 @@
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
-            this.Controls.Add(this.panelRejestracja);
-            this.Controls.Add(this.panelZaktualizujDane);
-            this.Controls.Add(this.panelUsunUzytkownika);
             this.Name = "FormOknoGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Twix";
@@ -1575,6 +1580,7 @@
             this.panelOknoGlowne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1700,6 +1706,7 @@
         private System.Windows.Forms.TextBox textBoxDodajWynikWynik;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaNrDow;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaPesel;
+        private System.Windows.Forms.ErrorProvider errorProviderRejestracjaLogin;
         private System.Windows.Forms.PictureBox pictureBoxKalkulatorKosztowMoneyGIF;
     }
 }
