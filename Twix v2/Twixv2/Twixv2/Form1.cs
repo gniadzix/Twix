@@ -75,14 +75,16 @@ namespace Twixv2
             }
         }
 
-        private void sprawdzanieLoginu(TextBox login)
+        private bool sprawdzanieLoginu(TextBox login)
         {
             Twix twixWalidacjaLogin = new Twix();
             if (twixWalidacjaLogin.Twix_Klienci.Any(o => o.LOGIN == login.Text))
             {
-                MessageBox.Show("Login istnieje!");
-                login.Focus();
+                //MessageBox.Show("Login istnieje!");
+                //login.Focus();
+                return false;
             }
+            return true;
         }
 
         public int czyPelnoletni (TextBox tekst)
@@ -315,7 +317,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaHaslo.Clear();
-                if((errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaLogin.GetError(textBoxRejestracjaLogin) == "") &&(errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
@@ -421,7 +423,17 @@ namespace Twixv2
 
         private void textBoxRejestracjaLogin_Leave(object sender, EventArgs e)
         {
-            sprawdzanieLoginu(textBoxRejestracjaLogin);
+            if(sprawdzanieLoginu(textBoxRejestracjaLogin) == false)
+            {
+                errorProviderRejestracjaLogin.Icon = Properties.Resources.blad;
+                errorProviderRejestracjaLogin.SetError(textBoxRejestracjaLogin, "Login istnieje");
+                buttonRejestracjaZarejestruj.Enabled = false;
+            }
+            else
+            {
+                errorProviderRejestracjaLogin.Clear();
+                if ((errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+            }
         }
 
         private void textBoxDodajHaslo_Click(object sender, EventArgs e)
@@ -621,7 +633,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaNrDow.Clear();
-                if((errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaLogin.GetError(textBoxRejestracjaLogin) == "") && (errorProviderRejestracjaPesel.GetError(textBoxRejestracjaPesel) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
@@ -662,7 +674,7 @@ namespace Twixv2
             else
             {
                 errorProviderRejestracjaPesel.Clear();
-                if((errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
+                if((errorProviderRejestracjaLogin.GetError(textBoxRejestracjaLogin) == "") && (errorProviderRejestracjaNrDow.GetError(textBoxRejestracjaNrDowodu) == "") && (errorProviderRejestracjaHaslo.GetError(textBoxRejestracjaPowtorzHaslo) == "")) buttonRejestracjaZarejestruj.Enabled = true;
             }
         }
 
