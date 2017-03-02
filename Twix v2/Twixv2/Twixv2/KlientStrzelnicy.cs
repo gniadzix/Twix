@@ -25,7 +25,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == log && a.HASLO == has);
                 id = klient.ID;
                 imie = klient.IMIE;
@@ -56,7 +56,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var nowyUzytkownik = new Twix_Klienci();
                 nowyUzytkownik.IMIE = im;
                 nowyUzytkownik.NAZWISKO = naz;
@@ -65,6 +65,8 @@ namespace Twixv2
                 nowyUzytkownik.LOGIN = log;
                 nowyUzytkownik.HASLO = has;
                 nowyUzytkownik.czyADMIN = 0;
+                nowyUzytkownik.ID_RANGI = 1;
+                nowyUzytkownik.SUMAPKT = 0;
                 encjaTwix.Twix_Klienci.Add(nowyUzytkownik);
                 encjaTwix.SaveChanges();
                 return true;
@@ -79,7 +81,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
                 id = klient.ID;
                 imie = klient.IMIE;
@@ -107,7 +109,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == login);
                 id = klient.ID;
                 var wyniki = new Twix_Wyniki();
@@ -132,7 +134,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == login);
 
                 string log;
@@ -165,7 +167,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
                 klient.IMIE = imPoZmianie;
                 klient.NAZWISKO = naz;
@@ -195,7 +197,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.PESEL == pes);
                 encjaTwix.Twix_Klienci.Remove(klient);
                 encjaTwix.SaveChanges();
@@ -235,7 +237,7 @@ namespace Twixv2
         {
             try
             {
-                Twix twixEncjaDodajUzytkownika = new Twix();
+                Baza twixEncjaDodajUzytkownika = new Baza();
                 var nowyUzytkownik = new Twix_Klienci();
                 nowyUzytkownik.IMIE = imie;
                 nowyUzytkownik.NAZWISKO = nazwisko;
@@ -255,8 +257,8 @@ namespace Twixv2
         }
         public ArrayList slownikBroni()
         {
-            
-            Twix encjaTwix = new Twix();
+
+            Baza encjaTwix = new Baza();
             ArrayList bronie = new ArrayList();
             bronie.Add("Wybierz broń");
 
@@ -271,7 +273,7 @@ namespace Twixv2
         }
         public ArrayList nazwyUzytkownikow()
         {
-            Twix encjaTwix = new Twix();
+            Baza encjaTwix = new Baza();
             ArrayList uzytkownicy = new ArrayList();
             int i = 0;
 
@@ -287,7 +289,7 @@ namespace Twixv2
         {
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 //var wynik = encjaTwix.Twix_Wyniki.Select(a => a.ID_KLIENTA == id);
                 var sum = encjaTwix.Twix_Wyniki.Where(a => a.ID_KLIENTA == id && a.WYNIK != null).Sum(s => s.WYNIK);
                 var aktualizacjaPkt = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == id);
@@ -318,7 +320,7 @@ namespace Twixv2
             //int? nullRang = rang;
             try
             {
-                Twix encjaTwix = new Twix();
+                Baza encjaTwix = new Baza();
                 var aktualizacjaRangi = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == id);
                 aktualizacjaRangi.ID_RANGI = rang;
                 encjaTwix.SaveChanges();

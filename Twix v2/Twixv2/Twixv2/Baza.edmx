@@ -17,14 +17,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IMIE" Type="varchar" MaxLength="50" />
           <Property Name="NAZWISKO" Type="varchar" MaxLength="50" />
           <Property Name="PESEL" Type="varchar" MaxLength="50" />
           <Property Name="NR_DOWODU" Type="varchar" MaxLength="50" />
           <Property Name="ID_RANGI" Type="int" />
           <Property Name="LOGIN" Type="varchar" MaxLength="50" />
-          <Property Name="HASLO" Type="varchar" MaxLength="50" />
+          <Property Name="HASLO" Type="varchar" MaxLength="100" />
           <Property Name="czyADMIN" Type="int" />
           <Property Name="SUMAPKT" Type="int" />
         </EntityType>
@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_KLIENTA" Type="int" />
           <Property Name="DATA" Type="datetime" />
           <Property Name="CZAS" Type="int" />
@@ -87,6 +87,7 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="WYNIK" Type="int" />
           <Property Name="ID_KLIENTA" Type="int" />
+          <Property Name="ID_BRONI" Type="int" />
         </EntityType>
         <Association Name="FK_ID_KLIENTA">
           <End Role="Twix_Klienci" Type="Self.Twix_Klienci" Multiplicity="0..1" />
@@ -247,14 +248,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IMIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NAZWISKO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PESEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NR_DOWODU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID_RANGI" Type="Int32" />
           <Property Name="LOGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="HASLO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HASLO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="czyADMIN" Type="Int32" />
           <Property Name="SUMAPKT" Type="Int32" />
           <NavigationProperty Name="Twix_Wyniki" Relationship="Self.FK_ID_KLIENTA" FromRole="Twix_Klienci" ToRole="Twix_Wyniki" />
@@ -265,7 +266,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_KLIENTA" Type="Int32" />
           <Property Name="DATA" Type="DateTime" Precision="3" />
           <Property Name="CZAS" Type="Int32" />
@@ -319,6 +320,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="WYNIK" Type="Int32" />
           <Property Name="ID_KLIENTA" Type="Int32" />
+          <Property Name="ID_BRONI" Type="Int32" />
           <NavigationProperty Name="Twix_Klienci" Relationship="Self.FK_ID_KLIENTA" FromRole="Twix_Wyniki" ToRole="Twix_Klienci" />
         </EntityType>
         <Association Name="FK_Twix_BronAmunicja_Twix_SL_Amunicji">
@@ -397,7 +399,7 @@
           <End Role="Twix_Bron_Amunicja" Type="Self.Twix_Bron_Amunicja" Multiplicity="*" />
           <End Role="Twix_Rezerwacja" Type="Self.Twix_Rezerwacja" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Twix" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Baza" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Twix_Bron_Amunicja" EntityType="Self.Twix_Bron_Amunicja" />
           <EntitySet Name="Twix_Klienci" EntityType="Self.Twix_Klienci" />
           <EntitySet Name="Twix_Rezerwacja" EntityType="Self.Twix_Rezerwacja" />
@@ -440,7 +442,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TwixModelStoreContainer" CdmEntityContainer="Twix">
+        <EntityContainerMapping StorageEntityContainer="TwixModelStoreContainer" CdmEntityContainer="Baza">
           <EntitySetMapping Name="Twix_Bron_Amunicja">
             <EntityTypeMapping TypeName="TwixModel.Twix_Bron_Amunicja">
               <MappingFragment StoreEntitySet="Twix_Bron_Amunicja">
@@ -521,6 +523,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="WYNIK" ColumnName="WYNIK" />
                 <ScalarProperty Name="ID_KLIENTA" ColumnName="ID_KLIENTA" />
+                <ScalarProperty Name="ID_BRONI" ColumnName="ID_BRONI" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

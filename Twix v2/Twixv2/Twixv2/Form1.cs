@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace Twixv2
 {
@@ -51,6 +52,25 @@ namespace Twixv2
             cb.DataSource = bron;
 
         }
+
+        public static string GenerateSHA256String(string inputString)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(inputString);
+            byte[] hash = sha256.ComputeHash(bytes);
+            return GetStringFromHash(hash);
+        }
+
+        private static string GetStringFromHash(byte[] hash)
+        {
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                result.Append(hash[i].ToString("X2"));
+            }
+            return result.ToString();
+        }
+
         public void autouzupelnianie_textBoxDodajWynikNazwaUzytkownika()
         {  
             textBoxDodajWynikNazwaUzytkownika.AutoCompleteMode = AutoCompleteMode.Suggest;
@@ -77,7 +97,7 @@ namespace Twixv2
 
         private bool sprawdzanieLoginu(TextBox login)
         {
-            Twix twixWalidacjaLogin = new Twix();
+            Baza twixWalidacjaLogin = new Baza();
             if (twixWalidacjaLogin.Twix_Klienci.Any(o => o.LOGIN == login.Text))
             {
                 //MessageBox.Show("Login istnieje!");
@@ -323,7 +343,8 @@ namespace Twixv2
 
         private void buttonRejestracjaZarejestruj_Click(object sender, EventArgs e)
         {
-            if (uzytkownik.rejestracja(textBoxRejestracjaImie.Text, textBoxRejestracjaNazwisko.Text, textBoxRejestracjaNrDowodu.Text, textBoxRejestracjaPesel.Text, textBoxRejestracjaLogin.Text, textBoxRejestracjaHaslo.Text))
+            
+            if (uzytkownik.rejestracja(textBoxRejestracjaImie.Text, textBoxRejestracjaNazwisko.Text, textBoxRejestracjaNrDowodu.Text, textBoxRejestracjaPesel.Text, textBoxRejestracjaLogin.Text, GenerateSHA256String(textBoxRejestracjaHaslo.Text)))
             {
                 MessageBox.Show("Rejestracja przebiegła pomyślnie", "Rejestracja");
             }
@@ -336,7 +357,7 @@ namespace Twixv2
         private void buttonLogowanieZaloguj_Click(object sender, EventArgs e)
         {
             bool logowanie;
-            logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text, textBoxLogowanieHaslo.Text);
+            logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text,GenerateSHA256String(textBoxLogowanieHaslo.Text));
             if(logowanie == true && uzytkownik.czyAdminBool == true)
             {
                 pokazywaniePanelu(panelPanelPracownika);
@@ -372,7 +393,7 @@ namespace Twixv2
 
             }
             else czyAdm = 0;
-            if(uzytkownik.dodajUzytkownika(textBoxDodajImie.Text, textBoxDodajNazwisko.Text, textBoxDodajNrDowodu.Text, textBoxDodajPesel.Text, textBoxDodajLogin.Text, textBoxDodajHaslo.Text, czyAdm))
+            if(uzytkownik.dodajUzytkownika(textBoxDodajImie.Text, textBoxDodajNazwisko.Text, textBoxDodajNrDowodu.Text, textBoxDodajPesel.Text, textBoxDodajLogin.Text, GenerateSHA256String(textBoxDodajHaslo.Text), czyAdm))
             {
                 MessageBox.Show("+++DODANO+++");
             }
@@ -539,7 +560,7 @@ namespace Twixv2
                 czyAdm = true;
             }
             else czyAdm = false;
-            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, textBoxZaktualizujDaneHaslo.Text, czyAdm) == true)
+            if (uzytkownikZmiana.zmianaDanych(textBoxZaktualizujDaneWyszukajPesel.Text, textBoxZaktualizujDaneImie.Text, textBoxZaktualizujDaneNazwisko.Text, textBoxZaktualizujDaneNrDowodu.Text, textBoxZaktualizujDanePesel.Text, textBoxZaktualizujDaneLogin.Text, GenerateSHA256String(textBoxZaktualizujDaneHaslo.Text), czyAdm) == true)
             {
                 MessageBox.Show("Poprawnie zaktualizowano dane użytkownika", "Sukces");
                 textBoxZaktualizujDaneHaslo.Enabled = false;
@@ -788,7 +809,7 @@ namespace Twixv2
         {
             string nazwabroni = comboBoxKalkulatorKosztowWybierzBron.Text;
             int iloscstrzalow = Convert.ToInt32(textBoxKalkulatorKosztowIloscStrzalow.Text);
-            Twix encjaTwix = new Twix();
+            Baza encjaTwix = new Baza();
             var bron = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.NAZWA == nazwabroni);
             int cena = (int)bron.CENA;
             int koszt = cena * iloscstrzalow;

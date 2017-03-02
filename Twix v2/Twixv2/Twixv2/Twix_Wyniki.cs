@@ -18,6 +18,7 @@ namespace Twixv2
         public int ID { get; set; }
         public Nullable<int> WYNIK { get; set; }
         public Nullable<int> ID_KLIENTA { get; set; }
+        public Nullable<int> ID_BRONI { get; set; }
     
         public virtual Twix_Klienci Twix_Klienci { get; set; }
     }

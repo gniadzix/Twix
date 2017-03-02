@@ -13,10 +13,10 @@ namespace Twixv2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Twix : DbContext
+    public partial class Baza : DbContext
     {
-        public Twix()
-            : base("name=Twix")
+        public Baza()
+            : base("name=Baza")
         {
         }
     
