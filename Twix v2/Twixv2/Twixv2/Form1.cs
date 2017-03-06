@@ -79,8 +79,11 @@ namespace Twixv2
             ArrayList user = new ArrayList();
 
             user=uzytkownik.nazwyUzytkownikow();
-            uzytkownicy.Add(user[0].ToString());
-            uzytkownicy.Add(user[1].ToString());
+            int maxid = uzytkownik.maxIdUzytkownika();
+            for (int i = 0; i <= maxid; i++)
+            {
+                uzytkownicy.Add(user[i].ToString());
+            }    
             textBoxDodajWynikNazwaUzytkownika.AutoCompleteCustomSource=uzytkownicy;
         }
        
@@ -733,9 +736,30 @@ namespace Twixv2
 
 
         private void buttonDodajWynikDodaj_Click(object sender, EventArgs e)
-        {    
+        {
 
-            
+
+
+
+            int x = uzytkownik.intoString(textBoxDodajWynikWynik.Text);
+            if (x == -1)
+            {
+                MessageBox.Show("Podaj poprawny wynik", "Błąd", MessageBoxButtons.OK);
+                textBoxDodajWynikWynik.Clear();
+            }
+            else
+            {
+
+                if (uzytkownik.dodajWynik(comboBoxDodajWynikWbierzBron.Text, x, textBoxDodajWynikNazwaUzytkownika.Text))
+                {
+                    MessageBox.Show("Sukces", "Dodano wynik", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Błąd", "Spróbuj jeszcze raz", MessageBoxButtons.OK);
+                }
+
+            }
         }
 
         private void buttonDodajWynikWroc_Click(object sender, EventArgs e)
@@ -827,7 +851,7 @@ namespace Twixv2
                 textBoxDodajWynikNazwaUzytkownika.Clear();
 
             }
-           // MessageBox.Show(textBoxDodajWynikNazwaUzytkownika.Text);
+       
 
         }
 

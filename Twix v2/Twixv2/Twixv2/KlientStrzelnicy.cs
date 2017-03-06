@@ -109,25 +109,30 @@ namespace Twixv2
         {
             try
             {
+                int id_broni = 2;
                 Baza encjaTwix = new Baza();
+                var klient2 = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.NAZWA == bron);
+                id_broni = klient2.ID;
+
                 var klient = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.LOGIN == login);
                 id = klient.ID;
+                int klient3 = encjaTwix.Twix_Wyniki.Max(a => a.ID);
                 var wyniki = new Twix_Wyniki();
-                wyniki.ID_KLIENTA = klient.ID;
+
+                wyniki.ID_KLIENTA = id;
                 wyniki.WYNIK = wynik;
-                //wyniki.bron=bron;
+                wyniki.ID_BRONI = id_broni;
+                wyniki.DATA = DateTime.Today;
+                wyniki.ID = 1 + klient3;
                 encjaTwix.Twix_Wyniki.Add(wyniki);
                 encjaTwix.SaveChanges();
 
-
                 return true;
-
             }
             catch
             {
                 return false;
             }
-
 
         }
         public short wyszukajPoLoginie(string login)
@@ -262,22 +267,42 @@ namespace Twixv2
             ArrayList bronie = new ArrayList();
             bronie.Add("Wybierz broń");
 
-            int i = 0;
-            for (i = 1; i <= 32; i++)
+            var maxid = encjaTwix.Twix_SL_Broni.Max(a => a.ID);
+            for (int i = 1; i <= maxid; i++)
             {
                 var bron = encjaTwix.Twix_SL_Broni.FirstOrDefault(a => a.ID == i);
                 bronie.Add(bron.NAZWA);
             }
             return bronie;
+           
 
         }
+        public int maxIdUzytkownika()
+        {
+            Baza encjaTwix = new Baza();
+            var maxid = encjaTwix.Twix_Klienci.Max(a => a.ID);
+            return maxid;
+        }
+        public int intoString(string text)
+        {
+            try
+            {
+                int x = Int32.Parse(text);
+                return x;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
         public ArrayList nazwyUzytkownikow()
         {
             Baza encjaTwix = new Baza();
             ArrayList uzytkownicy = new ArrayList();
             int i = 0;
-
-            for (i=0; i < 2; i++)
+            var maxid = encjaTwix.Twix_Klienci.Max(a => a.ID);
+            for (i=0; i <=maxid; i++)
             {
                 var nazwa = encjaTwix.Twix_Klienci.FirstOrDefault(a => a.ID == i);
                 uzytkownicy.Add(nazwa.LOGIN);
