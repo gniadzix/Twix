@@ -38,6 +38,7 @@ namespace Twixv2
             ukrywaniePanelu(panelUsunUzytkownika);
             ukrywaniePanelu(panelZaktualizujDane);
             ukrywaniePanelu(panelDodajWynik);
+            ukrywaniePanelu(panelRanking);
         }
         public void LoadingStart()
         {
@@ -52,6 +53,7 @@ namespace Twixv2
             cb.DataSource = bron;
 
         }
+
 
         public static string GenerateSHA256String(string inputString)
         {
@@ -729,11 +731,6 @@ namespace Twixv2
             pokazywaniePanelu(panelDodajWynik);
         }
 
-        private void panelRezerwacjaTerminu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
         private void buttonDodajWynikDodaj_Click(object sender, EventArgs e)
         {
@@ -859,6 +856,27 @@ namespace Twixv2
         {
             textBoxDodajWynikWynik.Clear();
 
+        }
+
+        private void buttonUzytkownikRanking_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelUzytkownika);
+            pokazywaniePanelu(panelRanking);
+            Baza encjaTwix = new Baza();
+            List<Twix_Klienci> lista = new List<Twix_Klienci>();
+            lista = encjaTwix.Twix_Klienci.OrderByDescending(a => a.SUMAPKT).ToList();
+            var text = string.Empty;
+            foreach (Twix_Klienci klient in lista)
+            {
+               text += klient.LOGIN + "                 "+ klient.SUMAPKT + Environment.NewLine;
+            }
+            labelRanking.Text = text;
+        }
+
+        private void buttonRankingCofnij_Click(object sender, EventArgs e)
+        {
+            ukrywaniePanelu(panelRanking);
+            pokazywaniePanelu(panelUzytkownika);
         }
     }
     }

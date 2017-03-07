@@ -140,17 +140,21 @@
             this.comboBoxDodajWynikWbierzBron = new System.Windows.Forms.ComboBox();
             this.textBoxDodajWynikNazwaUzytkownika = new System.Windows.Forms.TextBox();
             this.buttonDodajWynikWyszukaj = new System.Windows.Forms.Button();
-            this.panelUzytkownika = new System.Windows.Forms.Panel();
-            this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.buttonOtworzPanelKalkulatorKosztow = new System.Windows.Forms.Button();
-            this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
-            this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
-            this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
             this.panelOknoGlowne = new System.Windows.Forms.Panel();
             this.errorProviderRejestracjaNrDow = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderRejestracjaPesel = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderRejestracjaLogin = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonUzytkownikRezerwacjaTerminu = new System.Windows.Forms.Button();
+            this.buttonUzytkownikRanking = new System.Windows.Forms.Button();
+            this.buttonUzytkownikMojeStatystyki = new System.Windows.Forms.Button();
+            this.buttonOtworzPanelKalkulatorKosztow = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
+            this.panelUzytkownika = new System.Windows.Forms.Panel();
+            this.panelRanking = new System.Windows.Forms.Panel();
+            this.buttonRankingCofnij = new System.Windows.Forms.Button();
+            this.labelRanking = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -164,11 +168,12 @@
             this.panelKalkulatorKosztow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKalkulatorKosztowMoneyGIF)).BeginInit();
             this.panelDodajWynik.SuspendLayout();
-            this.panelUzytkownika.SuspendLayout();
             this.panelOknoGlowne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).BeginInit();
+            this.panelUzytkownika.SuspendLayout();
+            this.panelRanking.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -1195,7 +1200,6 @@
             this.panelRezerwacjaTerminu.Name = "panelRezerwacjaTerminu";
             this.panelRezerwacjaTerminu.Size = new System.Drawing.Size(800, 600);
             this.panelRezerwacjaTerminu.TabIndex = 9;
-            this.panelRezerwacjaTerminu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRezerwacjaTerminu_Paint);
             // 
             // buttonRezerwacjaTerminuWroc
             // 
@@ -1432,85 +1436,6 @@
             this.buttonDodajWynikWyszukaj.UseVisualStyleBackColor = true;
             this.buttonDodajWynikWyszukaj.Click += new System.EventHandler(this.buttonDodajWynikWyszukaj_Click);
             // 
-            // panelUzytkownika
-            // 
-            this.panelUzytkownika.BackgroundImage = global::Twixv2.Properties.Resources.Panel_uzytkownika_background;
-            this.panelUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikWyloguj);
-            this.panelUzytkownika.Controls.Add(this.monthCalendar1);
-            this.panelUzytkownika.Controls.Add(this.buttonOtworzPanelKalkulatorKosztow);
-            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikMojeStatystyki);
-            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRanking);
-            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRezerwacjaTerminu);
-            this.panelUzytkownika.Location = new System.Drawing.Point(0, 0);
-            this.panelUzytkownika.Name = "panelUzytkownika";
-            this.panelUzytkownika.Size = new System.Drawing.Size(800, 600);
-            this.panelUzytkownika.TabIndex = 11;
-            // 
-            // buttonUzytkownikWyloguj
-            // 
-            this.buttonUzytkownikWyloguj.BackgroundImage = global::Twixv2.Properties.Resources.button_wyloguj;
-            this.buttonUzytkownikWyloguj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(63, 502);
-            this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
-            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(132, 44);
-            this.buttonUzytkownikWyloguj.TabIndex = 5;
-            this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
-            this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(609, 388);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 4;
-            // 
-            // buttonOtworzPanelKalkulatorKosztow
-            // 
-            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImage = global::Twixv2.Properties.Resources.button_koszty;
-            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonOtworzPanelKalkulatorKosztow.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonOtworzPanelKalkulatorKosztow.Location = new System.Drawing.Point(568, 71);
-            this.buttonOtworzPanelKalkulatorKosztow.Name = "buttonOtworzPanelKalkulatorKosztow";
-            this.buttonOtworzPanelKalkulatorKosztow.Size = new System.Drawing.Size(119, 51);
-            this.buttonOtworzPanelKalkulatorKosztow.TabIndex = 3;
-            this.buttonOtworzPanelKalkulatorKosztow.UseVisualStyleBackColor = true;
-            this.buttonOtworzPanelKalkulatorKosztow.Click += new System.EventHandler(this.buttonOtworzPanelKalkulatorKosztow_Click);
-            // 
-            // buttonUzytkownikMojeStatystyki
-            // 
-            this.buttonUzytkownikMojeStatystyki.BackgroundImage = global::Twixv2.Properties.Resources.button_statystyki;
-            this.buttonUzytkownikMojeStatystyki.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
-            this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
-            this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
-            this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
-            this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
-            // 
-            // buttonUzytkownikRanking
-            // 
-            this.buttonUzytkownikRanking.BackgroundImage = global::Twixv2.Properties.Resources.button_ranking;
-            this.buttonUzytkownikRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
-            this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
-            this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
-            this.buttonUzytkownikRanking.TabIndex = 1;
-            this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
-            // 
-            // buttonUzytkownikRezerwacjaTerminu
-            // 
-            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImage = global::Twixv2.Properties.Resources.button_rezerwacja_terminu;
-            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUzytkownikRezerwacjaTerminu.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonUzytkownikRezerwacjaTerminu.Location = new System.Drawing.Point(52, 71);
-            this.buttonUzytkownikRezerwacjaTerminu.Name = "buttonUzytkownikRezerwacjaTerminu";
-            this.buttonUzytkownikRezerwacjaTerminu.Size = new System.Drawing.Size(119, 51);
-            this.buttonUzytkownikRezerwacjaTerminu.TabIndex = 0;
-            this.buttonUzytkownikRezerwacjaTerminu.UseVisualStyleBackColor = true;
-            this.buttonUzytkownikRezerwacjaTerminu.Click += new System.EventHandler(this.buttonUzytkownikRezerwacjaTerminu_Click);
-            // 
             // panelOknoGlowne
             // 
             this.panelOknoGlowne.BackgroundImage = global::Twixv2.Properties.Resources.Home_background1;
@@ -1535,6 +1460,126 @@
             // 
             this.errorProviderRejestracjaLogin.ContainerControl = this;
             // 
+            // buttonUzytkownikRezerwacjaTerminu
+            // 
+            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImage = global::Twixv2.Properties.Resources.button_rezerwacja_terminu;
+            this.buttonUzytkownikRezerwacjaTerminu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUzytkownikRezerwacjaTerminu.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikRezerwacjaTerminu.Location = new System.Drawing.Point(52, 71);
+            this.buttonUzytkownikRezerwacjaTerminu.Name = "buttonUzytkownikRezerwacjaTerminu";
+            this.buttonUzytkownikRezerwacjaTerminu.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikRezerwacjaTerminu.TabIndex = 0;
+            this.buttonUzytkownikRezerwacjaTerminu.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikRezerwacjaTerminu.Click += new System.EventHandler(this.buttonUzytkownikRezerwacjaTerminu_Click);
+            // 
+            // buttonUzytkownikRanking
+            // 
+            this.buttonUzytkownikRanking.BackgroundImage = global::Twixv2.Properties.Resources.button_ranking;
+            this.buttonUzytkownikRanking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUzytkownikRanking.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikRanking.Location = new System.Drawing.Point(214, 71);
+            this.buttonUzytkownikRanking.Name = "buttonUzytkownikRanking";
+            this.buttonUzytkownikRanking.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikRanking.TabIndex = 1;
+            this.buttonUzytkownikRanking.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikRanking.Click += new System.EventHandler(this.buttonUzytkownikRanking_Click);
+            // 
+            // buttonUzytkownikMojeStatystyki
+            // 
+            this.buttonUzytkownikMojeStatystyki.BackgroundImage = global::Twixv2.Properties.Resources.button_statystyki;
+            this.buttonUzytkownikMojeStatystyki.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUzytkownikMojeStatystyki.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikMojeStatystyki.Location = new System.Drawing.Point(391, 71);
+            this.buttonUzytkownikMojeStatystyki.Name = "buttonUzytkownikMojeStatystyki";
+            this.buttonUzytkownikMojeStatystyki.Size = new System.Drawing.Size(119, 51);
+            this.buttonUzytkownikMojeStatystyki.TabIndex = 2;
+            this.buttonUzytkownikMojeStatystyki.UseVisualStyleBackColor = true;
+            // 
+            // buttonOtworzPanelKalkulatorKosztow
+            // 
+            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImage = global::Twixv2.Properties.Resources.button_koszty;
+            this.buttonOtworzPanelKalkulatorKosztow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonOtworzPanelKalkulatorKosztow.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonOtworzPanelKalkulatorKosztow.Location = new System.Drawing.Point(568, 71);
+            this.buttonOtworzPanelKalkulatorKosztow.Name = "buttonOtworzPanelKalkulatorKosztow";
+            this.buttonOtworzPanelKalkulatorKosztow.Size = new System.Drawing.Size(119, 51);
+            this.buttonOtworzPanelKalkulatorKosztow.TabIndex = 3;
+            this.buttonOtworzPanelKalkulatorKosztow.UseVisualStyleBackColor = true;
+            this.buttonOtworzPanelKalkulatorKosztow.Click += new System.EventHandler(this.buttonOtworzPanelKalkulatorKosztow_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(609, 388);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
+            // 
+            // buttonUzytkownikWyloguj
+            // 
+            this.buttonUzytkownikWyloguj.BackgroundImage = global::Twixv2.Properties.Resources.button_wyloguj;
+            this.buttonUzytkownikWyloguj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUzytkownikWyloguj.Font = new System.Drawing.Font("Pricedown Bl", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUzytkownikWyloguj.Location = new System.Drawing.Point(63, 502);
+            this.buttonUzytkownikWyloguj.Name = "buttonUzytkownikWyloguj";
+            this.buttonUzytkownikWyloguj.Size = new System.Drawing.Size(132, 44);
+            this.buttonUzytkownikWyloguj.TabIndex = 5;
+            this.buttonUzytkownikWyloguj.UseVisualStyleBackColor = true;
+            this.buttonUzytkownikWyloguj.Click += new System.EventHandler(this.buttonUzytkownikWyloguj_Click);
+            // 
+            // panelUzytkownika
+            // 
+            this.panelUzytkownika.BackgroundImage = global::Twixv2.Properties.Resources.Panel_uzytkownika_background;
+            this.panelUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikWyloguj);
+            this.panelUzytkownika.Controls.Add(this.monthCalendar1);
+            this.panelUzytkownika.Controls.Add(this.buttonOtworzPanelKalkulatorKosztow);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikMojeStatystyki);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRanking);
+            this.panelUzytkownika.Controls.Add(this.buttonUzytkownikRezerwacjaTerminu);
+            this.panelUzytkownika.Location = new System.Drawing.Point(0, 0);
+            this.panelUzytkownika.Name = "panelUzytkownika";
+            this.panelUzytkownika.Size = new System.Drawing.Size(800, 600);
+            this.panelUzytkownika.TabIndex = 11;
+            // 
+            // panelRanking
+            // 
+            this.panelRanking.Controls.Add(this.label2);
+            this.panelRanking.Controls.Add(this.labelRanking);
+            this.panelRanking.Controls.Add(this.buttonRankingCofnij);
+            this.panelRanking.Location = new System.Drawing.Point(0, 0);
+            this.panelRanking.Name = "panelRanking";
+            this.panelRanking.Size = new System.Drawing.Size(800, 600);
+            this.panelRanking.TabIndex = 13;
+            // 
+            // buttonRankingCofnij
+            // 
+            this.buttonRankingCofnij.Location = new System.Drawing.Point(678, 502);
+            this.buttonRankingCofnij.Name = "buttonRankingCofnij";
+            this.buttonRankingCofnij.Size = new System.Drawing.Size(75, 23);
+            this.buttonRankingCofnij.TabIndex = 0;
+            this.buttonRankingCofnij.Text = "Cofnij";
+            this.buttonRankingCofnij.UseVisualStyleBackColor = true;
+            this.buttonRankingCofnij.Click += new System.EventHandler(this.buttonRankingCofnij_Click);
+            // 
+            // labelRanking
+            // 
+            this.labelRanking.AutoSize = true;
+            this.labelRanking.Font = new System.Drawing.Font("Pricedown Bl", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRanking.Location = new System.Drawing.Point(332, 152);
+            this.labelRanking.Name = "labelRanking";
+            this.labelRanking.Size = new System.Drawing.Size(100, 35);
+            this.labelRanking.TabIndex = 3;
+            this.labelRanking.Text = "Wyniki";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Pricedown Bl", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(295, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 58);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ranking";
+            // 
             // FormOknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1542,9 +1587,7 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.panelDodajWynik);
-            this.Controls.Add(this.panelOknoGlowne);
-            this.Controls.Add(this.panelKalkulatorKosztow);
+            this.Controls.Add(this.panelRanking);
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
@@ -1553,9 +1596,12 @@
             this.Controls.Add(this.panelUsunUzytkownika);
             this.Controls.Add(this.panelLogowanie);
             this.Controls.Add(this.panelRezerwacjaTerminu);
+            this.Controls.Add(this.panelDodajWynik);
+            this.Controls.Add(this.panelOknoGlowne);
+            this.Controls.Add(this.panelKalkulatorKosztow);
             this.Name = "FormOknoGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Twix";
+            this.Text = "p";
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             this.panelPanelPracownika.ResumeLayout(false);
@@ -1576,11 +1622,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKalkulatorKosztowMoneyGIF)).EndInit();
             this.panelDodajWynik.ResumeLayout(false);
             this.panelDodajWynik.PerformLayout();
-            this.panelUzytkownika.ResumeLayout(false);
             this.panelOknoGlowne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaNrDow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).EndInit();
+            this.panelUzytkownika.ResumeLayout(false);
+            this.panelRanking.ResumeLayout(false);
+            this.panelRanking.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1685,17 +1733,10 @@
         private System.Windows.Forms.ComboBox comboBoxDodajWynikWbierzBron;
         private System.Windows.Forms.TextBox textBoxDodajWynikNazwaUzytkownika;
         private System.Windows.Forms.Button buttonDodajWynikWyszukaj;
-        private System.Windows.Forms.Panel panelUzytkownika;
         private System.Windows.Forms.Button buttonDodajWynik;
         private System.Windows.Forms.Button buttonDodajWynikDodaj;
         private System.Windows.Forms.Button buttonDodajWynikWroc;
-        private System.Windows.Forms.Button buttonUzytkownikRezerwacjaTerminu;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button buttonOtworzPanelKalkulatorKosztow;
-        private System.Windows.Forms.Button buttonUzytkownikMojeStatystyki;
-        private System.Windows.Forms.Button buttonUzytkownikRanking;
         private System.Windows.Forms.Button buttonRezerwacjaTerminuWroc;
-        private System.Windows.Forms.Button buttonUzytkownikWyloguj;
         private System.Windows.Forms.Panel panelKalkulatorKosztow;
         private System.Windows.Forms.Button buttonKalkulatorKosztowCofnij;
         private System.Windows.Forms.Button buttonKalkulatorKosztowOblicz;
@@ -1708,6 +1749,17 @@
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaPesel;
         private System.Windows.Forms.ErrorProvider errorProviderRejestracjaLogin;
         private System.Windows.Forms.PictureBox pictureBoxKalkulatorKosztowMoneyGIF;
+        private System.Windows.Forms.Panel panelUzytkownika;
+        private System.Windows.Forms.Button buttonUzytkownikWyloguj;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button buttonOtworzPanelKalkulatorKosztow;
+        private System.Windows.Forms.Button buttonUzytkownikMojeStatystyki;
+        private System.Windows.Forms.Button buttonUzytkownikRanking;
+        private System.Windows.Forms.Button buttonUzytkownikRezerwacjaTerminu;
+        private System.Windows.Forms.Panel panelRanking;
+        private System.Windows.Forms.Button buttonRankingCofnij;
+        private System.Windows.Forms.Label labelRanking;
+        private System.Windows.Forms.Label label2;
     }
 }
 
