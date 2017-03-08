@@ -373,6 +373,8 @@ namespace Twixv2
                 uzupelnianie_comboboxWybierzBron(comboBoxKalkulatorKosztowWybierzBron);
                 ukrywaniePanelu(panelLogowanie);
                 pokazywaniePanelu(panelUzytkownika);
+                labelUzytkownikLoginNazwa.Text = uzytkownik.log();
+                labelUzytkownikRangaNazwa.Text = uzytkownik.nazwaRangi();
             }
             else
             {

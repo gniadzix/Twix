@@ -355,5 +355,17 @@ namespace Twixv2
                 MessageBox.Show("Błąd");
             }
         }
+
+        public string log()
+        {
+            return login;
+        }
+
+        public string nazwaRangi()
+        {
+            Baza encjaTwix = new Baza();
+            var rang = encjaTwix.Twix_SL_Rangi.FirstOrDefault(a => a.ID == ranga);
+            return rang.NAZWA;
+        }
     }
 }

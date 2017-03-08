@@ -152,9 +152,13 @@
             this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
             this.panelUzytkownika = new System.Windows.Forms.Panel();
             this.panelRanking = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelRanking = new System.Windows.Forms.Label();
             this.buttonRankingCofnij = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelUzytkownikLogin = new System.Windows.Forms.Label();
+            this.labelUzytkownikRanga = new System.Windows.Forms.Label();
+            this.labelUzytkownikLoginNazwa = new System.Windows.Forms.Label();
+            this.labelUzytkownikRangaNazwa = new System.Windows.Forms.Label();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -1510,7 +1514,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(609, 388);
+            this.monthCalendar1.Location = new System.Drawing.Point(429, 388);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
             // 
@@ -1530,6 +1534,10 @@
             // 
             this.panelUzytkownika.BackgroundImage = global::Twixv2.Properties.Resources.Panel_uzytkownika_background;
             this.panelUzytkownika.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelUzytkownika.Controls.Add(this.labelUzytkownikRangaNazwa);
+            this.panelUzytkownika.Controls.Add(this.labelUzytkownikLoginNazwa);
+            this.panelUzytkownika.Controls.Add(this.labelUzytkownikRanga);
+            this.panelUzytkownika.Controls.Add(this.labelUzytkownikLogin);
             this.panelUzytkownika.Controls.Add(this.buttonUzytkownikWyloguj);
             this.panelUzytkownika.Controls.Add(this.monthCalendar1);
             this.panelUzytkownika.Controls.Add(this.buttonOtworzPanelKalkulatorKosztow);
@@ -1551,6 +1559,15 @@
             this.panelRanking.Name = "panelRanking";
             this.panelRanking.Size = new System.Drawing.Size(800, 600);
             this.panelRanking.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Twixv2.Properties.Resources.ranking_text;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 102);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // labelRanking
             // 
@@ -1574,14 +1591,49 @@
             this.buttonRankingCofnij.UseVisualStyleBackColor = true;
             this.buttonRankingCofnij.Click += new System.EventHandler(this.buttonRankingCofnij_Click);
             // 
-            // pictureBox1
+            // labelUzytkownikLogin
             // 
-            this.pictureBox1.Image = global::Twixv2.Properties.Resources.ranking_text;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 102);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.labelUzytkownikLogin.AutoSize = true;
+            this.labelUzytkownikLogin.BackColor = System.Drawing.Color.Transparent;
+            this.labelUzytkownikLogin.Font = new System.Drawing.Font("Pricedown Bl", 20F, System.Drawing.FontStyle.Bold);
+            this.labelUzytkownikLogin.Location = new System.Drawing.Point(238, 149);
+            this.labelUzytkownikLogin.Name = "labelUzytkownikLogin";
+            this.labelUzytkownikLogin.Size = new System.Drawing.Size(79, 32);
+            this.labelUzytkownikLogin.TabIndex = 6;
+            this.labelUzytkownikLogin.Text = "Login:";
+            // 
+            // labelUzytkownikRanga
+            // 
+            this.labelUzytkownikRanga.AutoSize = true;
+            this.labelUzytkownikRanga.BackColor = System.Drawing.Color.Transparent;
+            this.labelUzytkownikRanga.Font = new System.Drawing.Font("Pricedown Bl", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUzytkownikRanga.Location = new System.Drawing.Point(238, 185);
+            this.labelUzytkownikRanga.Name = "labelUzytkownikRanga";
+            this.labelUzytkownikRanga.Size = new System.Drawing.Size(93, 32);
+            this.labelUzytkownikRanga.TabIndex = 7;
+            this.labelUzytkownikRanga.Text = "Ranga:";
+            // 
+            // labelUzytkownikLoginNazwa
+            // 
+            this.labelUzytkownikLoginNazwa.AutoSize = true;
+            this.labelUzytkownikLoginNazwa.BackColor = System.Drawing.Color.Transparent;
+            this.labelUzytkownikLoginNazwa.Font = new System.Drawing.Font("Pricedown Bl", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUzytkownikLoginNazwa.Location = new System.Drawing.Point(323, 151);
+            this.labelUzytkownikLoginNazwa.Name = "labelUzytkownikLoginNazwa";
+            this.labelUzytkownikLoginNazwa.Size = new System.Drawing.Size(88, 32);
+            this.labelUzytkownikLoginNazwa.TabIndex = 8;
+            this.labelUzytkownikLoginNazwa.Text = "label2";
+            // 
+            // labelUzytkownikRangaNazwa
+            // 
+            this.labelUzytkownikRangaNazwa.AutoSize = true;
+            this.labelUzytkownikRangaNazwa.BackColor = System.Drawing.Color.Transparent;
+            this.labelUzytkownikRangaNazwa.Font = new System.Drawing.Font("Pricedown Bl", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelUzytkownikRangaNazwa.Location = new System.Drawing.Point(323, 186);
+            this.labelUzytkownikRangaNazwa.Name = "labelUzytkownikRangaNazwa";
+            this.labelUzytkownikRangaNazwa.Size = new System.Drawing.Size(88, 32);
+            this.labelUzytkownikRangaNazwa.TabIndex = 9;
+            this.labelUzytkownikRangaNazwa.Text = "label3";
             // 
             // FormOknoGlowne
             // 
@@ -1590,7 +1642,6 @@
             this.BackgroundImage = global::Twixv2.Properties.Resources.Home_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.panelRanking);
             this.Controls.Add(this.panelUzytkownika);
             this.Controls.Add(this.panelPanelPracownika);
             this.Controls.Add(this.panelDodajUzytkownika);
@@ -1602,6 +1653,7 @@
             this.Controls.Add(this.panelDodajWynik);
             this.Controls.Add(this.panelOknoGlowne);
             this.Controls.Add(this.panelKalkulatorKosztow);
+            this.Controls.Add(this.panelRanking);
             this.Name = "FormOknoGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STRZELNICA Twixv2";
@@ -1630,6 +1682,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaPesel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).EndInit();
             this.panelUzytkownika.ResumeLayout(false);
+            this.panelUzytkownika.PerformLayout();
             this.panelRanking.ResumeLayout(false);
             this.panelRanking.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1764,6 +1817,10 @@
         private System.Windows.Forms.Button buttonRankingCofnij;
         private System.Windows.Forms.Label labelRanking;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelUzytkownikRanga;
+        private System.Windows.Forms.Label labelUzytkownikLogin;
+        private System.Windows.Forms.Label labelUzytkownikRangaNazwa;
+        private System.Windows.Forms.Label labelUzytkownikLoginNazwa;
     }
 }
 
