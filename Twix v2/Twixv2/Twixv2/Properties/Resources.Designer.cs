@@ -373,6 +373,26 @@ namespace Twixv2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ranking_background {
+            get {
+                object obj = ResourceManager.GetObject("ranking_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ranking_text {
+            get {
+                object obj = ResourceManager.GetObject("ranking_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rejestracja_background {
             get {
                 object obj = ResourceManager.GetObject("Rejestracja_background", resourceCulture);

@@ -152,9 +152,9 @@
             this.buttonUzytkownikWyloguj = new System.Windows.Forms.Button();
             this.panelUzytkownika = new System.Windows.Forms.Panel();
             this.panelRanking = new System.Windows.Forms.Panel();
-            this.buttonRankingCofnij = new System.Windows.Forms.Button();
             this.labelRanking = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonRankingCofnij = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             buttonDodajPracownika = new System.Windows.Forms.Button();
             this.panelLogowanie.SuspendLayout();
             this.panelPanelPracownika.SuspendLayout();
@@ -174,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderRejestracjaLogin)).BeginInit();
             this.panelUzytkownika.SuspendLayout();
             this.panelRanking.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDodajPracownika
@@ -1542,7 +1543,8 @@
             // 
             // panelRanking
             // 
-            this.panelRanking.Controls.Add(this.label2);
+            this.panelRanking.BackgroundImage = global::Twixv2.Properties.Resources.ranking_background;
+            this.panelRanking.Controls.Add(this.pictureBox1);
             this.panelRanking.Controls.Add(this.labelRanking);
             this.panelRanking.Controls.Add(this.buttonRankingCofnij);
             this.panelRanking.Location = new System.Drawing.Point(0, 0);
@@ -1550,35 +1552,36 @@
             this.panelRanking.Size = new System.Drawing.Size(800, 600);
             this.panelRanking.TabIndex = 13;
             // 
-            // buttonRankingCofnij
-            // 
-            this.buttonRankingCofnij.Location = new System.Drawing.Point(678, 502);
-            this.buttonRankingCofnij.Name = "buttonRankingCofnij";
-            this.buttonRankingCofnij.Size = new System.Drawing.Size(75, 23);
-            this.buttonRankingCofnij.TabIndex = 0;
-            this.buttonRankingCofnij.Text = "Cofnij";
-            this.buttonRankingCofnij.UseVisualStyleBackColor = true;
-            this.buttonRankingCofnij.Click += new System.EventHandler(this.buttonRankingCofnij_Click);
-            // 
             // labelRanking
             // 
             this.labelRanking.AutoSize = true;
+            this.labelRanking.BackColor = System.Drawing.Color.Transparent;
             this.labelRanking.Font = new System.Drawing.Font("Pricedown Bl", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelRanking.Location = new System.Drawing.Point(332, 152);
+            this.labelRanking.Location = new System.Drawing.Point(55, 130);
             this.labelRanking.Name = "labelRanking";
             this.labelRanking.Size = new System.Drawing.Size(100, 35);
             this.labelRanking.TabIndex = 3;
             this.labelRanking.Text = "Wyniki";
             // 
-            // label2
+            // buttonRankingCofnij
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Pricedown Bl", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(295, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 58);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Ranking";
+            this.buttonRankingCofnij.BackgroundImage = global::Twixv2.Properties.Resources.button_cofnij;
+            this.buttonRankingCofnij.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRankingCofnij.Location = new System.Drawing.Point(661, 490);
+            this.buttonRankingCofnij.Name = "buttonRankingCofnij";
+            this.buttonRankingCofnij.Size = new System.Drawing.Size(92, 35);
+            this.buttonRankingCofnij.TabIndex = 0;
+            this.buttonRankingCofnij.UseVisualStyleBackColor = true;
+            this.buttonRankingCofnij.Click += new System.EventHandler(this.buttonRankingCofnij_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Twixv2.Properties.Resources.ranking_text;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 102);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // FormOknoGlowne
             // 
@@ -1601,7 +1604,7 @@
             this.Controls.Add(this.panelKalkulatorKosztow);
             this.Name = "FormOknoGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "p";
+            this.Text = "STRZELNICA Twixv2";
             this.panelLogowanie.ResumeLayout(false);
             this.panelLogowanie.PerformLayout();
             this.panelPanelPracownika.ResumeLayout(false);
@@ -1629,6 +1632,7 @@
             this.panelUzytkownika.ResumeLayout(false);
             this.panelRanking.ResumeLayout(false);
             this.panelRanking.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1759,7 +1763,7 @@
         private System.Windows.Forms.Panel panelRanking;
         private System.Windows.Forms.Button buttonRankingCofnij;
         private System.Windows.Forms.Label labelRanking;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

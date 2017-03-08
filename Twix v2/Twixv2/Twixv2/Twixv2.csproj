@@ -229,6 +229,8 @@
       <DependentUpon>Baza.edmx</DependentUpon>
       <LastGenOutput>Baza.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ranking_text.gif" />
+    <None Include="Resources\ranking_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

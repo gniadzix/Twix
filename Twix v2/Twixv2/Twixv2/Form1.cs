@@ -365,10 +365,12 @@ namespace Twixv2
             logowanie = uzytkownik.pobranieDanych(textBoxLogowanieLogin.Text,GenerateSHA256String(textBoxLogowanieHaslo.Text));
             if(logowanie == true && uzytkownik.czyAdminBool == true)
             {
+                uzupelnianie_comboboxWybierzBron(comboBoxDodajWynikWbierzBron);
                 pokazywaniePanelu(panelPanelPracownika);
             }
             else if(logowanie == true && uzytkownik.czyAdminBool == false)
             {
+                uzupelnianie_comboboxWybierzBron(comboBoxKalkulatorKosztowWybierzBron);
                 ukrywaniePanelu(panelLogowanie);
                 pokazywaniePanelu(panelUzytkownika);
             }
@@ -785,8 +787,7 @@ namespace Twixv2
         }
 
         private void buttonDodajWynik_Click_1(object sender, EventArgs e)
-        {
-            uzupelnianie_comboboxWybierzBron(comboBoxDodajWynikWbierzBron);
+        {           
             autouzupelnianie_textBoxDodajWynikNazwaUzytkownika();
             comboBoxDodajWynikWbierzBron.SelectedIndex = 0;
             pokazywaniePanelu(panelDodajWynik);
@@ -807,14 +808,13 @@ namespace Twixv2
 
         private void buttonOtworzPanelKalkulatorKosztow_Click(object sender, EventArgs e)
         {
-            uzupelnianie_comboboxWybierzBron(comboBoxKalkulatorKosztowWybierzBron);
             ukrywaniePanelu(panelUzytkownika);
             pokazywaniePanelu(panelKalkulatorKosztow);
         }
 
         private void buttonKalkulatorKosztowCofnij_Click(object sender, EventArgs e)
         {
-            labelKalkulatorKosztowWynik.Text = "";
+            labelKalkulatorKosztowWynik.Text = ""; 
             pictureBoxKalkulatorKosztowMoneyGIF.Visible = false;
             textBoxKalkulatorKosztowIloscStrzalow.Text = "Ilość strzałów";
             ukrywaniePanelu(panelKalkulatorKosztow);
