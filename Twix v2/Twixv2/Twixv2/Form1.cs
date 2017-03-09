@@ -16,7 +16,7 @@ namespace Twixv2
 {
     public partial class FormOknoGlowne : Form
     {
-       // private SoundPlayer odtwarzacz;
+        private SoundPlayer odtwarzacz;
         KlientStrzelnicy uzytkownik = new KlientStrzelnicy();
         public FormOknoGlowne()
         {
@@ -314,7 +314,7 @@ namespace Twixv2
 
         private void buttonOknoGlowneWyjdz_Click(object sender, EventArgs e)
         {
-          //  odtwarzacz.Stop();
+            //odtwarzacz.Stop();
             Application.Exit();
         }
 
